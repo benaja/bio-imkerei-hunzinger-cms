@@ -11,6 +11,8 @@
 |
 */
 
-Route::get('/', function () {
-    return view('frontpage');
-});
+Route::get('/', 'FrontpageController@index');
+
+// Route::get('/', function () {
+//     return view('frontpage');
+// });

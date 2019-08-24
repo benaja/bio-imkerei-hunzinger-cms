@@ -31,5 +31,23 @@ return [
                 'max' => 10,
             ],
         ]
-    ]
+    ],
+    'buckets' => [
+        'frontpage' => [
+            'name' => 'Frontpage',
+            'buckets' => [
+                'home_primary_feature' => [
+                    'name' => 'Home primary feature',
+                    'bucketables' => [
+                        [
+                            'module' => 'products',
+                            'name' => 'Products',
+                            'scopes' => ['published' => true],
+                        ],
+                    ],
+                    'max_items' => 4,
+                ],
+            ],
+        ],
+    ],
 ];
