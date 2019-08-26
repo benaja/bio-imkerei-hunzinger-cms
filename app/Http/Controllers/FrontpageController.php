@@ -20,16 +20,15 @@ class FrontpageController extends Controller
         $featured = Feature::where('featured_type', 'products')->orderBy('position')->get('featured_id')->map(function ($value,$key) {
             return $value->featured_id;
         });
-        $products = Product::whereIn('id', $featured)->get();
 
-        dd($products);
-        $products = Product::rightJoin('features', 'products.id', '=', 'featured_id::int')
-            ->where('features.featured_type', '=', 'products')
-            ->get();
-        // $products = Product::where('featured_type', '=', 'products')->get();
-        dd($products);
-        // dd(Product);
-        // dd(Product::features()->get());
-        return view('frontpage');
+        $products = [];
+        foreach($featured as $featuredId) {
+            array_push($products, Product::find($featuredId));
+        }
+
+        // dd($products[0]->image('cover'));
+
+        // dd($products);
+        return view('frontpage', ['products' => $products]);
     }
 }

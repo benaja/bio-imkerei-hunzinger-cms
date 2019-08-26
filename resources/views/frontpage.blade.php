@@ -32,6 +32,10 @@
 
 <div class="content">
     <h1>Produkte</h1>
+    @foreach ($products as $product)
+        @component('products.product-preview', ['product' => $product])
+        @endcomponent
+    @endforeach
 </div>
 
 <style>
