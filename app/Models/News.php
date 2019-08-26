@@ -19,7 +19,7 @@ class News extends Model implements Sortable
         'description',
         'position',
         // 'public',
-        // 'featured',
+        'featured',
         // 'publish_start_date',
         // 'publish_end_date',
     ];

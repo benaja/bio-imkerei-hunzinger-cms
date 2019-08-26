@@ -20,12 +20,13 @@ class ProductController extends ModuleController
             'title' => 'Title',
             'field' => 'title',
         ],
-        'prices' => [ // relation column
-            'title' => 'Prices',
-            'sort' => true,
-            'relationship' => 'prices',
-            'field' => 'amount'
-        ],
+    ];
+
+    protected $featureField = 'home_primary_feature';
+
+    protected $indexOptions = [
+        'feature' => true,
+        'reorder' => true,
     ];
 
     protected $browserColumns = [

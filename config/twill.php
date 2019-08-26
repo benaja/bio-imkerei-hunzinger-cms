@@ -46,8 +46,9 @@ return [
                         ],
                     ],
                     'max_items' => 4,
+                    'reorder' => true
                 ],
             ],
-        ],
+        ]
     ],
 ];

@@ -9,6 +9,10 @@ return [
         'title' => 'News',
         'module' => true
     ],
+    'aboutUsContents' => [
+        'title' => 'aboutUsContents',
+        'module' => true
+    ],
     'featured' => [
         'title' => 'Features',
         'route' => 'admin.featured.frontpage',
