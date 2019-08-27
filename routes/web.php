@@ -10,8 +10,9 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
+Route::get('/{any}', 'SinglePageController@index')->where('any', '.*');
 
-Route::get('/', 'FrontpageController@index');
+// Route::get('/', 'FrontpageController@index');
 
 // Route::get('/', function () {
 //     return view('frontpage');
