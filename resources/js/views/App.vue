@@ -1,20 +1,36 @@
 <template>
-    <div>
-        <router-view></router-view>
-    </div>
+  <div>
+    <router-view></router-view>
+  </div>
 </template>
 
 <script>
-import UIkit from 'uikit'
-import Icons from 'uikit/dist/js/uikit-icons'
+import UIkit from "uikit";
+import Icons from "uikit/dist/js/uikit-icons";
 
-UIkit.use(Icons)
+UIkit.use(Icons);
 
-export default {
-    
-}
+export default {};
 </script>
 
-<style>
-/* @import "uikit/dist/css/uikit.min.css"; */
+<style lang="scss">
+.uk-link,
+a {
+  color: #e89602;
+}
+
+.text-editor-content {
+  &.dark {
+    p,
+    h1,
+    h2,
+    h3 {
+      color: white;
+
+      em {
+        color: white;
+      }
+    }
+  }
+}
 </style>
