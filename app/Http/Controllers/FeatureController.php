@@ -15,7 +15,7 @@ class FeatureController extends Controller
 
         $products = [];
         foreach($featured as $featuredId) {
-            $product = Product::with('prices')->find($featuredId);
+            $product = Product::with(['prices', 'slugs'])->find($featuredId);
             $product->image = $product->image('cover');
             array_push($products, $product);
         }

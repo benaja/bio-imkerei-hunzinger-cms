@@ -1,34 +1,39 @@
 <template>
   <div class="product-preview-container">
-    <div
+    <router-link
+      :to="'/produkte/' + product.slugs[0].slug"
+      tag="div"
       class="product-preview"
       :style="hover"
       @mouseover="updateHover(true)"
       @mouseleave="updateHover(false)"
     >
-      <div
-        v-if="product.image"
-        class="image"
-        :style="{
-                backgroundImage: `url(${product.image})`
-            }"
-      ></div>
-      <div v-else class="no-image" :style="{ backgroundImage: `url(/images/no-image.png)` }"></div>
       <div class="content">
-        <h2>{{ product.title }}</h2>
-        <div class="short-description">
+        <h3>{{ product.title }}</h3>
+        <!-- <div class="short-description">
           <p>{{ product.short_description }}</p>
-        </div>
+        </div>-->
         <div v-if="product.prices.length" class="price-information">
           <p class="price">ab {{ product.prices[0].amount }}.-</p>
           <p class="subdescription">( zzgl. Versand )</p>
         </div>
+        <router-link :to="'/produkte/' + product.slugs[0].slug" tag="a">
+          Mehr details
+          <span uk-icon="icon: chevron-right"></span>
+          <!-- <a href uk-icon="icon: chevron-right"></a> -->
+        </router-link>
       </div>
-      <div class="hover-container">
+      <div v-if="product.image" class="image" :style="{ backgroundImage: `url(${product.image})` }"></div>
+      <div v-else class="no-image" :style="{ backgroundImage: `url(/images/no-image.png)` }"></div>
+      <!-- <div class="hover-container">
         <p class="detail-description text-editor-content dark" v-html="product.description"></p>
-        <router-link tag="button" class="more-button" :to="'/produkte/' + product.id">Mehr details</router-link>
-      </div>
-    </div>
+        <router-link
+          tag="button"
+          class="more-button"
+          :to="'/produkte/' + product.slugs[0].slug"
+        >Mehr details</router-link>
+      </div>-->
+    </router-link>
   </div>
 </template>
 
@@ -68,27 +73,30 @@ export default {
 
 <style lang="scss" scoped>
 .product-preview-container {
-  width: 25%;
+  width: 50%;
+  margin-bottom: 30px;
 }
 
 .product-preview {
+  padding-top: 1px;
   width: 90%;
-  background-color: rgb(245, 245, 245);
+  background-color: white;
   position: relative;
-  margin: 12px;
+  margin: 0 5%;
   border-radius: 5px;
   cursor: pointer;
   transition-duration: 0.3s;
+  // box-shadow: 10px 10px 10px lightgray;
 }
 
 .image {
   width: 100%;
-  padding-bottom: 70%;
+  padding-bottom: 60%;
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
-  border-top-right-radius: 5px;
-  border-top-left-radius: 5px;
+  border-bottom-right-radius: 5px;
+  border-bottom-left-radius: 5px;
 }
 
 .no-image {
@@ -102,13 +110,13 @@ export default {
 
 .content {
   text-align: center;
-  height: 200px;
+  height: 180px;
 }
 
-h2 {
-  margin: 20px 0 15px 0;
-  line-height: 1.8rem;
-  font-size: 1.8rem;
+h3 {
+  margin: 30px 0 0 0;
+  // line-height: 1.8rem;
+  font-size: 2.2rem;
 }
 
 .short-description {
@@ -124,15 +132,10 @@ h2 {
   }
 }
 
-.price-information {
-  position: absolute;
-  bottom: 0;
-  width: 100%;
-}
-
 .price {
   font-weight: bold;
   margin-bottom: 0;
+  margin-top: 10px;
   font-size: 1.3rem;
 }
 
@@ -161,8 +164,8 @@ h2 {
 }
 
 .detail-description {
-  margin: 40px;
-  height: calc(100% - 150px);
+  margin: 20px;
+  height: calc(100% - 120px);
   overflow-x: hidden;
   overflow-y: hidden;
 
@@ -189,10 +192,26 @@ h2 {
   border-color: lightgray;
 }
 
-@media only screen and (max-width: 700px) {
-  .product-preview {
-    width: 100%;
-    margin-right: 0;
-  }
-}
+// @media only screen and (max-width: 1100px) {
+//   .product-preview-container {
+//     width: 50%;
+//   }
+// }
+
+// @media only screen and (max-width: 550px) {
+//   .product-preview-container {
+//     width: 100%;
+//   }
+
+//   .product-preview {
+//     margin: 0;
+//     width: 100%;
+//     max-width: unset;
+//     box-shadow: none;
+//   }
+
+//   .hover-container {
+//     display: none;
+//   }
+// }
 </style>

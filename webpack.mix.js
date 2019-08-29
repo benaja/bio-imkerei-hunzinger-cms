@@ -1,6 +1,21 @@
 const mix = require("laravel-mix");
+const path = require('path');
 
 mix.webpackConfig({
+    module: {
+        rules: [
+            {
+                test: /\.jsx?$/,
+                exclude: /node_modules(?!\/foundation-sites)|bower_components/,
+                use: [
+                    {
+                        loader: 'babel-loader',
+                        options: Config.babel()
+                    }
+                ]
+            }
+        ]
+    },
     resolve: {
         extensions: [".js", ".vue"],
         alias: {
@@ -20,7 +35,8 @@ mix.webpackConfig({
  |
  */
 
-mix.js("resources/js/app.js", "public/js").sass(
-    "resources/sass/app.scss",
-    "public/css"
-);
+mix.js("resources/js/app.js", "public/js")
+    .sass(
+        "resources/sass/app.scss",
+        "public/css"
+    );
