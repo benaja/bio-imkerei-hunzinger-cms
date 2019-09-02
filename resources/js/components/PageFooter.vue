@@ -12,10 +12,12 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "~@/sass/_variables.scss";
+
 .footer {
   position: relative;
   overflow: hidden;
-  z-index: -1;
+  z-index: 0;
   margin-top: 50px;
 }
 
@@ -23,7 +25,7 @@ export default {
   width: 150%;
   height: 160px;
   position: absolute;
-  background-color: white;
+  background-color: $background-color;
   transform: rotate(5deg);
   top: -50px;
   left: -50px;
@@ -33,6 +35,7 @@ export default {
   background-color: #e89602;
   height: 500px;
   width: 100%;
+  margin-top: 1px;
 }
 
 @media only screen and (max-width: 100px) {

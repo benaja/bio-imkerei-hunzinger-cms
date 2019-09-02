@@ -8,31 +8,26 @@
       @mouseover="updateHover(true)"
       @mouseleave="updateHover(false)"
     >
+      <div v-if="product.image" class="image" :style="{ backgroundImage: `url(${product.image})` }"></div>
+      <div v-else class="no-image" :style="{ backgroundImage: `url(/images/no-image.png)` }"></div>
       <div class="content">
         <h3>{{ product.title }}</h3>
-        <!-- <div class="short-description">
+        <div class="short-description">
           <p>{{ product.short_description }}</p>
-        </div>-->
+        </div>
         <div v-if="product.prices.length" class="price-information">
           <p class="price">ab {{ product.prices[0].amount }}.-</p>
           <p class="subdescription">( zzgl. Versand )</p>
         </div>
-        <router-link :to="'/produkte/' + product.slugs[0].slug" tag="a">
-          Mehr details
-          <span uk-icon="icon: chevron-right"></span>
-          <!-- <a href uk-icon="icon: chevron-right"></a> -->
-        </router-link>
       </div>
-      <div v-if="product.image" class="image" :style="{ backgroundImage: `url(${product.image})` }"></div>
-      <div v-else class="no-image" :style="{ backgroundImage: `url(/images/no-image.png)` }"></div>
-      <!-- <div class="hover-container">
+      <div class="hover-container">
         <p class="detail-description text-editor-content dark" v-html="product.description"></p>
         <router-link
           tag="button"
           class="more-button"
           :to="'/produkte/' + product.slugs[0].slug"
         >Mehr details</router-link>
-      </div>-->
+      </div>
     </router-link>
   </div>
 </template>
@@ -73,7 +68,7 @@ export default {
 
 <style lang="scss" scoped>
 .product-preview-container {
-  width: 50%;
+  width: 25%;
   margin-bottom: 30px;
 }
 
@@ -95,8 +90,8 @@ export default {
   background-size: cover;
   background-position: top center;
   background-repeat: no-repeat;
-  border-bottom-right-radius: 5px;
-  border-bottom-left-radius: 5px;
+  border-top-right-radius: 5px;
+  border-top-left-radius: 5px;
 }
 
 .no-image {
@@ -110,13 +105,17 @@ export default {
 
 .content {
   text-align: center;
-  height: 180px;
+  height: 190px;
 }
 
 h3 {
-  margin: 30px 0 0 0;
+  margin: 10px 0 0 0;
   // line-height: 1.8rem;
   font-size: 2.2rem;
+  max-width: 100%;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
 }
 
 .short-description {
@@ -134,14 +133,15 @@ h3 {
 
 .price {
   font-weight: bold;
-  margin-bottom: 0;
   margin-top: 10px;
+  margin-bottom: 0;
   font-size: 1.3rem;
 }
 
 .subdescription {
   color: gray;
   margin-top: 0;
+  // margin-bottom: 20px;
 }
 
 .hover-container {
@@ -158,6 +158,7 @@ h3 {
 }
 
 .product-preview:hover {
+  transform: scale(1.05);
   .hover-container {
     opacity: 1;
   }
@@ -192,16 +193,25 @@ h3 {
   border-color: lightgray;
 }
 
-// @media only screen and (max-width: 1100px) {
-//   .product-preview-container {
-//     width: 50%;
-//   }
-// }
+@media only screen and (max-width: 1200px) {
+  .product-preview-container {
+    width: 50%;
+  }
+}
 
-// @media only screen and (max-width: 550px) {
-//   .product-preview-container {
-//     width: 100%;
-//   }
+@media only screen and (max-width: 600px) {
+  .product-preview-container {
+    width: 100%;
+  }
+
+  .product-preview:hover{
+    transform: scale(1);  
+  }
+
+  .hover-container {
+    display: none;
+  }
+}
 
 //   .product-preview {
 //     margin: 0;

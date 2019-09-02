@@ -17,7 +17,7 @@ export default {};
 @import "~@/sass/_variables.scss";
 
 body {
-  background-color: rgb(240, 240, 240);
+  background-color: $background-color;
 }
 
 .uk-link,

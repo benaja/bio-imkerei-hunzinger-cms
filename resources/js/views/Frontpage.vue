@@ -2,47 +2,8 @@
   <div>
     <div uk-parallax="bgy: -200" class="background-image">
       <div class="darken-background">
-        <!-- <div :class="{'navbar-fixed': navbarFixed}"> -->
-        <div
-          uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 60"
-        >
-          <nav class="uk-navbar-container" uk-navbar>
-            <a class="uk-navbar-item uk-logo" href="/">
-              <img class="logo" src="/images/logo_portrait.png" />
-            </a>
-
-            <div class="uk-navbar-right">
-              <ul class="uk-navbar-nav">
-                <li>
-                  <a href="/produkte">Produkte</a>
-                </li>
-                <li>
-                  <a href="/galerie">Galerie</a>
-                </li>
-                <li>
-                  <a href="/news">News</a>
-                </li>
-                <li>
-                  <a href="/about">Über Uns</a>
-                  <div class="uk-navbar-dropdown">
-                    <ul class="uk-nav uk-navbar-dropdown-nav">
-                      <li>
-                        <a href="/kontakt">Über Uns</a>
-                      </li>
-                      <li>
-                        <a href="/kontakt">Kontakt</a>
-                      </li>
-                      <li>
-                        <a href="/projekt">Projekt</a>
-                      </li>
-                    </ul>
-                  </div>
-                </li>
-              </ul>
-            </div>
-          </nav>
-        </div>
-        <!-- </div> -->
+        <NavigationBar></NavigationBar>
+        <img class="large-logo" src="/images/logo_portrait_inverted.png" v-if="!navbarFixed" />
         <h1 class="main-title">Bio-Imkerei Hunzinger</h1>
         <h2 class="second-title">Schweizer Bienenhonig feinster Qualität</h2>
       </div>
@@ -60,12 +21,14 @@
 <script>
 import ProductPreview from "@/js/components/products/ProductPreview";
 import PageFooter from "@/js/components/PageFooter";
+import NavigationBar from "@/js/components/NavigationBar";
 
 export default {
   name: "Frontpage",
   components: {
     ProductPreview,
-    PageFooter
+    PageFooter,
+    NavigationBar
   },
   data() {
     return {
@@ -87,8 +50,8 @@ export default {
   methods: {
     onScroll() {
       if (
-        document.body.scrollTop > 50 ||
-        document.documentElement.scrollTop > 50
+        document.body.scrollTop > 60 ||
+        document.documentElement.scrollTop > 60
       ) {
         console.log("x");
         this.navbarFixed = true;
@@ -128,7 +91,8 @@ h2 {
   color: white;
   font-size: 80px;
   text-align: center;
-  margin-top: calc(50vh - 200px);
+  margin-top: calc(50vh - 100px);
+  // margin-top: -200px;
 }
 
 .second-title {
@@ -138,49 +102,11 @@ h2 {
   margin-top: 0;
 }
 
-.uk-navbar-container {
+.large-logo {
+  height: 170px;
+  margin: 10px;
+  display: block;
   position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-}
-
-.uk-navbar-right {
-  margin-right: 10px;
-}
-
-.uk-navbar-sticky {
-  // box-shadow: 0 0 7px black;
-  background-color: black;
-  // .uk-navbar-nav {
-  //   > li > a {
-  //     color: rgb(71, 71, 71);
-  //   }
-
-  //   > li.uk-active > a {
-  //     color: rgb(116, 116, 116);
-  //   }
-  // }
-  .uk-navbar-nav > li > a,
-  .uk-navbar-item {
-    min-height: 50px;
-  }
-
-  .logo {
-    height: 50px;
-  }
-}
-
-.uk-navbar-nav > li > a {
-  color: white;
-}
-
-.uk-navbar-nav > li.uk-active > a {
-  color: lightgray;
-}
-
-.logo {
-  height: 60px;
 }
 
 .content {
@@ -205,7 +131,20 @@ h2 {
   // }
 }
 
-@media only screen and (max-width: 550px) {
+@media only screen and (max-width: 600px) {
+  .large-logo {
+    display: none;
+  }
+
+  .main-title {
+    font-size: 60px;
+    margin-top: calc(50vh - 150px);
+  }
+
+  .second-title {
+    font-size: 30px;
+  }
+
   .products {
     transform: scale(1);
   }
