@@ -22,6 +22,11 @@ return [
                 'icon' => 'text',
                 'component' => 'a17-block-prices',
             ],
+            'content_card' => [
+                'title' => 'Karte',
+                'icon' => 'image',
+                'component' => 'a17-block-content_card',
+            ]
         ],
         'repeaters' => [
             'prices' => [
@@ -30,7 +35,21 @@ return [
                 'component' => 'a17-block-prices',
                 'max' => 10,
             ],
-        ]
+        ],
+        'crops' => [
+            'slideshow' => [
+                'desktop' => [
+                    [
+                        'name' => 'desktop',
+                        // 'ratio' => 4 / 3,
+                        'minValues' => [
+                            'width' => 100,
+                            'height' => 100,
+                        ],
+                    ],
+                ]
+            ],
+        ],
     ],
     'buckets' => [
         'frontpage' => [

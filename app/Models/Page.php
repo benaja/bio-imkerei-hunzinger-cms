@@ -45,7 +45,7 @@ class Page extends Model
 
     // uncomment and modify this as needed if you use the HasMedias trait
     // public $mediasParams = [
-    //     'cover' => [
+    //     'slideshow' => [
     //         'default' => [
     //             [
     //                 'name' => 'landscape',
