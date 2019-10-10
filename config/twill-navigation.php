@@ -32,13 +32,17 @@ return [
         ]
     ],
     'featured' => [
-        'title' => 'Features',
-        'route' => 'admin.featured.frontpage',
+        'title' => 'Startseite',
+        'route' => 'admin.featured.products_on_frontpage',
         'primary_navigation' => [
-            'frontpage' => [
-                'title' => 'Startseite',
-                'route' => 'admin.featured.frontpage',
+            'products_on_frontpage' => [
+                'title' => 'Produkte',
+                'route' => 'admin.featured.products_on_frontpage',
             ],
+            'frontpage_more_content' => [
+                'title' => 'Weitere Inahlte',
+                'route' => 'admin.featured.frontpage_more_content'
+            ]
         ],
     ],
 ];

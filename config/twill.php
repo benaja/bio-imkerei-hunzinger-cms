@@ -52,7 +52,7 @@ return [
         ],
     ],
     'buckets' => [
-        'frontpage' => [
+        'products_on_frontpage' => [
             'name' => 'Frontpage',
             'buckets' => [
                 'home_primary_feature' => [

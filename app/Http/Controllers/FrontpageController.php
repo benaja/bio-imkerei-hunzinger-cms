@@ -26,9 +26,6 @@ class FrontpageController extends Controller
             array_push($products, Product::find($featuredId));
         }
 
-        // dd($products[0]->image('cover'));
-
-        // dd($products);
         return view('frontpage', ['products' => $products]);
     }
 }

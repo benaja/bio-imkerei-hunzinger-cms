@@ -41,6 +41,10 @@ class PageController extends ModuleController
         return $this->getView($repository, 'project', 'Projekt');
     }
 
+    public function frontpageMoreContent(PageRepository $repository) {
+        return $this->getView($repository, 'frontpage_more_content', 'Füge hier weitere Elemente ein, welche auf der Startseite angezeigt werden');
+    }
+
     private function getView($repository, $pageName, $pageNameGerman) {
         $page = $repository->byName($pageName);
 

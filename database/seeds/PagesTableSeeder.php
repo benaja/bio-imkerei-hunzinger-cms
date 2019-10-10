@@ -16,6 +16,7 @@ class PagesTableSeeder extends Seeder
         Page::firstOrCreate(['name' => 'about_us']);
         Page::firstOrCreate(['name' => 'contact']);
         Page::firstOrCreate(['name' => 'project']);
+        Page::firstOrCreate(['name' => 'frontpage_more_content']);
 
         // DB::table('pages')->insert([
         //     'name' => 'about_us'

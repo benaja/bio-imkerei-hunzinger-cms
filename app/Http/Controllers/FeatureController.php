@@ -5,6 +5,8 @@ namespace App\Http\Controllers;
 use Illuminate\Http\Request;
 use App\Feature;
 use App\Models\Product;
+use App\Block;
+use App\Page;
 
 class FeatureController extends Controller
 {
@@ -20,8 +22,13 @@ class FeatureController extends Controller
             array_push($products, $product);
         }
 
+
+        $frontPage = Page::getByPageName('frontpage_more_content');
+        $moreContent = Block::getByPageId($frontPage->id)->get();
+
         return [
-            'products' => $products
+            'products' => $products,
+            'content' => $moreContent
         ];
     }
 }

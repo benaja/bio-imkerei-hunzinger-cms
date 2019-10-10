@@ -13,6 +13,8 @@
       <div class="products">
         <ProductPreview v-for="product of products" :key="product.id" :product="product"></ProductPreview>
       </div>
+
+      <!-- <template v-for="content of " -->
     </div>
     <page-footer></page-footer>
   </div>
@@ -33,17 +35,15 @@ export default {
   data() {
     return {
       products: [],
+      contentElements: [],
       navbarFixed: false
     };
   },
   mounted() {
     this.axios.get("/features").then(response => {
       this.products = response.data.products;
+      this.contentElements = response.data.content;
     });
-
-    // this.axios.get("/products").then(response => {
-    //   console.log(response.data);
-    // });
 
     window.onscroll = this.onScroll;
   },
