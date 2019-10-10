@@ -8,13 +8,13 @@ class CreateProductsTables extends Migration
     public function up()
     {
         Schema::create('products', function (Blueprint $table) {
-            
+
             // this will create an id, a "published" column, and soft delete and timestamps columns
             createDefaultTableFields($table);
-            
+
             // feel free to modify the name of this column, but title is supported by default (you would need to specify the name of the column Twill should consider as your "title" column in your module controller if you change it)
             $table->string('title', 200)->nullable();
-            
+
             // your generated model and form include a description field, to get you started, but feel free to get rid of it if you don't need it
             $table->text('description')->nullable();
 
@@ -30,12 +30,12 @@ class CreateProductsTables extends Migration
         Schema::create('prices', function (Blueprint $table) {
             createDefaultTableFields($table);
             // $table->bigIncrements('id');
-            
+
             $table->float('amount', 8, 2);
 
             $table->string('name', 200);
 
-            $table->unsignedBigInteger('product_id')->nullable();
+            $table->unsignedInteger('product_id')->nullable();
 
             $table->foreign('product_id')->references('id')->on('products');
         });

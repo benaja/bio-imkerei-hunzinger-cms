@@ -65581,8 +65581,8 @@ __webpack_require__.r(__webpack_exports__);
 /*! no static exports found */
 /***/ (function(module, exports, __webpack_require__) {
 
-__webpack_require__(/*! /Users/benaja/Documents/twil-cms/resources/js/app.js */"./resources/js/app.js");
-module.exports = __webpack_require__(/*! /Users/benaja/Documents/twil-cms/resources/sass/app.scss */"./resources/sass/app.scss");
+__webpack_require__(/*! /Users/benaja/Documents/GitHub/twill-cms/resources/js/app.js */"./resources/js/app.js");
+module.exports = __webpack_require__(/*! /Users/benaja/Documents/GitHub/twill-cms/resources/sass/app.scss */"./resources/sass/app.scss");
 
 
 /***/ })
