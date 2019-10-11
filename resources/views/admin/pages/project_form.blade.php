@@ -2,6 +2,6 @@
 
 @section('contentFields')
   @formField('block_editor', [
-    'blocks' => ['content_card']
+    'blocks' => ['card_with_image']
   ])
 @stop

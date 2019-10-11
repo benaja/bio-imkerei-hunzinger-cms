@@ -17,7 +17,7 @@
     'max' => 10
 ])
 
-@formField('select', [
+{{-- @formField('select', [
     'name' => 'orientation',
     'label' => 'Bilder orientierung',
     'unpack' => true,
@@ -31,4 +31,4 @@
             'label' => 'Rechts'
         ]
     ]
-])
+]) --}}

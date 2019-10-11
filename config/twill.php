@@ -22,10 +22,15 @@ return [
                 'icon' => 'text',
                 'component' => 'a17-block-prices',
             ],
-            'content_card' => [
-                'title' => 'Karte',
+            'card_with_image' => [
+                'title' => 'Karte mit Bild',
                 'icon' => 'image',
-                'component' => 'a17-block-content_card',
+                'component' => 'a17-block-card_with_image',
+            ],
+            'multi_card' => [
+                'title' => 'Doppelte Karte',
+                'icon' => 'image',
+                'component' => 'a17-block-multi_card',
             ]
         ],
         'repeaters' => [
@@ -34,6 +39,12 @@ return [
                 'trigger' => 'Preis hinzufügen',
                 'component' => 'a17-block-prices',
                 'max' => 10,
+            ],
+            'card_with_image' => [
+                'title' => 'Karte mit Bild',
+                'trigger' => 'Karte hinzufügen',
+                'component' => 'a17-block-card_with_image',
+                'max' => 10
             ],
         ],
         'crops' => [

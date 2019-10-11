@@ -16,5 +16,6 @@
   "eslint.autoFixOnSave": true,
   "editor.formatOnSave": true,
   "vetur.validation.template": false,
-  "editor.tabSize": 2
+  "prettier.tabWidth": 4,
+  "vetur.format.options.tabSize": 4
 }
