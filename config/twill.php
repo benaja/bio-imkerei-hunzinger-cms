@@ -27,6 +27,11 @@ return [
                 'icon' => 'image',
                 'component' => 'a17-block-card_with_image',
             ],
+            'card_with_video' => [
+                'title' => 'Karte mit Video',
+                'icon' => 'image',
+                'component' => 'a17-block-card_with_video',
+            ],
             'multi_card' => [
                 'title' => 'Doppelte Karte',
                 'icon' => 'image',

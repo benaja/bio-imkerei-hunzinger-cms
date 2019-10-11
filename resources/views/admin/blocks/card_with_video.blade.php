@@ -31,8 +31,7 @@
     ]
 ])
 
-@formField('medias', [
-    'name' => 'slideshow',
-    'label' => 'Bilder',
-    'max' => 10
+@formField('input', [
+  'name' => 'url',
+  'label' => 'Yotube Link',
 ])

@@ -20,7 +20,7 @@
             <div class="content">
                 <template v-for="card of contentElements">
                     <card-with-image
-                        v-if="card.type === 'card_with_image'"
+                        v-if="card.type === 'card_with_image' || card.type === 'card_with_video'"
                         v-model="card.content"
                         :medias="card.medias"
                     ></card-with-image>

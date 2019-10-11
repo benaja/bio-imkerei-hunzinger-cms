@@ -69,25 +69,28 @@ export default {
 <style lang="scss" scoped>
 .card-container {
     display: grid;
-    margin-top: 50px;
+    margin-top: 100px;
 }
 
 h2 {
     text-align: center;
-    margin-top: 60px;
+    margin-top: 30px;
     font-size: 3rem;
 }
 
 .text {
     text-align: center;
-    padding: 0 10px;
+    background-color: white;
+    margin: 10px 10px 0 10px;
 }
 
 .image {
-    padding: 0 10px;
+    padding: 20px;
+    margin: 0 10px 10px 10px;
+    background-color: white;
     > div {
         width: 100%;
-        padding-bottom: calc(100% / 4 * 3);
+        padding-bottom: calc(100% / 16 * 9);
         background-size: cover;
         background-position: center center;
     }

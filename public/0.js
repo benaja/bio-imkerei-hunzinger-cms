@@ -85,6 +85,12 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
 /* harmony default export */ __webpack_exports__["default"] = ({
   name: "NavigationBar"
 });
@@ -122,6 +128,11 @@ __webpack_require__.r(__webpack_exports__);
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
+//
+//
+//
+//
+//
 //
 //
 //
@@ -424,7 +435,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".uk-navbar-container[data-v-30e7b4f8] {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n}\n.uk-navbar-right[data-v-30e7b4f8] {\n  margin-right: 10px;\n}\n.uk-navbar-sticky[data-v-30e7b4f8] {\n  background-color: black;\n}\n.uk-navbar-sticky .uk-navbar-nav > li > a[data-v-30e7b4f8],\n.uk-navbar-sticky .uk-navbar-item[data-v-30e7b4f8],\n.uk-navbar-sticky .uk-navbar-toggle[data-v-30e7b4f8] {\n  min-height: 50px;\n}\n.uk-navbar-sticky .uk-logo > .logo[data-v-30e7b4f8] {\n  display: block;\n  height: 44px;\n  margin: 3px 0;\n}\n.uk-navbar-nav > li > a[data-v-30e7b4f8] {\n  color: white;\n}\n.uk-navbar-nav > li.uk-active > a[data-v-30e7b4f8] {\n  color: lightgray;\n}\n.logo[data-v-30e7b4f8] {\n  display: none;\n  height: 80px;\n  margin: 10px 0;\n}\n.menu-icon[data-v-30e7b4f8] {\n  display: none;\n}\n.uk-navbar-toggle[data-v-30e7b4f8] {\n  color: white;\n  padding-left: 20px;\n  padding-right: 20px;\n}\n@media only screen and (max-width: 600px) {\n.logo[data-v-30e7b4f8] {\n    display: block;\n}\n.menu-icon[data-v-30e7b4f8] {\n    display: block;\n}\n.uk-navbar-right[data-v-30e7b4f8] {\n    display: none;\n}\n.uk-logo[data-v-30e7b4f8] {\n    float: right;\n}\n}", ""]);
+exports.push([module.i, ".uk-navbar-container[data-v-30e7b4f8] {\n  position: absolute;\n  top: 0;\n  left: 0;\n  width: 100%;\n}\n.uk-navbar-right[data-v-30e7b4f8] {\n  margin-right: 10px;\n}\n.uk-navbar-sticky[data-v-30e7b4f8] {\n  background-color: white;\n}\n.uk-navbar-sticky .uk-navbar-nav > li > a[data-v-30e7b4f8],\n.uk-navbar-sticky .uk-navbar-item[data-v-30e7b4f8],\n.uk-navbar-sticky .uk-navbar-toggle[data-v-30e7b4f8] {\n  min-height: 70px;\n  color: black;\n}\n.uk-navbar-sticky .uk-logo[data-v-30e7b4f8] {\n  display: flex;\n}\n.uk-navbar-sticky .uk-logo > .logo[data-v-30e7b4f8] {\n  display: block;\n  height: 60px;\n  margin: 3px 20px 3px 3px;\n}\n.uk-navbar-nav > li > a[data-v-30e7b4f8] {\n  color: white;\n}\n.uk-navbar-nav > li.uk-active > a[data-v-30e7b4f8] {\n  color: #303030;\n}\n.uk-logo[data-v-30e7b4f8] {\n  display: none;\n}\n.logo[data-v-30e7b4f8] {\n  display: none;\n  height: 80px;\n  margin: 10px 0;\n}\n.menu-icon[data-v-30e7b4f8] {\n  display: none;\n}\n.uk-navbar-toggle[data-v-30e7b4f8] {\n  color: black;\n  padding-left: 20px;\n  padding-right: 20px;\n}\n@media only screen and (max-width: 600px) {\n.logo[data-v-30e7b4f8] {\n    display: block;\n}\n.menu-icon[data-v-30e7b4f8] {\n    display: block;\n}\n.uk-navbar-right[data-v-30e7b4f8] {\n    display: none;\n}\n.uk-logo[data-v-30e7b4f8] {\n    float: right;\n}\n}", ""]);
 
 // exports
 
@@ -462,7 +473,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, "h2[data-v-6f701e70] {\n  font-size: 3rem;\n  text-align: center;\n  margin-top: 100px;\n}\n.card[data-v-6f701e70] {\n  max-width: 600px;\n  width: 50%;\n  margin: 0 auto;\n}\n.content[data-v-6f701e70] {\n  text-align: center;\n}\n.image[data-v-6f701e70] {\n  text-align: center;\n  justify-content: center;\n}\n.image img[data-v-6f701e70] {\n  width: 100%;\n}", ""]);
+exports.push([module.i, "h2[data-v-6f701e70] {\n  font-size: 3rem;\n  text-align: center;\n  margin-top: 30px;\n}\n.card[data-v-6f701e70] {\n  width: 60%;\n  margin: 100px auto 0 auto;\n  background-color: white;\n  padding-top: 1px;\n}\n.card.small[data-v-6f701e70] {\n  width: 40%;\n}\n.card.large[data-v-6f701e70] {\n  width: calc(100% - 20px);\n}\n.content[data-v-6f701e70] {\n  text-align: center;\n  padding: 0 20px;\n}\n.image[data-v-6f701e70] {\n  padding: 20px;\n  text-align: center;\n  justify-content: center;\n}\n.image img[data-v-6f701e70] {\n  width: 100%;\n}\n.image .video[data-v-6f701e70] {\n  width: 100%;\n  padding-bottom: calc(100% / 16 * 9);\n  position: relative;\n}\n.image .video > div[data-v-6f701e70] {\n  position: absolute;\n  top: 0;\n  bottom: 0;\n  left: 0;\n  right: 0;\n}\n.image .video > div > iframe[data-v-6f701e70] {\n  width: 100%;\n  height: 100%;\n}", ""]);
 
 // exports
 
@@ -481,7 +492,7 @@ exports = module.exports = __webpack_require__(/*! ../../../../node_modules/css-
 
 
 // module
-exports.push([module.i, ".card-container[data-v-e65efa58] {\n  display: grid;\n  margin-top: 50px;\n}\nh2[data-v-e65efa58] {\n  text-align: center;\n  margin-top: 60px;\n  font-size: 3rem;\n}\n.text[data-v-e65efa58] {\n  text-align: center;\n  padding: 0 10px;\n}\n.image[data-v-e65efa58] {\n  padding: 0 10px;\n}\n.image > div[data-v-e65efa58] {\n  width: 100%;\n  padding-bottom: calc(100% / 4 * 3);\n  background-size: cover;\n  background-position: center center;\n}", ""]);
+exports.push([module.i, ".card-container[data-v-e65efa58] {\n  display: grid;\n  margin-top: 100px;\n}\nh2[data-v-e65efa58] {\n  text-align: center;\n  margin-top: 30px;\n  font-size: 3rem;\n}\n.text[data-v-e65efa58] {\n  text-align: center;\n  background-color: white;\n  margin: 10px 10px 0 10px;\n}\n.image[data-v-e65efa58] {\n  padding: 20px;\n  margin: 0 10px 10px 10px;\n  background-color: white;\n}\n.image > div[data-v-e65efa58] {\n  width: 100%;\n  padding-bottom: calc(100% / 16 * 9);\n  background-size: cover;\n  background-position: center center;\n}", ""]);
 
 // exports
 
@@ -759,10 +770,11 @@ var staticRenderFns = [
                 [
                   _c("img", {
                     staticClass: "logo",
-                    attrs: {
-                      src: "/images/logo_portrait_inverted_without_text.png"
-                    }
-                  })
+                    attrs: { src: "/images/logo_portrait.png" }
+                  }),
+                  _vm._v(
+                    "\n                Bio-Imkerei Hunzinger\n            "
+                  )
                 ]
               ),
               _vm._v(" "),
@@ -924,7 +936,7 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c("div", { staticClass: "card" }, [
+  return _c("div", { class: ["card", _vm.value.size] }, [
     _c("h2", [_vm._v(_vm._s(_vm.value.title))]),
     _vm._v(" "),
     _c("div", [
@@ -934,7 +946,11 @@ var render = function() {
       }),
       _vm._v(" "),
       _c("div", { staticClass: "image" }, [
-        _c("img", { attrs: { src: "/img/" + _vm.medias[0].uuid } })
+        _vm.value.url
+          ? _c("div", { staticClass: "video" }, [
+              _c("div", [_c("iframe", { attrs: { src: _vm.value.url } })])
+            ])
+          : _c("img", { attrs: { src: "/img/" + _vm.medias[0].uuid } })
       ])
     ])
   ])
@@ -1183,7 +1199,8 @@ var render = function() {
           [
             _vm._l(_vm.contentElements, function(card) {
               return [
-                card.type === "card_with_image"
+                card.type === "card_with_image" ||
+                card.type === "card_with_video"
                   ? _c("card-with-image", {
                       attrs: { medias: card.medias },
                       model: {
