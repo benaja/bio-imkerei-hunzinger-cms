@@ -1,7 +1,8 @@
 <template>
     <div>
         <div
-            uk-sticky="animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 60"
+            :class="{sticky: sticky}"
+            :uk-sticky="sticky ? 'animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 60' :false"
         >
             <nav class="uk-navbar-container" uk-navbar>
                 <div class="uk-navbar-left menu-icon">
@@ -82,7 +83,13 @@
 
 <script>
 export default {
-    name: "NavigationBar"
+    name: "NavigationBar",
+    props: {
+        sticky: {
+            type: Boolean,
+            default: false
+        }
+    }
 };
 </script>
 
@@ -98,42 +105,48 @@ export default {
     margin-right: 10px;
 }
 
-.uk-navbar-sticky {
-    background-color: white;
+.uk-navbar-nav > li > a {
+    color: black;
+}
 
-    .uk-navbar-nav > li > a,
-    .uk-navbar-item,
-    .uk-navbar-toggle {
-        min-height: 70px;
-        color: black;
+.sticky {
+    .uk-navbar-sticky {
+        background-color: white;
+
+        .uk-navbar-nav > li > a,
+        .uk-navbar-item,
+        .uk-navbar-toggle {
+            min-height: 70px;
+            color: black;
+        }
+
+        .uk-logo {
+            display: flex;
+            > .logo {
+                display: block;
+            }
+        }
+    }
+    .uk-navbar-nav > li > a {
+        color: white;
+    }
+
+    .logo {
+        display: none;
     }
 
     .uk-logo {
-        display: flex;
-        > .logo {
-            display: block;
-            height: 60px;
-            margin: 3px 20px 3px 3px;
-        }
+        display: none;
     }
-}
-
-.uk-navbar-nav > li > a {
-    color: white;
 }
 
 .uk-navbar-nav > li.uk-active > a {
     color: rgb(48, 48, 48);
 }
 
-.uk-logo {
-    display: none;
-}
-
 .logo {
-    display: none;
-    height: 80px;
-    margin: 10px 0;
+    height: 60px;
+    margin: 3px 20px 3px 3px;
 }
 
 .menu-icon {

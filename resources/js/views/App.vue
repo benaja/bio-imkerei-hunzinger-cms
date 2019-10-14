@@ -1,7 +1,7 @@
 <template>
-  <div>
-    <router-view></router-view>
-  </div>
+    <div>
+        <router-view></router-view>
+    </div>
 </template>
 
 <script>
@@ -17,29 +17,32 @@ export default {};
 @import "~@/sass/_variables.scss";
 
 body {
-  background-color: $background-color;
+    background-color: $background-color;
 }
+
+$button-primary-background: #e89602;
+$button-secondary-background: #0267e8;
 
 .uk-link,
 a {
-  color: #e89602;
-  &:hover {
-    color: #dd9000;
-  }
+    color: #e89602;
+    &:hover {
+        color: #dd9000;
+    }
 }
 
 .text-editor-content {
-  &.dark {
-    p,
-    h1,
-    h2,
-    h3 {
-      color: white;
+    &.dark {
+        p,
+        h1,
+        h2,
+        h3 {
+            color: white;
 
-      em {
-        color: white;
-      }
+            em {
+                color: white;
+            }
+        }
     }
-  }
 }
 </style>
