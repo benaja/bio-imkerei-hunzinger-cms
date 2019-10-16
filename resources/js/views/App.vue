@@ -18,6 +18,8 @@ export default {};
 
 body {
     background-color: $background-color;
+    min-height: 100vh;
+    margin-bottom: 0 !important;
 }
 
 $button-primary-background: #e89602;

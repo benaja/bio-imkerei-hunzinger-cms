@@ -27,7 +27,7 @@ class Product extends Model implements Sortable
         'publish_start_date',
         'publish_end_date',
     ];
-    
+
     // uncomment and modify this as needed if you use the HasSlug trait
     public $slugAttributes = [
         'title',
@@ -62,5 +62,9 @@ class Product extends Model implements Sortable
 
     public function prices() {
         return $this->hasMany(Price::class, 'product_id', 'id');
+    }
+
+    public function categories() {
+        return $this->belongsToMany(Category::class, 'categories_products');
     }
 }

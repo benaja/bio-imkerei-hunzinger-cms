@@ -17,6 +17,8 @@ Route::get('features', 'FeatureController@index');
 
 Route::get('products', 'ProductController@index');
 
+Route::get('categories', 'CategoryController@index');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

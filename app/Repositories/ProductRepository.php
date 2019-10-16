@@ -23,6 +23,8 @@ class ProductRepository extends ModuleRepository
     public function afterSave($product, $fields)
     {
         $this->updateRepeater($product, $fields, 'prices');
+        // dd($fields);
+        $product->categories()->sync($fields['categories'] ?? []);
         parent::afterSave($product, $fields);
     }
 

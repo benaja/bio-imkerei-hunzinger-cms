@@ -19,6 +19,7 @@ class ProductController extends ModuleController
         'title' => [ // field column
             'title' => 'Title',
             'field' => 'title',
+            'sort' => true,
         ],
     ];
 }

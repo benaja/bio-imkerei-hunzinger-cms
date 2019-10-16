@@ -94,13 +94,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.uk-navbar-container {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-}
-
 .uk-navbar-right {
     margin-right: 10px;
 }
@@ -109,7 +102,20 @@ export default {
     color: black;
 }
 
+.uk-navbar-container {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background-color: white;
+}
+
 .sticky {
+    .uk-navbar-container {
+        position: absolute;
+        background-color: transparent;
+    }
+
     .uk-navbar-sticky {
         background-color: white;
 

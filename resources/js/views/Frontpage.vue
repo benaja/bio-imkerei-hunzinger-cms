@@ -15,7 +15,12 @@
         <div class="uk-container">
             <h2 class="products-header">Produkte</h2>
             <div class="products">
-                <ProductPreview v-for="product of products" :key="product.id" :product="product"></ProductPreview>
+                <ProductPreview
+                    v-for="product of products"
+                    :key="product.id"
+                    :product="product"
+                    hover-slider
+                ></ProductPreview>
             </div>
             <div class="content">
                 <template v-for="card of contentElements">

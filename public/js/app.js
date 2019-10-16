@@ -6427,7 +6427,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "body {\n  background-color: #f0f0f0;\n}\n.uk-link,\na {\n  color: #e89602;\n}\n.uk-link:hover,\na:hover {\n  color: #dd9000;\n}\n.text-editor-content.dark p,\n.text-editor-content.dark h1,\n.text-editor-content.dark h2,\n.text-editor-content.dark h3 {\n  color: white;\n}\n.text-editor-content.dark p em,\n.text-editor-content.dark h1 em,\n.text-editor-content.dark h2 em,\n.text-editor-content.dark h3 em {\n  color: white;\n}", ""]);
+exports.push([module.i, "body {\n  background-color: #f0f0f0;\n  min-height: 100vh;\n  margin-bottom: 0 !important;\n}\n.uk-link,\na {\n  color: #e89602;\n}\n.uk-link:hover,\na:hover {\n  color: #dd9000;\n}\n.text-editor-content.dark p,\n.text-editor-content.dark h1,\n.text-editor-content.dark h2,\n.text-editor-content.dark h3 {\n  color: white;\n}\n.text-editor-content.dark p em,\n.text-editor-content.dark h1 em,\n.text-editor-content.dark h2 em,\n.text-editor-content.dark h3 em {\n  color: white;\n}", ""]);
 
 // exports
 

@@ -3,6 +3,7 @@
 use Illuminate\Database\Seeder;
 use Illuminate\Support\Facades\DB;
 use App\Models\Page;
+use App\Models\Category;
 
 class PagesTableSeeder extends Seeder
 {
@@ -18,6 +19,8 @@ class PagesTableSeeder extends Seeder
         Page::firstOrCreate(['name' => 'project']);
         Page::firstOrCreate(['name' => 'frontpage_more_content']);
 
+        Category::firstOrCreate(['name' => 'Neuigkeiten']);
+        Category::firstOrCreate(['name' => 'Honig']);
         // DB::table('pages')->insert([
         //     'name' => 'about_us'
         // ]);

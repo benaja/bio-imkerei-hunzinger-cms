@@ -1,11 +1,29 @@
 @extends('twill::layouts.form')
 
+@php
+    $categories = [];
+@endphp
+@foreach(\App\Models\Category::all() as $category)
+    @php
+        $categories[] =
+        [
+            'value' => $category->id,
+            'label' => $category->name
+        ];
+    @endphp
+@endforeach
+
 @section('contentFields')
     @formField('input', [
         'name' => 'short_description',
         'label' => 'Kurzbeschreibung',
         'placeholder' => 'Stichwortartige Beschreibung für Startseite',
         'maxlength' => 100
+    ])
+
+    @formField('checkbox', [
+        'name' => 'available',
+        'label' => 'Verfügbar'
     ])
 
     @formField('wysiwyg', [
@@ -18,6 +36,12 @@
     @formField('medias', [
         'name' => 'cover',
         'label' => 'Bild'
+    ])
+
+    @formField('multi_select', [
+        'name' => 'categories',
+        'label' => 'Kategorien',
+        'options' => $categories
     ])
 
     @formField('repeater', ['type' => 'prices'])
