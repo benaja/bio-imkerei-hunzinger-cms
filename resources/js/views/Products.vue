@@ -115,14 +115,17 @@ export default {
                 return 0;
             } else if (this.sortby == 2) {
                 a.minPirce = a.prices.sort(this.sortPrices)[0];
+                b.minPirce = b.prices.sort(this.sortPrices)[0];
                 console.log(a.minPirce);
-                if (a.minPirce > b.minPirce) return 1;
-                if (a.minPirce < b.minPirce) return -1;
+                if (a.minPirce.amount > b.minPirce.amount) return 1;
+                if (a.minPirce.amount < b.minPirce.amount) return -1;
                 return 0;
             } else {
                 a.minPirce = a.prices.sort(this.sortPrices)[0];
-                if (a.minPirce < b.minPirce) return 1;
-                if (a.minPirce > b.minPirce) return -1;
+                b.minPirce = b.prices.sort(this.sortPrices)[0];
+                console.log(a.minPirce);
+                if (a.minPirce.amount < b.minPirce.amount) return 1;
+                if (a.minPirce.amount > b.minPirce.amount) return -1;
                 return 0;
             }
         },

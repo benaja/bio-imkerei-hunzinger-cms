@@ -108,6 +108,7 @@ export default {
     left: 0;
     width: 100%;
     background-color: white;
+    z-index: 100;
 }
 
 .sticky {
