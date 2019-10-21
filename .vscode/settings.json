@@ -1,21 +1,32 @@
 {
-  "eslint.validate": [
-    {
-      "language": "vue",
-      "autoFix": true
+    "eslint.validate": [{
+            "language": "vue",
+            "autoFix": true
+        },
+        {
+            "language": "javascript",
+            "autoFix": true
+        },
+        {
+            "language": "javascriptreact",
+            "autoFix": true
+        }
+    ],
+    "eslint.autoFixOnSave": true,
+    "editor.formatOnSave": true,
+    "vetur.validation.template": false,
+    "prettier.tabWidth": 4,
+    "vetur.format.options.tabSize": 4,
+    "editor.multiCursorModifier": "ctrlCmd",
+    "editor.snippetSuggestions": "top",
+    "editor.formatOnPaste": true,
+    "emmet.triggerExpansionOnTab": true,
+    "php.suggest.basic": false,
+    "editor.autoIndent": true,
+    "emmet.includeLanguages": {
+        "blade": "html"
     },
-    {
-      "language": "javascript",
-      "autoFix": true
-    },
-    {
-      "language": "javascriptreact",
-      "autoFix": true
-    }
-  ],
-  "eslint.autoFixOnSave": true,
-  "editor.formatOnSave": true,
-  "vetur.validation.template": false,
-  "prettier.tabWidth": 4,
-  "vetur.format.options.tabSize": 4
+    "explorer.openEditors.visible": 0,
+    "editor.minimap.enabled": false,
+    "editor.tabCompletion": "on",
 }

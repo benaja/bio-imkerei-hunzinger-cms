@@ -10,6 +10,7 @@ use A17\Twill\Models\Behaviors\HasRevisions;
 use A17\Twill\Models\Behaviors\HasPosition;
 use A17\Twill\Models\Behaviors\Sortable;
 use A17\Twill\Models\Model;
+use App\Models\Slugs\ProductSlug;
 
 class Product extends Model implements Sortable
 {
@@ -60,11 +61,18 @@ class Product extends Model implements Sortable
         ],
     ];
 
-    public function prices() {
+    public function prices()
+    {
         return $this->hasMany(Price::class, 'product_id', 'id');
     }
 
-    public function categories() {
+    public function categories()
+    {
         return $this->belongsToMany(Category::class, 'categories_products');
+    }
+
+    public function slug()
+    {
+        return $this->hasMany(ProductSlug::class);
     }
 }

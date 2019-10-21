@@ -16,6 +16,7 @@ use Illuminate\Http\Request;
 Route::get('features', 'FeatureController@index');
 
 Route::get('products', 'ProductController@index');
+Route::get('products/{slug}', 'ProductController@getBySlug');
 
 Route::get('categories', 'CategoryController@index');
 

@@ -15,11 +15,11 @@ export default new Router({
             name: 'Products',
             component: () => import('./views/Products')
         },
-        // {
-        //   path: '/produkte/:productName',
-        //   name: 'Product',
-        //   component: () => import('./views/Product')
-        // },
+        {
+            path: '/produkte/:productName',
+            name: 'Product',
+            component: () => import('./views/Product')
+        },
         // {
         //   path: '/news',
         //   name: 'News',

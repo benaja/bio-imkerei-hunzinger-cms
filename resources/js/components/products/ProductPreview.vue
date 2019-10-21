@@ -19,7 +19,7 @@
                 <div class="short-description">
                     <p>{{ product.short_description }}</p>
                 </div>
-                <div v-if="product.prices.length" class="price-information">
+                <div v-if="product.prices.length > 0" class="price-information">
                     <p class="price">ab {{ product.prices[0].amount }}.-</p>
                     <p class="subdescription">( zzgl. Versand )</p>
                 </div>
