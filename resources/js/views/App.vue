@@ -24,6 +24,41 @@ body {
 
 $button-primary-background: #e89602;
 $button-secondary-background: #0267e8;
+.uk-button-primary {
+    background-color: $button-primary-background;
+    &:hover {
+        background-color: darken($button-primary-background, 5%);
+    }
+
+    &:focus {
+        background-color: $button-primary-background;
+    }
+
+    &::selection {
+        background: $button-primary-background;
+    }
+}
+.uk-button-secondary {
+    background-color: $button-secondary-background;
+    &:hover {
+        background-color: darken($button-secondary-background, 5%);
+    }
+}
+
+.uk-button-outline-primary {
+    background-color: transparent;
+    border: 1px solid $button-primary-background;
+    &:hover,
+    &.uk-active {
+        background-color: $button-primary-background;
+        color: white;
+    }
+}
+
+::selection {
+    background: $button-primary-background;
+    color: white;
+}
 
 .uk-link,
 a {

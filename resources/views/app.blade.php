@@ -8,13 +8,13 @@
         <title>Bio-Imkerei Hunzinger</title>
 
         <link rel="stylesheet" href="css/uikit.min.css" />
-        <script src="js/uikit.min.js"></script>
-        <script src="js/uikit-icons.min.js"></script>
-        
+        <script src="/js/uikit.min.js"></script>
+        <script src="/js/uikit-icons.min.js"></script>
+
         <link rel="stylesheet" type="text/css" href="/css/uikit-rtl.min.css">
         <link rel="stylesheet" type="text/css" href="/css/uikit.min.css">
         <link href="{{ asset('css/app.css') }}"/>
-        
+
     </head>
     <body>
         <div id="app"></div>

@@ -4,7 +4,7 @@
         <div class="uk-container">
             <div class="product-container">
                 <div class="image" uk-lightbox>
-                    <a :href="'/img/' + product.medias[0].uuid">
+                    <a v-if="product.medias" :href="'/img/' + product.medias[0].uuid">
                         <img :src="'/img/' + product.medias[0].uuid" />
                     </a>
                 </div>
@@ -13,6 +13,22 @@
                     <div v-html="product.description"></div>
                     <p class="available" v-if="product.available">Verfügbar</p>
                     <p class="not-available" v-else>Zurzeit nicht verfügbar</p>
+                    <div class="price">
+                        <p>
+                            <strong>CHF {{ selectedPrice.amount }}</strong>
+                        </p>
+                        <div class="price-buttons">
+                            <div uk-switcher="animation: uk-animation-fade; toggle: > *">
+                                <button
+                                    v-for="price of product.prices"
+                                    class="uk-button uk-button-outline-primary price-button"
+                                    type="button"
+                                    @click="selectedPrice = price"
+                                >{{ price.name }}</button>
+                            </div>
+                            <button class="uk-button uk-button-primary">Kaufen</button>
+                        </div>
+                    </div>
                 </div>
             </div>
         </div>
@@ -31,7 +47,10 @@ export default {
     },
     data() {
         return {
-            product: {}
+            product: {
+                prices: []
+            },
+            selectedPrice: {}
         };
     },
     mounted() {
@@ -39,6 +58,7 @@ export default {
             .get(`/products/${this.$route.params.productName}`)
             .then(result => {
                 this.product = result.data;
+                this.selectedPrice = this.product.prices[0] || [];
             });
     }
 };
@@ -72,5 +92,23 @@ export default {
 
 .available {
     color: $green;
+}
+
+.price {
+    text-align: center;
+}
+
+.price-buttons {
+    display: inline-block;
+    > button {
+        width: calc(100% - 20px);
+        margin: 10px;
+    }
+
+    .price-button {
+        width: 120px;
+        margin: 10px;
+        text-transform: none;
+    }
 }
 </style>
