@@ -8,20 +8,14 @@ use A17\Twill\Repositories\Behaviors\HandleMedias;
 use A17\Twill\Repositories\Behaviors\HandleFiles;
 use A17\Twill\Repositories\Behaviors\HandleRevisions;
 use A17\Twill\Repositories\ModuleRepository;
-use App\Models\Page;
+use App\Models\News;
 
-class PageRepository extends ModuleRepository
+class NewsRepository extends ModuleRepository
 {
     use HandleBlocks, HandleSlugs, HandleMedias, HandleFiles, HandleRevisions;
 
-    public function __construct(Page $model)
+    public function __construct(News $model)
     {
         $this->model = $model;
     }
-
-    // public function afterSave($product, $fields)
-    // {
-
-    //     // dd($fields);
-    // }
 }

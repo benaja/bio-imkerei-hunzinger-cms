@@ -65469,13 +65469,25 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     path: '/produkte',
     name: 'Products',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(4)]).then(__webpack_require__.bind(null, /*! ./views/Products */ "./resources/js/views/Products.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(6)]).then(__webpack_require__.bind(null, /*! ./views/Products */ "./resources/js/views/Products.vue"));
     }
   }, {
     path: '/produkte/:productName',
     name: 'Product',
     component: function component() {
       return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(3)]).then(__webpack_require__.bind(null, /*! ./views/Product */ "./resources/js/views/Product.vue"));
+    }
+  }, {
+    path: '/galerie',
+    name: 'Gallery',
+    component: function component() {
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(4)]).then(__webpack_require__.bind(null, /*! ./views/Gallery */ "./resources/js/views/Gallery.vue"));
+    }
+  }, {
+    path: '/news',
+    name: 'News',
+    component: function component() {
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(5)]).then(__webpack_require__.bind(null, /*! ./views/News */ "./resources/js/views/News.vue"));
     }
   }],
   scrollBehavior: function scrollBehavior() {

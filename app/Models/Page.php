@@ -15,6 +15,7 @@ class Page extends Model
     protected $fillable = [
         'published',
         'name',
+        "text"
         // 'position',
         // 'public',
         // 'featured',
@@ -28,7 +29,7 @@ class Page extends Model
     //     'description',
     //     'active',
     // ];
-    
+
     // uncomment and modify this as needed if you use the HasSlug trait
     // public $slugAttributes = [
     //     'name',
@@ -39,29 +40,18 @@ class Page extends Model
         'published'
     ];
 
-    public static function byName($name){
+    public static function byName($name)
+    {
         return Page::where('name', '=', $name)->first();
     }
 
-    // uncomment and modify this as needed if you use the HasMedias trait
-    // public $mediasParams = [
-    //     'slideshow' => [
-    //         'default' => [
-    //             [
-    //                 'name' => 'landscape',
-    //                 'ratio' => 16 / 9,
-    //             ],
-    //             [
-    //                 'name' => 'portrait',
-    //                 'ratio' => 3 / 4,
-    //             ],
-    //         ],
-    //         'mobile' => [
-    //             [
-    //                 'name' => 'mobile',
-    //                 'ratio' => 1,
-    //             ],
-    //         ],
-    //     ],
-    // ];
+    public $mediasParams = [
+        'gallery' => [
+            'default' => [
+                [
+                    'name' => 'landscape'
+                ]
+            ]
+        ],
+    ];
 }

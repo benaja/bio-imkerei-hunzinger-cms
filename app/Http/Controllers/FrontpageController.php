@@ -16,13 +16,14 @@ class FrontpageController extends Controller
         $this->repository = new ProductRepository(new Product());
     }
 
-    public function index(){
-        $featured = Feature::where('featured_type', 'products')->orderBy('position')->get('featured_id')->map(function ($value,$key) {
+    public function index()
+    {
+        $featured = Feature::where('featured_type', 'products')->orderBy('position')->get('featured_id')->map(function ($value, $key) {
             return $value->featured_id;
         });
 
         $products = [];
-        foreach($featured as $featuredId) {
+        foreach ($featured as $featuredId) {
             array_push($products, Product::find($featuredId));
         }
 

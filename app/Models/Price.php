@@ -5,15 +5,17 @@ namespace App\Models;
 
 use A17\Twill\Models\Model;
 
-class Price extends Model 
+class Price extends Model
 {
     protected $fillable = [
         'amount',
         'name',
-        'product_id'
+        'product_id',
+        'position'
     ];
 
-    public function product() {
+    public function product()
+    {
         return $this->belongsTo(Product::class, 'product_id', 'id');
     }
 
@@ -23,7 +25,7 @@ class Price extends Model
     //     'description',
     //     'active',
     // ];
-    
+
     // uncomment and modify this as needed if you use the HasSlug trait
     // public $slugAttributes = [
     //     'title',

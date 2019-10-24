@@ -20,6 +20,10 @@ Route::get('products/{slug}', 'ProductController@getBySlug');
 
 Route::get('categories', 'CategoryController@index');
 
+Route::get('buy-information', 'MoreContentController@buyInformation');
+Route::get('gallery', 'MoreContentController@gallery');
+Route::get('news', 'MoreContentController@news');
+
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();
 });

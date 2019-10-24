@@ -73,8 +73,7 @@ return [
             'buckets' => [
                 'home_primary_feature' => [
                     'name' => 'Home primary feature',
-                    '
-                    ' => [
+                    'bucketables' => [
                         [
                             'module' => 'products',
                             'name' => 'Products',

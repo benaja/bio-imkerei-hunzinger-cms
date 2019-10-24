@@ -1,8 +1,8 @@
 @extends('twill::layouts.form')
 
 @section('contentFields')
-     @formField('wysiwyg', [
-        'name' => 'description',
+  @formField('wysiwyg', [
+        'name' => 'text',
         'label' => 'Beschreibung',
         'toolbarOptions' => [
             'bold',
@@ -17,16 +17,4 @@
         ],
         'placeholder' => 'Produktbeschreibung',
     ])
-
-    @formField('medias', [
-        'name' => 'cover',
-        'label' => 'Bild'
-    ])
-
-    @formField('files', [
-        'name' => 'single_file',
-        'label' => 'Datei',
-        'note' => 'Hochladen von z.B. eines PDFs.'
-    ])
-
 @stop

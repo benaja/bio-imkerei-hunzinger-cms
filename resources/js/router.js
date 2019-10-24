@@ -20,11 +20,16 @@ export default new Router({
             name: 'Product',
             component: () => import('./views/Product')
         },
-        // {
-        //   path: '/news',
-        //   name: 'News',
-        //   component: () => import('./views/News')
-        // }
+        {
+            path: '/galerie',
+            name: 'Gallery',
+            component: () => import('./views/Gallery')
+        },
+        {
+            path: '/news',
+            name: 'News',
+            component: () => import('./views/News')
+        }
     ],
     scrollBehavior() {
         return {

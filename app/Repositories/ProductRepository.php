@@ -28,10 +28,12 @@ class ProductRepository extends ModuleRepository
         parent::afterSave($product, $fields);
     }
 
-    public function getFormFields($object) {
+    public function getFormFields($object)
+    {
         $fields = parent::getFormFields($object);
 
         $fields = $this->getFormFieldsForRepeater($object, $fields, 'prices');
+
 
         return $fields;
     }

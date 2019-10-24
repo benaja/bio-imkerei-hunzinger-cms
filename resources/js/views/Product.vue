@@ -9,29 +9,45 @@
                     </a>
                 </div>
                 <div class="content">
-                    <h1>{{product.title}}</h1>
-                    <div v-html="product.description"></div>
-                    <p class="available" v-if="product.available">Verfügbar</p>
-                    <p class="not-available" v-else>Zurzeit nicht verfügbar</p>
+                    <div class="text">
+                        <h1>{{product.title}}</h1>
+                        <div v-html="product.description"></div>
+                    </div>
                     <div class="price">
-                        <p>
-                            <strong>CHF {{ selectedPrice.amount }}</strong>
+                        <p class="available" v-if="product.available">Verfügbar</p>
+                        <p class="not-available" v-else>Zurzeit nicht verfügbar</p>
+                        <p class="amount">
+                            <strong>
+                                CHF {{ selectedPrice.amount }}
+                                <span
+                                    v-if="product.prices.length === 1"
+                                >/ {{ selectedPrice.name }}</span>
+                            </strong>
                         </p>
                         <div class="price-buttons">
-                            <div uk-switcher="animation: uk-animation-fade; toggle: > *">
+                            <div
+                                uk-switcher="animation: uk-animation-fade; toggle: > *"
+                                v-if="product.prices.length > 1"
+                            >
                                 <button
                                     v-for="price of product.prices"
                                     class="uk-button uk-button-outline-primary price-button"
                                     type="button"
                                     @click="selectedPrice = price"
+                                    :style="{width: 'calc(' + (100 / product.prices.length) + '%' + ' - 20px'}"
                                 >{{ price.name }}</button>
                             </div>
-                            <button class="uk-button uk-button-primary">Kaufen</button>
+                            <button
+                                class="uk-button uk-button-primary"
+                                type="button"
+                                uk-toggle="target: #buy-information"
+                            >Kaufen</button>
                         </div>
                     </div>
                 </div>
             </div>
         </div>
+        <BuyInformation></BuyInformation>
         <PageFooter></PageFooter>
     </div>
 </template>
@@ -39,11 +55,13 @@
 <script>
 import PageFooter from "@/js/components/PageFooter";
 import NavigationBar from "@/js/components/NavigationBar";
+import BuyInformation from "@/js/components/BuyInformation";
 
 export default {
     components: {
         PageFooter,
-        NavigationBar
+        NavigationBar,
+        BuyInformation
     },
     data() {
         return {
@@ -69,6 +87,7 @@ export default {
 .uk-container {
     padding-top: 130px;
     min-height: calc(100vh - 500px);
+    padding-bottom: 100px;
 }
 
 .product-container {
@@ -90,23 +109,31 @@ export default {
     padding-left: 20px;
 }
 
+.text {
+    padding: 0 10px;
+}
+
 .available {
     color: $green;
 }
 
 .price {
     text-align: center;
+
+    .amount {
+        font-size: 1.5em;
+    }
 }
 
 .price-buttons {
-    display: inline-block;
+    // display: inline-block;
     > button {
         width: calc(100% - 20px);
         margin: 10px;
     }
 
     .price-button {
-        width: 120px;
+        // width: 120px;
         margin: 10px;
         text-transform: none;
     }
