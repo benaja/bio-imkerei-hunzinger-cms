@@ -36,7 +36,12 @@ return [
                 'title' => 'Doppelte Karte',
                 'icon' => 'image',
                 'component' => 'a17-block-multi_card',
-            ]
+            ],
+            'about_us_card' => [
+                'title' => 'Karte',
+                'icon' => 'image',
+                'component' => 'a17-block-about_us_card',
+            ],
         ],
         'repeaters' => [
             'prices' => [
