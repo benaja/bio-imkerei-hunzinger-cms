@@ -45,4 +45,6 @@ class News extends Model implements Sortable
             ]
         ],
     ];
+
+    public $filesParams = ['single_file'];
 }

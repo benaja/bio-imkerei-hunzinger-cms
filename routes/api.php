@@ -23,6 +23,7 @@ Route::get('categories', 'CategoryController@index');
 Route::get('buy-information', 'MoreContentController@buyInformation');
 Route::get('gallery', 'MoreContentController@gallery');
 Route::get('news', 'MoreContentController@news');
+Route::get('about-us', 'MoreContentController@aboutUs');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

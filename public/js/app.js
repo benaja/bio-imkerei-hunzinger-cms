@@ -65489,6 +65489,12 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     component: function component() {
       return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(5)]).then(__webpack_require__.bind(null, /*! ./views/News */ "./resources/js/views/News.vue"));
     }
+  }, {
+    path: '/about',
+    name: 'AboutUs',
+    component: function component() {
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(8)]).then(__webpack_require__.bind(null, /*! ./views/AboutUs */ "./resources/js/views/AboutUs.vue"));
+    }
   }],
   scrollBehavior: function scrollBehavior() {
     return {

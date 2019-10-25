@@ -42,6 +42,7 @@ return [
                 'icon' => 'image',
                 'component' => 'a17-block-about_us_card',
             ],
+
         ],
         'repeaters' => [
             'prices' => [

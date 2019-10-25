@@ -29,6 +29,11 @@ export default new Router({
             path: '/news',
             name: 'News',
             component: () => import('./views/News')
+        },
+        {
+            path: '/about',
+            name: 'AboutUs',
+            component: () => import('./views/AboutUs')
         }
     ],
     scrollBehavior() {
