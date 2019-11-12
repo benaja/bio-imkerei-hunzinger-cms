@@ -63,7 +63,7 @@ return [
                 'desktop' => [
                     [
                         'name' => 'desktop',
-                        // 'ratio' => 4 / 3,
+                        'ratio' => 16 / 9,
                         'minValues' => [
                             'width' => 100,
                             'height' => 100,

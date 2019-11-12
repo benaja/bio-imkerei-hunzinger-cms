@@ -11,13 +11,14 @@ use App\Page;
 
 class FeatureController extends Controller
 {
-    public function index() {
-        $featured = Feature::where('featured_type', 'products')->orderBy('position')->get('featured_id')->map(function ($value,$key) {
+    public function index()
+    {
+        $featured = Feature::where('featured_type', 'products')->orderBy('position')->get('featured_id')->map(function ($value, $key) {
             return $value->featured_id;
         });
 
         $products = [];
-        foreach($featured as $featuredId) {
+        foreach ($featured as $featuredId) {
             $product = Product::with(['prices', 'slugs', 'medias'])->find($featuredId);
             $product->image = $product->image('cover');
             array_push($products, $product);
@@ -26,13 +27,13 @@ class FeatureController extends Controller
         $frontPage = Page::getByPageName('frontpage_more_content');
         $cards = Block::where('blockable_id', $frontPage->id)->where('parent_id', null)->get();
 
-        foreach($cards as $card) {
+        foreach ($cards as $card) {
             if ($card->type == 'card_with_image') {
-                $card->image = $card->image('slideshow');
+                $card->images = $card->images('slideshow', 'desktop');
             } else if ($card->type == 'multi_card') {
                 $card->subCards = Block::where('parent_id', $card->id)->get();
-                foreach($card->subCards as $subCard) {
-                    $subCard->image = $subCard->image('slideshow');
+                foreach ($card->subCards as $subCard) {
+                    $subCard->images = $subCard->images('slideshow', 'desktop');
                 }
             }
         }

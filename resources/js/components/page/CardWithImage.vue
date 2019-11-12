@@ -1,15 +1,39 @@
 <template>
-    <div :class="['card', value.size]">
-        <h2>{{value.title}}</h2>
+    <div :class="['card', isMultiCard ? 'large' : card.content.size]">
+        <h2>{{card.content.title}}</h2>
         <div>
-            <div class="content" v-html="value.text"></div>
-            <div class="image">
-                <div class="video" v-if="value.url">
+            <div class="content" v-html="card.content.text"></div>
+            <div class="media">
+                <div class="video" v-if="card.content.url">
                     <div>
-                        <iframe :src="value.url"></iframe>
+                        <iframe :src="card.content.url"></iframe>
                     </div>
                 </div>
-                <img :src="'/img/' + medias[0].uuid" v-else />
+                <!-- <img :src="'/img/' + medias[0].uuid" v-else /> -->
+                <div v-else class="image-container">
+                    <div uk-slider="clsActivated: uk-transition-active; center: true">
+                        <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
+                            <ul class="uk-slider-items uk-child-width-1-1 uk-child-width-1-1@m">
+                                <li v-for="image of card.images">
+                                    <img :src="image" class="image" />
+                                </li>
+                            </ul>
+                            <a
+                                class="uk-position-center-left uk-position-small uk-hidden-hover"
+                                href="#"
+                                uk-slidenav-previous
+                                uk-slider-item="previous"
+                            ></a>
+                            <a
+                                class="uk-position-center-right uk-position-small uk-hidden-hover"
+                                href="#"
+                                uk-slidenav-next
+                                uk-slider-item="next"
+                            ></a>
+                        </div>
+                        <!-- <ul class="uk-slider-nav uk-dotnav uk-flex-center uk-margin uk-dark"></ul> -->
+                    </div>
+                </div>
             </div>
         </div>
     </div>
@@ -19,13 +43,13 @@
 export default {
     name: "ContentWithImage",
     props: {
-        value: {
+        card: {
             type: Object,
             required: true
         },
-        medias: {
-            type: Array,
-            default: () => []
+        isMultiCard: {
+            type: Boolean,
+            default: false
         }
     },
     computed: {
@@ -34,7 +58,7 @@ export default {
         }
     },
     mounted() {
-        // console.log(this.content);
+        console.log(this.card);
     }
 };
 </script>
@@ -48,7 +72,7 @@ h2 {
 
 .card {
     width: 60%;
-    margin: 100px auto 0 auto;
+    margin: 40px auto 100px auto;
     background-color: white;
     padding-top: 1px;
 
@@ -66,7 +90,7 @@ h2 {
     padding: 0 20px;
 }
 
-.image {
+.media {
     //   width: 50%;
     padding: 20px;
     text-align: center;

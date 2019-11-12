@@ -3,7 +3,7 @@
 namespace App\Http\Controllers;
 
 use A17\Twill\Models\Block;
-use App\Page;
+use App\Models\Page;
 use App\Repositories\NewsRepository;
 use Illuminate\Http\Request;
 
@@ -31,7 +31,7 @@ class MoreContentController extends Controller
 
     public function aboutUs()
     {
-        $aboutUsPage = Page::getByPageName('about_us');
+        $aboutUsPage = Page::byName('about_us');
         $cards = Block::where('blockable_id', $aboutUsPage->id)->get();
         foreach ($cards as &$card) {
             $card->images = $card->images('slideshow', 'desktop');

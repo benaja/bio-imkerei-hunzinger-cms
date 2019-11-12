@@ -22,6 +22,10 @@ body {
     margin-bottom: 0 !important;
 }
 
+h1 {
+    text-align: center;
+}
+
 $button-primary-background: #e89602;
 $button-secondary-background: #0267e8;
 .uk-button-primary {

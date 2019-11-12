@@ -6427,7 +6427,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, "body {\n  background-color: #f0f0f0;\n  min-height: 100vh;\n  margin-bottom: 0 !important;\n}\n.uk-button-primary {\n  background-color: #e89602;\n}\n.uk-button-primary:hover {\n  background-color: #cf8602;\n}\n.uk-button-primary:focus {\n  background-color: #e89602;\n}\n.uk-button-primary::-moz-selection {\n  background: #e89602;\n}\n.uk-button-primary::selection {\n  background: #e89602;\n}\n.uk-button-secondary {\n  background-color: #0267e8;\n}\n.uk-button-secondary:hover {\n  background-color: #025ccf;\n}\n.uk-button-outline-primary {\n  background-color: transparent;\n  border: 1px solid #e89602;\n}\n.uk-button-outline-primary:hover, .uk-button-outline-primary.uk-active {\n  background-color: #e89602;\n  color: white;\n}\n::-moz-selection {\n  background: #e89602;\n  color: white;\n}\n::selection {\n  background: #e89602;\n  color: white;\n}\n.uk-link,\na {\n  color: #e89602;\n}\n.uk-link:hover,\na:hover {\n  color: #dd9000;\n}\n.text-editor-content.dark p,\n.text-editor-content.dark h1,\n.text-editor-content.dark h2,\n.text-editor-content.dark h3 {\n  color: white;\n}\n.text-editor-content.dark p em,\n.text-editor-content.dark h1 em,\n.text-editor-content.dark h2 em,\n.text-editor-content.dark h3 em {\n  color: white;\n}", ""]);
+exports.push([module.i, "body {\n  background-color: #f0f0f0;\n  min-height: 100vh;\n  margin-bottom: 0 !important;\n}\nh1 {\n  text-align: center;\n}\n.uk-button-primary {\n  background-color: #e89602;\n}\n.uk-button-primary:hover {\n  background-color: #cf8602;\n}\n.uk-button-primary:focus {\n  background-color: #e89602;\n}\n.uk-button-primary::-moz-selection {\n  background: #e89602;\n}\n.uk-button-primary::selection {\n  background: #e89602;\n}\n.uk-button-secondary {\n  background-color: #0267e8;\n}\n.uk-button-secondary:hover {\n  background-color: #025ccf;\n}\n.uk-button-outline-primary {\n  background-color: transparent;\n  border: 1px solid #e89602;\n}\n.uk-button-outline-primary:hover, .uk-button-outline-primary.uk-active {\n  background-color: #e89602;\n  color: white;\n}\n::-moz-selection {\n  background: #e89602;\n  color: white;\n}\n::selection {\n  background: #e89602;\n  color: white;\n}\n.uk-link,\na {\n  color: #e89602;\n}\n.uk-link:hover,\na:hover {\n  color: #dd9000;\n}\n.text-editor-content.dark p,\n.text-editor-content.dark h1,\n.text-editor-content.dark h2,\n.text-editor-content.dark h3 {\n  color: white;\n}\n.text-editor-content.dark p em,\n.text-editor-content.dark h1 em,\n.text-editor-content.dark h2 em,\n.text-editor-content.dark h3 em {\n  color: white;\n}", ""]);
 
 // exports
 
@@ -65463,13 +65463,13 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     path: '/',
     name: 'Frontpage',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(2)]).then(__webpack_require__.bind(null, /*! ./views/Frontpage */ "./resources/js/views/Frontpage.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(2), __webpack_require__.e(9)]).then(__webpack_require__.bind(null, /*! ./views/Frontpage */ "./resources/js/views/Frontpage.vue"));
     }
   }, {
     path: '/produkte',
     name: 'Products',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(6)]).then(__webpack_require__.bind(null, /*! ./views/Products */ "./resources/js/views/Products.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(2), __webpack_require__.e(7)]).then(__webpack_require__.bind(null, /*! ./views/Products */ "./resources/js/views/Products.vue"));
     }
   }, {
     path: '/produkte/:productName',
@@ -65481,19 +65481,19 @@ vue__WEBPACK_IMPORTED_MODULE_0___default.a.use(vue_router__WEBPACK_IMPORTED_MODU
     path: '/galerie',
     name: 'Gallery',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(4)]).then(__webpack_require__.bind(null, /*! ./views/Gallery */ "./resources/js/views/Gallery.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(5)]).then(__webpack_require__.bind(null, /*! ./views/Gallery */ "./resources/js/views/Gallery.vue"));
     }
   }, {
     path: '/news',
     name: 'News',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(5)]).then(__webpack_require__.bind(null, /*! ./views/News */ "./resources/js/views/News.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(6)]).then(__webpack_require__.bind(null, /*! ./views/News */ "./resources/js/views/News.vue"));
     }
   }, {
     path: '/about',
     name: 'AboutUs',
     component: function component() {
-      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(8)]).then(__webpack_require__.bind(null, /*! ./views/AboutUs */ "./resources/js/views/AboutUs.vue"));
+      return Promise.all(/*! import() */[__webpack_require__.e(0), __webpack_require__.e(1), __webpack_require__.e(8)]).then(__webpack_require__.bind(null, /*! ./views/AboutUs */ "./resources/js/views/AboutUs.vue"));
     }
   }],
   scrollBehavior: function scrollBehavior() {

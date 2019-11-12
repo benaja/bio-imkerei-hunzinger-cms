@@ -11,6 +11,8 @@
 __webpack_require__.r(__webpack_exports__);
 /* harmony import */ var _js_components_PageFooter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/js/components/PageFooter */ "./resources/js/components/PageFooter.vue");
 /* harmony import */ var _js_components_NavigationBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/js/components/NavigationBar */ "./resources/js/components/NavigationBar.vue");
+/* harmony import */ var _js_components_page_CardWithImage__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/js/components/page/CardWithImage */ "./resources/js/components/page/CardWithImage.vue");
+/* harmony import */ var _js_components_page_MultiCard__WEBPACK_IMPORTED_MODULE_3__ = __webpack_require__(/*! @/js/components/page/MultiCard */ "./resources/js/components/page/MultiCard.vue");
 //
 //
 //
@@ -21,12 +23,29 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+//
+
+
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
     PageFooter: _js_components_PageFooter__WEBPACK_IMPORTED_MODULE_0__["default"],
-    NavigationBar: _js_components_NavigationBar__WEBPACK_IMPORTED_MODULE_1__["default"]
+    NavigationBar: _js_components_NavigationBar__WEBPACK_IMPORTED_MODULE_1__["default"],
+    CardWithImage: _js_components_page_CardWithImage__WEBPACK_IMPORTED_MODULE_2__["default"],
+    MultiCard: _js_components_page_MultiCard__WEBPACK_IMPORTED_MODULE_3__["default"]
   },
   data: function data() {
     return {
@@ -113,23 +132,41 @@ var render = function() {
     [
       _c("NavigationBar"),
       _vm._v(" "),
-      _vm._m(0),
+      _c("div", { staticClass: "uk-container" }, [
+        _c("h1", [_vm._v("Über Uns")]),
+        _vm._v(" "),
+        _c(
+          "div",
+          { staticClass: "content" },
+          [
+            _vm._l(_vm.content, function(card) {
+              return [
+                card.type === "card_with_image" ||
+                card.type === "card_with_video"
+                  ? _c("card-with-image", { attrs: { card: card } })
+                  : _vm._e(),
+                _vm._v(" "),
+                card.type === "multi_card"
+                  ? _c("multi-card", {
+                      attrs: {
+                        cards: card.subCards,
+                        rows: parseInt(card.content.rows)
+                      }
+                    })
+                  : _vm._e()
+              ]
+            })
+          ],
+          2
+        )
+      ]),
       _vm._v(" "),
       _c("PageFooter")
     ],
     1
   )
 }
-var staticRenderFns = [
-  function() {
-    var _vm = this
-    var _h = _vm.$createElement
-    var _c = _vm._self._c || _h
-    return _c("div", { staticClass: "uk-container" }, [
-      _c("h1", [_vm._v("Über Uns")])
-    ])
-  }
-]
+var staticRenderFns = []
 render._withStripped = true
 
 

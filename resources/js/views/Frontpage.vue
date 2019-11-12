@@ -26,8 +26,7 @@
                 <template v-for="card of contentElements">
                     <card-with-image
                         v-if="card.type === 'card_with_image' || card.type === 'card_with_video'"
-                        v-model="card.content"
-                        :medias="card.medias"
+                        :card="card"
                     ></card-with-image>
                     <multi-card
                         v-if="card.type === 'multi_card'"
