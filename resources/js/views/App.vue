@@ -1,16 +1,28 @@
 <template>
     <div>
+        <NavigationBar :sticky="$route.path === '/'"></NavigationBar>
         <router-view></router-view>
+        <PageFooter></PageFooter>
     </div>
 </template>
 
 <script>
 import UIkit from "uikit";
 import Icons from "uikit/dist/js/uikit-icons";
+import PageFooter from "@/js/components/PageFooter";
+import NavigationBar from "@/js/components/NavigationBar";
 
 UIkit.use(Icons);
 
-export default {};
+export default {
+    components: {
+        PageFooter,
+        NavigationBar
+    },
+    mounted() {
+        console.log(this.$route);
+    }
+};
 </script>
 
 <style lang="scss">
@@ -24,6 +36,8 @@ body {
 
 h1 {
     text-align: center;
+    margin-top: 40px;
+    margin-bottom: 40px;
 }
 
 $button-primary-background: #e89602;

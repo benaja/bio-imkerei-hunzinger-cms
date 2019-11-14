@@ -15,7 +15,8 @@ class Page extends Model
     protected $fillable = [
         'published',
         'name',
-        "text"
+        "text",
+        "values"
         // 'position',
         // 'public',
         // 'featured',
@@ -53,5 +54,9 @@ class Page extends Model
                 ]
             ]
         ],
+    ];
+
+    protected $casts = [
+        'values' => 'array'
     ];
 }

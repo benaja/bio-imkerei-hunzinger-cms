@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[6],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[11],{
 
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Gallery.vue?vue&type=script&lang=js&":
 /*!********************************************************************************************************************************************************************************************************!*\
@@ -9,8 +9,6 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _js_components_PageFooter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/js/components/PageFooter */ "./resources/js/components/PageFooter.vue");
-/* harmony import */ var _js_components_NavigationBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/js/components/NavigationBar */ "./resources/js/components/NavigationBar.vue");
 //
 //
 //
@@ -30,15 +28,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-
-
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    NavigationBar: _js_components_NavigationBar__WEBPACK_IMPORTED_MODULE_1__["default"],
-    PageFooter: _js_components_PageFooter__WEBPACK_IMPORTED_MODULE_0__["default"]
-  },
   data: function data() {
     return {
       images: []
@@ -67,7 +57,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".uk-container[data-v-c9f3dafa] {\n  padding-top: 120px;\n}\n.image-container[data-v-c9f3dafa] {\n  text-align: center;\n}", ""]);
+exports.push([module.i, ".image-container[data-v-c9f3dafa] {\n  text-align: center;\n}", ""]);
 
 // exports
 
@@ -119,41 +109,33 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("NavigationBar"),
+  return _c("div", [
+    _c("div", { staticClass: "uk-container" }, [
+      _c("h1", [_vm._v("Galerie")]),
       _vm._v(" "),
-      _c("div", { staticClass: "uk-container" }, [
-        _c("h1", [_vm._v("Galerie")]),
-        _vm._v(" "),
-        _c(
-          "div",
-          {
-            staticClass:
-              "uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l",
-            attrs: { "uk-grid": "", "uk-lightbox": "animation: slide" }
-          },
-          _vm._l(_vm.images, function(image) {
-            return _c("div", { staticClass: "image-container" }, [
-              _c(
-                "a",
-                {
-                  staticClass: "uk-inline",
-                  attrs: { href: image.src, "data-caption": image.caption }
-                },
-                [_c("img", { attrs: { src: image.src + "&w=400&h=150" } })]
-              )
-            ])
-          }),
-          0
-        )
-      ]),
-      _vm._v(" "),
-      _c("PageFooter")
-    ],
-    1
-  )
+      _c(
+        "div",
+        {
+          staticClass:
+            "uk-child-width-1-2@s uk-child-width-1-3@m uk-child-width-1-4@l",
+          attrs: { "uk-grid": "", "uk-lightbox": "animation: slide" }
+        },
+        _vm._l(_vm.images, function(image) {
+          return _c("div", { staticClass: "image-container" }, [
+            _c(
+              "a",
+              {
+                staticClass: "uk-inline",
+                attrs: { href: image.src, "data-caption": image.caption }
+              },
+              [_c("img", { attrs: { src: image.src + "&w=400&h=150" } })]
+            )
+          ])
+        }),
+        0
+      )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

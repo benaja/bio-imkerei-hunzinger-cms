@@ -1,6 +1,5 @@
 <template>
     <div>
-        <NavigationBar></NavigationBar>
         <div class="uk-container">
             <h1>News</h1>
             <div class="news-container">
@@ -13,19 +12,11 @@
                 </div>
             </div>
         </div>
-        <PageFooter></PageFooter>
     </div>
 </template>
 
 <script>
-import PageFooter from "@/js/components/PageFooter";
-import NavigationBar from "@/js/components/NavigationBar";
-
 export default {
-    components: {
-        NavigationBar,
-        PageFooter
-    },
     data() {
         return {
             news: []
@@ -40,10 +31,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.uk-container {
-    padding-top: 120px;
-}
-
 .news-container {
     display: flex;
     flex-wrap: wrap;
@@ -51,8 +38,7 @@ export default {
 
 .news-card {
     width: calc(50% - 50px);
-    margin-right: 50px;
-    margin-bottom: 50px;
+    margin: 0 25px 25px 25px;
     background-color: white;
     cursor: pointer;
 

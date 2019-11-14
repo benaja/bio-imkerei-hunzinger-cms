@@ -34,6 +34,11 @@ export default new Router({
             path: '/about',
             name: 'AboutUs',
             component: () => import('./views/AboutUs')
+        }, ,
+        {
+            path: '/kontakt',
+            name: 'Contact',
+            component: () => import('./views/Contact')
         }
     ],
     scrollBehavior() {

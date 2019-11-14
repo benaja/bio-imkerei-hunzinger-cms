@@ -2,7 +2,6 @@
     <div>
         <div uk-parallax="bgy: -200" class="background-image">
             <div class="darken-background">
-                <NavigationBar sticky></NavigationBar>
                 <img
                     class="large-logo"
                     src="/images/logo_portrait_inverted.png"

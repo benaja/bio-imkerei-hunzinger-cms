@@ -1,6 +1,5 @@
 <template>
     <div>
-        <NavigationBar></NavigationBar>
         <div class="uk-container">
             <h1>Galerie</h1>
             <div
@@ -15,19 +14,11 @@
                 </div>
             </div>
         </div>
-        <PageFooter></PageFooter>
     </div>
 </template>
 
 <script>
-import PageFooter from "@/js/components/PageFooter";
-import NavigationBar from "@/js/components/NavigationBar";
-
 export default {
-    components: {
-        NavigationBar,
-        PageFooter
-    },
     data() {
         return {
             images: []
@@ -42,10 +33,6 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.uk-container {
-    padding-top: 120px;
-}
-
 .image-container {
     text-align: center;
 }

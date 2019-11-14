@@ -1,6 +1,5 @@
 <template>
     <div>
-        <NavigationBar></NavigationBar>
         <div class="uk-container">
             <div class="product-container">
                 <div class="image" uk-lightbox>
@@ -48,19 +47,14 @@
             </div>
         </div>
         <BuyInformation></BuyInformation>
-        <PageFooter></PageFooter>
     </div>
 </template>
 
 <script>
-import PageFooter from "@/js/components/PageFooter";
-import NavigationBar from "@/js/components/NavigationBar";
 import BuyInformation from "@/js/components/BuyInformation";
 
 export default {
     components: {
-        PageFooter,
-        NavigationBar,
         BuyInformation
     },
     data() {

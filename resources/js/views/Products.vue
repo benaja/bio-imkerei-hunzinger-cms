@@ -1,8 +1,7 @@
 <template>
     <div>
-        <NavigationBar></NavigationBar>
         <div class="uk-container">
-            <h1 class="uk-margin-top">Produkte</h1>
+            <h1>Produkte</h1>
             <div class="products-grid">
                 <div class="filter">
                     <div>
@@ -33,19 +32,14 @@
                 </div>
             </div>
         </div>
-        <PageFooter></PageFooter>
     </div>
 </template>
 
 <script>
-import PageFooter from "@/js/components/PageFooter";
-import NavigationBar from "@/js/components/NavigationBar";
 import ProductPreview from "@/js/components/products/ProductPreview";
 
 export default {
     components: {
-        PageFooter,
-        NavigationBar,
         ProductPreview
     },
     data() {
@@ -141,10 +135,6 @@ export default {
 
 <style lang="scss" scoped>
 @import "~@/sass/_variables.scss";
-.uk-container {
-    padding-top: 100px;
-}
-
 h4 {
     margin-bottom: 0;
 }

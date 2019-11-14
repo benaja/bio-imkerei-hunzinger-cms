@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div :class="{'navigation-box-container': !sticky}">
         <div
             :class="{sticky: sticky}"
             :uk-sticky="sticky ? 'animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 60' :false"
@@ -27,17 +27,18 @@
                             <a href="/galerie">Galerie</a>
                         </li>
                         <li>
-                            <a href="/news">News</a>
+                            <a href="/kontakt">Kontakt</a>
                         </li>
                         <li>
                             <a href="/about">Über Uns</a>
                             <div class="uk-navbar-dropdown">
                                 <ul class="uk-nav uk-navbar-dropdown-nav">
                                     <li>
-                                        <a href="/kontakt">Über Uns</a>
+                                        <a href="/about">Über Uns</a>
                                     </li>
+
                                     <li>
-                                        <a href="/kontakt">Kontakt</a>
+                                        <a href="/news">News</a>
                                     </li>
                                     <li>
                                         <a href="/projekt">Projekt</a>
@@ -102,6 +103,10 @@ export default {
     color: black;
 }
 
+.navigation-box-container {
+    height: 80px;
+}
+
 .uk-navbar-container {
     position: fixed;
     top: 0;
@@ -109,6 +114,14 @@ export default {
     width: 100%;
     background-color: white;
     z-index: 100;
+}
+
+.uk-light .uk-navbar-nav > li:hover > a {
+    color: rgb(60, 60, 60);
+}
+
+.uk-light .uk-logo {
+    color: black;
 }
 
 .sticky {
@@ -133,6 +146,14 @@ export default {
                 display: block;
             }
         }
+    }
+
+    & .uk-navbar-transparent .uk-navbar-nav > li:hover > a {
+        color: lightgray;
+    }
+
+    & .uk-navbar-sticky .uk-navbar-nav > li:hover > a {
+        color: rgb(60, 60, 60);
     }
     .uk-navbar-nav > li > a {
         color: white;

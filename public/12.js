@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[7],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[12],{
 
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/News.vue?vue&type=script&lang=js&":
 /*!*****************************************************************************************************************************************************************************************************!*\
@@ -9,8 +9,6 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _js_components_PageFooter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/js/components/PageFooter */ "./resources/js/components/PageFooter.vue");
-/* harmony import */ var _js_components_NavigationBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/js/components/NavigationBar */ "./resources/js/components/NavigationBar.vue");
 //
 //
 //
@@ -28,15 +26,7 @@ __webpack_require__.r(__webpack_exports__);
 //
 //
 //
-//
-//
-
-
 /* harmony default export */ __webpack_exports__["default"] = ({
-  components: {
-    NavigationBar: _js_components_NavigationBar__WEBPACK_IMPORTED_MODULE_1__["default"],
-    PageFooter: _js_components_PageFooter__WEBPACK_IMPORTED_MODULE_0__["default"]
-  },
   data: function data() {
     return {
       news: []
@@ -65,7 +55,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".uk-container[data-v-3e37c8f2] {\n  padding-top: 120px;\n}\n.news-container[data-v-3e37c8f2] {\n  display: flex;\n  flex-wrap: wrap;\n}\n.news-card[data-v-3e37c8f2] {\n  width: calc(50% - 50px);\n  margin-right: 50px;\n  margin-bottom: 50px;\n  background-color: white;\n  cursor: pointer;\n}\n.news-card[data-v-3e37c8f2]:hover {\n  box-shadow: lightgray 0 0 20px;\n}\n.news-card > img[data-v-3e37c8f2] {\n  width: 100%;\n}\n.news-text[data-v-3e37c8f2] {\n  padding: 20px;\n}", ""]);
+exports.push([module.i, ".news-container[data-v-3e37c8f2] {\n  display: flex;\n  flex-wrap: wrap;\n}\n.news-card[data-v-3e37c8f2] {\n  width: calc(50% - 50px);\n  margin: 0 25px 25px 25px;\n  background-color: white;\n  cursor: pointer;\n}\n.news-card[data-v-3e37c8f2]:hover {\n  box-shadow: lightgray 0 0 20px;\n}\n.news-card > img[data-v-3e37c8f2] {\n  width: 100%;\n}\n.news-text[data-v-3e37c8f2] {\n  padding: 20px;\n}", ""]);
 
 // exports
 
@@ -117,38 +107,30 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("NavigationBar"),
+  return _c("div", [
+    _c("div", { staticClass: "uk-container" }, [
+      _c("h1", [_vm._v("News")]),
       _vm._v(" "),
-      _c("div", { staticClass: "uk-container" }, [
-        _c("h1", [_vm._v("News")]),
-        _vm._v(" "),
-        _c(
-          "div",
-          { staticClass: "news-container" },
-          _vm._l(_vm.news, function(article) {
-            return _c("div", { staticClass: "news-card" }, [
-              _c("img", { attrs: { src: article.image } }),
+      _c(
+        "div",
+        { staticClass: "news-container" },
+        _vm._l(_vm.news, function(article) {
+          return _c("div", { staticClass: "news-card" }, [
+            _c("img", { attrs: { src: article.image } }),
+            _vm._v(" "),
+            _c("div", { staticClass: "news-text" }, [
+              _c("h2", [_vm._v(_vm._s(article.title))]),
               _vm._v(" "),
-              _c("div", { staticClass: "news-text" }, [
-                _c("h2", [_vm._v(_vm._s(article.title))]),
-                _vm._v(" "),
-                _c("div", {
-                  domProps: { innerHTML: _vm._s(article.description) }
-                })
-              ])
+              _c("div", {
+                domProps: { innerHTML: _vm._s(article.description) }
+              })
             ])
-          }),
-          0
-        )
-      ]),
-      _vm._v(" "),
-      _c("PageFooter")
-    ],
-    1
-  )
+          ])
+        }),
+        0
+      )
+    ])
+  ])
 }
 var staticRenderFns = []
 render._withStripped = true

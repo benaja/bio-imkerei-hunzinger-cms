@@ -19,9 +19,10 @@ class PageRepository extends ModuleRepository
         $this->model = $model;
     }
 
-    // public function afterSave($product, $fields)
-    // {
-
-    //     // dd($fields);
-    // }
+    public function afterSave($product, $fields)
+    {
+        foreach ($fields as $key => $value) {
+            if (strpos($key, 'values') !== false) { }
+        }
+    }
 }

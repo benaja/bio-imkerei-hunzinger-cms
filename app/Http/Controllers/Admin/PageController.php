@@ -81,6 +81,7 @@ class PageController extends ModuleController
         });
 
         $form = $this->form($submoduleId ?? $page->id);
+        // dd($form);
         $form['editableTitle'] = false;
         $form['customTitle'] = $pageNameGerman;
         return View::make($view, $form);

@@ -1,4 +1,4 @@
-(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[8],{
+(window["webpackJsonp"] = window["webpackJsonp"] || []).push([[13],{
 
 /***/ "./node_modules/babel-loader/lib/index.js?!./node_modules/babel-loader/lib/index.js?!./node_modules/vue-loader/lib/index.js?!./resources/js/views/Products.vue?vue&type=script&lang=js&":
 /*!*********************************************************************************************************************************************************************************************************!*\
@@ -9,9 +9,7 @@
 
 "use strict";
 __webpack_require__.r(__webpack_exports__);
-/* harmony import */ var _js_components_PageFooter__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/js/components/PageFooter */ "./resources/js/components/PageFooter.vue");
-/* harmony import */ var _js_components_NavigationBar__WEBPACK_IMPORTED_MODULE_1__ = __webpack_require__(/*! @/js/components/NavigationBar */ "./resources/js/components/NavigationBar.vue");
-/* harmony import */ var _js_components_products_ProductPreview__WEBPACK_IMPORTED_MODULE_2__ = __webpack_require__(/*! @/js/components/products/ProductPreview */ "./resources/js/components/products/ProductPreview.vue");
+/* harmony import */ var _js_components_products_ProductPreview__WEBPACK_IMPORTED_MODULE_0__ = __webpack_require__(/*! @/js/components/products/ProductPreview */ "./resources/js/components/products/ProductPreview.vue");
 function _typeof2(obj) { if (typeof Symbol === "function" && typeof Symbol.iterator === "symbol") { _typeof2 = function _typeof2(obj) { return typeof obj; }; } else { _typeof2 = function _typeof2(obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; }; } return _typeof2(obj); }
 
 function _typeof(obj) {
@@ -63,18 +61,12 @@ function _typeof(obj) {
 //
 //
 //
-//
-//
-
-
 
 
 
 /* harmony default export */ __webpack_exports__["default"] = ({
   components: {
-    PageFooter: _js_components_PageFooter__WEBPACK_IMPORTED_MODULE_0__["default"],
-    NavigationBar: _js_components_NavigationBar__WEBPACK_IMPORTED_MODULE_1__["default"],
-    ProductPreview: _js_components_products_ProductPreview__WEBPACK_IMPORTED_MODULE_2__["default"]
+    ProductPreview: _js_components_products_ProductPreview__WEBPACK_IMPORTED_MODULE_0__["default"]
   },
   data: function data() {
     return {
@@ -256,7 +248,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".uk-container[data-v-eec6f8fa] {\n  padding-top: 100px;\n}\nh4[data-v-eec6f8fa] {\n  margin-bottom: 0;\n}\n.products-grid[data-v-eec6f8fa] {\n  display: grid;\n  grid-template-columns: 200px auto;\n  grid-template-rows: auto auto;\n}\n.filter[data-v-eec6f8fa] {\n  grid-row-start: 1;\n  grid-row-end: 2;\n  grid-column-start: 1;\n  grid-column-end: 1;\n  margin: 5px 0;\n  padding: 3px 6px;\n  cursor: pointer;\n}\n.filter p[data-v-eec6f8fa] {\n  margin: 0;\n}\n.filter.selected[data-v-eec6f8fa] {\n  background-color: rgba(255, 192, 75, 0.479);\n  border-radius: 3px;\n}\n.uk-select[data-v-eec6f8fa] {\n  background-color: transparent;\n  border-color: #e89602;\n}\n.products[data-v-eec6f8fa] {\n  grid-row-start: 1;\n  grid-row-end: 2;\n  grid-column-start: 2;\n  grid-column-end: 2;\n  display: flex;\n  flex-wrap: wrap;\n  min-height: 300px;\n}\n[type=checkbox].filled-in:checked + span[data-v-eec6f8fa]:not(.lever):after {\n  background-color: #e89602;\n  border-color: #e89602;\n}\n.filter-text[data-v-eec6f8fa] {\n  float: left;\n  width: 150px;\n  font-weight: bold;\n}", ""]);
+exports.push([module.i, "h4[data-v-eec6f8fa] {\n  margin-bottom: 0;\n}\n.products-grid[data-v-eec6f8fa] {\n  display: grid;\n  grid-template-columns: 200px auto;\n  grid-template-rows: auto auto;\n}\n.filter[data-v-eec6f8fa] {\n  grid-row-start: 1;\n  grid-row-end: 2;\n  grid-column-start: 1;\n  grid-column-end: 1;\n  margin: 5px 0;\n  padding: 3px 6px;\n  cursor: pointer;\n}\n.filter p[data-v-eec6f8fa] {\n  margin: 0;\n}\n.filter.selected[data-v-eec6f8fa] {\n  background-color: rgba(255, 192, 75, 0.479);\n  border-radius: 3px;\n}\n.uk-select[data-v-eec6f8fa] {\n  background-color: transparent;\n  border-color: #e89602;\n}\n.products[data-v-eec6f8fa] {\n  grid-row-start: 1;\n  grid-row-end: 2;\n  grid-column-start: 2;\n  grid-column-end: 2;\n  display: flex;\n  flex-wrap: wrap;\n  min-height: 300px;\n}\n[type=checkbox].filled-in:checked + span[data-v-eec6f8fa]:not(.lever):after {\n  background-color: #e89602;\n  border-color: #e89602;\n}\n.filter-text[data-v-eec6f8fa] {\n  float: left;\n  width: 150px;\n  font-weight: bold;\n}", ""]);
 
 // exports
 
@@ -308,105 +300,95 @@ var render = function() {
   var _vm = this
   var _h = _vm.$createElement
   var _c = _vm._self._c || _h
-  return _c(
-    "div",
-    [
-      _c("NavigationBar"),
+  return _c("div", [
+    _c("div", { staticClass: "uk-container" }, [
+      _c("h1", [_vm._v("Produkte")]),
       _vm._v(" "),
-      _c("div", { staticClass: "uk-container" }, [
-        _c("h1", { staticClass: "uk-margin-top" }, [_vm._v("Produkte")]),
+      _c("div", { staticClass: "products-grid" }, [
+        _c(
+          "div",
+          { staticClass: "filter" },
+          [
+            _c("div", [
+              _vm._m(0),
+              _vm._v(" "),
+              _c(
+                "select",
+                {
+                  directives: [
+                    {
+                      name: "model",
+                      rawName: "v-model",
+                      value: _vm.sortby,
+                      expression: "sortby"
+                    }
+                  ],
+                  staticClass: "uk-select",
+                  attrs: { id: "sort-by" },
+                  on: {
+                    change: function($event) {
+                      var $$selectedVal = Array.prototype.filter
+                        .call($event.target.options, function(o) {
+                          return o.selected
+                        })
+                        .map(function(o) {
+                          var val = "_value" in o ? o._value : o.value
+                          return val
+                        })
+                      _vm.sortby = $event.target.multiple
+                        ? $$selectedVal
+                        : $$selectedVal[0]
+                    }
+                  }
+                },
+                [
+                  _c("option", { attrs: { value: "1", selected: "" } }, [
+                    _vm._v("Bestseller")
+                  ]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "2" } }, [
+                    _vm._v("Günstigste")
+                  ]),
+                  _vm._v(" "),
+                  _c("option", { attrs: { value: "3" } }, [_vm._v("Teuerste")])
+                ]
+              )
+            ]),
+            _vm._v(" "),
+            _c("h4", [_vm._v("Filter")]),
+            _vm._v(" "),
+            _vm._l(_vm.filters, function(filter, index) {
+              return _c(
+                "div",
+                {
+                  class: ["filter", { selected: filter.selected }],
+                  on: {
+                    click: function($event) {
+                      return _vm.changeFilter(index)
+                    }
+                  }
+                },
+                [_c("p", [_vm._v(_vm._s(filter.text))])]
+              )
+            })
+          ],
+          2
+        ),
         _vm._v(" "),
-        _c("div", { staticClass: "products-grid" }, [
-          _c(
-            "div",
-            { staticClass: "filter" },
-            [
-              _c("div", [
-                _vm._m(0),
-                _vm._v(" "),
-                _c(
-                  "select",
-                  {
-                    directives: [
-                      {
-                        name: "model",
-                        rawName: "v-model",
-                        value: _vm.sortby,
-                        expression: "sortby"
-                      }
-                    ],
-                    staticClass: "uk-select",
-                    attrs: { id: "sort-by" },
-                    on: {
-                      change: function($event) {
-                        var $$selectedVal = Array.prototype.filter
-                          .call($event.target.options, function(o) {
-                            return o.selected
-                          })
-                          .map(function(o) {
-                            var val = "_value" in o ? o._value : o.value
-                            return val
-                          })
-                        _vm.sortby = $event.target.multiple
-                          ? $$selectedVal
-                          : $$selectedVal[0]
-                      }
-                    }
-                  },
-                  [
-                    _c("option", { attrs: { value: "1", selected: "" } }, [
-                      _vm._v("Bestseller")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "2" } }, [
-                      _vm._v("Günstigste")
-                    ]),
-                    _vm._v(" "),
-                    _c("option", { attrs: { value: "3" } }, [
-                      _vm._v("Teuerste")
-                    ])
-                  ]
-                )
-              ]),
-              _vm._v(" "),
-              _c("h4", [_vm._v("Filter")]),
-              _vm._v(" "),
-              _vm._l(_vm.filters, function(filter, index) {
-                return _c(
-                  "div",
-                  {
-                    class: ["filter", { selected: filter.selected }],
-                    on: {
-                      click: function($event) {
-                        return _vm.changeFilter(index)
-                      }
-                    }
-                  },
-                  [_c("p", [_vm._v(_vm._s(filter.text))])]
-                )
-              })
-            ],
-            2
-          ),
-          _vm._v(" "),
-          _c(
-            "div",
-            { staticClass: "products" },
-            _vm._l(_vm.filterProducts, function(product) {
-              return _c("ProductPreview", {
-                key: product.id,
-                attrs: { product: product }
-              })
-            }),
-            1
-          )
-        ])
-      ]),
-      _vm._v(" "),
-      _c("PageFooter")
-    ],
-    1
-  )
+        _c(
+          "div",
+          { staticClass: "products" },
+          _vm._l(_vm.filterProducts, function(product) {
+            return _c("ProductPreview", {
+              key: product.id,
+              attrs: { product: product }
+            })
+          }),
+          1
+        )
+      ])
+    ])
+  ])
 }
 var staticRenderFns = [
   function() {

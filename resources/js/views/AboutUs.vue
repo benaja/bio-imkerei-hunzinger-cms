@@ -1,6 +1,5 @@
 <template>
     <div>
-        <NavigationBar></NavigationBar>
         <div class="uk-container">
             <h1>Über Uns</h1>
             <div class="content">
@@ -17,20 +16,15 @@
                 </template>
             </div>
         </div>
-        <PageFooter></PageFooter>
     </div>
 </template>
 
 <script>
-import PageFooter from "@/js/components/PageFooter";
-import NavigationBar from "@/js/components/NavigationBar";
 import CardWithImage from "@/js/components/page/CardWithImage";
 import MultiCard from "@/js/components/page/MultiCard";
 
 export default {
     components: {
-        PageFooter,
-        NavigationBar,
         CardWithImage,
         MultiCard
     },
@@ -48,7 +42,4 @@ export default {
 </script>
 
 <style lang="scss" scoped>
-.uk-container {
-    padding-top: 120px;
-}
 </style>

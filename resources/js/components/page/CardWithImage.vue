@@ -91,8 +91,11 @@ h2 {
 }
 
 .media {
-    //   width: 50%;
     padding: 20px;
+    padding-bottom: 100% / 16 * 9;
+    height: 0;
+    position: relative;
+    //   width: 50%;
     text-align: center;
     justify-content: center;
 
