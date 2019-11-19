@@ -2,7 +2,7 @@
     <div :class="{'navigation-box-container': !sticky}">
         <div
             :class="{sticky: sticky}"
-            :uk-sticky="sticky ? 'animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 60' :false"
+            :uk-sticky="sticky ? 'animation: uk-animation-slide-top; sel-target: .uk-navbar-container; cls-active: uk-navbar-sticky; cls-inactive: uk-navbar-transparent uk-light; top: 50vh' :false"
         >
             <nav class="uk-navbar-container" uk-navbar>
                 <div class="uk-navbar-left menu-icon">
@@ -63,13 +63,13 @@
                         <a href="/galerie">Galerie</a>
                     </li>
                     <li>
-                        <a href="/news">News</a>
+                        <a href="/kontakt">Kontakt</a>
                     </li>
                     <li>
                         <a href="/about">Über Uns</a>
                         <ul class="uk-nav-sub">
                             <li>
-                                <a href="/kontakt">Kontakt</a>
+                                <a href="/news">News</a>
                             </li>
                             <li>
                                 <a href="/projekt">Projekt</a>
@@ -99,10 +99,6 @@ export default {
     margin-right: 10px;
 }
 
-.uk-navbar-nav > li > a {
-    color: black;
-}
-
 .navigation-box-container {
     height: 80px;
 }
@@ -118,6 +114,14 @@ export default {
 
 .uk-light .uk-navbar-nav > li:hover > a {
     color: rgb(60, 60, 60);
+}
+
+.uk-navbar-nav > li > a {
+    color: black;
+
+    &.uk-open {
+        color: black;
+    }
 }
 
 .uk-light .uk-logo {
@@ -187,7 +191,10 @@ export default {
     padding-right: 20px;
 }
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
+    .uk-navbar-toggle {
+        padding-right: 0;
+    }
     .logo {
         display: block;
     }
@@ -196,12 +203,24 @@ export default {
         display: block;
     }
 
+    .uk-navbar-toggle-icon {
+        min-width: 40px;
+    }
+
     .uk-navbar-right {
         display: none;
     }
 
     .uk-logo {
         float: right;
+        padding-left: 10px;
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .uk-logo {
+        float: right;
+        padding-right: 10px;
     }
 }
 </style>

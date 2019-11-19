@@ -21,18 +21,9 @@ class PagesTableSeeder extends Seeder
         Page::firstOrCreate(['name' => 'frontpage_more_content']);
         Page::firstOrCreate(['name' => 'buy_information']);
         Page::firstOrCreate(['name' => 'gallery']);
+        Page::firstOrCreate(['name' => 'footer']);
 
         Category::firstOrCreate(['name' => 'Neuigkeiten']);
         Category::firstOrCreate(['name' => 'Honig']);
-
-        // DB::table('pages')->insert([
-        //     'name' => 'about_us'
-        // ]);
-        // DB::table('pages')->insert([
-        //     'name' => 'products'
-        // ]);
-        // DB::table('pages')->insert([
-        //     'name' => 'about_us'
-        // ]);
     }
 }

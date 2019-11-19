@@ -37,11 +37,21 @@ return [
                 'icon' => 'image',
                 'component' => 'a17-block-multi_card',
             ],
-            'about_us_card' => [
-                'title' => 'Karte',
-                'icon' => 'image',
-                'component' => 'a17-block-about_us_card',
+            'text' => [
+                'title' => 'Text',
+                'icon' => 'text',
+                'component' => 'a17-block-text',
             ],
+            'video' => [
+                'title' => 'Video',
+                'icon' => 'add',
+                'component' => 'a17-block-video',
+            ],
+            'image_gallery' => [
+                'title' => 'Bilder Galerie',
+                'icon' => 'add',
+                'component' => 'a17-block-image_gallery',
+            ]
 
         ],
         'repeaters' => [
@@ -64,6 +74,17 @@ return [
                     [
                         'name' => 'desktop',
                         'ratio' => 16 / 9,
+                        'minValues' => [
+                            'width' => 100,
+                            'height' => 100,
+                        ],
+                    ],
+                ]
+            ],
+            'cover' => [
+                'desktop' => [
+                    [
+                        'name' => 'desktop',
                         'minValues' => [
                             'width' => 100,
                             'height' => 100,

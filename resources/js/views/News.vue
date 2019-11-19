@@ -8,6 +8,7 @@
                     <div class="news-text">
                         <h2>{{article.title}}</h2>
                         <div v-html="article.description"></div>
+                        <a :href="article.file">{{article.file_name}}</a>
                     </div>
                 </div>
             </div>

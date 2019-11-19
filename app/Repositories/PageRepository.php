@@ -21,8 +21,14 @@ class PageRepository extends ModuleRepository
 
     public function afterSave($product, $fields)
     {
+        $values = [];
         foreach ($fields as $key => $value) {
-            if (strpos($key, 'values') !== false) { }
+            if (preg_match('/^values\.(.+)$/', $key, $matches)) {
+                $values[$matches[1]] = $value;
+            }
         }
+        $product->values = $values;
+        $product->save();
+        parent::afterSave($product, $fields);
     }
 }

@@ -3,16 +3,7 @@
         <div class="footer-cutter"></div>
         <div class="footer-background">
             <div class="footer-content">
-                <div class="contact">
-                    <p>
-                        <strong>Kontakt</strong>
-                        <br />Martin und Kornelia Hunzinger
-                        <br />2577 Finsterhennen
-                        <br />Allmenhag 2
-                        <br />Tel: 032 396 34 03
-                        <br />Email: info@imkerei-hunzinger.ch
-                    </p>
-                </div>
+                <div class="content" v-html="content.values.content_left"></div>
                 <div class="newsletter">
                     <p>
                         <strong>Newsletter Anmeldung</strong>
@@ -52,10 +43,22 @@
                         <button class="uk-button uk-button-secondary">Anmelden</button>
                     </form>
                 </div>
-                <div class="links">
-                    <p>
-                        <strong>Nützliche Links</strong>
-                    </p>
+                <div class="content content-right">
+                    <div v-html="content.values.content_right"></div>
+                    <a href="https://www.facebook.com/bioimkereihunzinger/">
+                        <img
+                            class="social-media-icon"
+                            src="/icons/facebook-logo.svg"
+                            alt="facebook icon"
+                        />
+                    </a>
+                    <a href="https://www.instagram.com/bio_imkerei_hunzinger/?hl=de">
+                        <img
+                            class="social-media-icon"
+                            src="/icons/instagram-logo.svg"
+                            alt="instagram icon"
+                        />
+                    </a>
                 </div>
             </div>
         </div>
@@ -64,7 +67,19 @@
 
 <script>
 export default {
-    name: "PageFooter"
+    name: "PageFooter",
+    data() {
+        return {
+            content: {
+                values: {}
+            }
+        };
+    },
+    mounted() {
+        this.axios
+            .get("/footer")
+            .then(response => (this.content = response.data));
+    }
 };
 </script>
 
@@ -131,6 +146,16 @@ export default {
     width: 100%;
 }
 
+.content-right {
+    text-align: right;
+    color: white;
+}
+
+.social-media-icon {
+    width: 50px;
+    margin-left: 30px;
+}
+
 @media only screen and (max-width: 100px) {
     .footer-cutter {
         transform: rotate(10deg);
@@ -140,6 +165,19 @@ export default {
 @media only screen and (max-width: 600px) {
     .footer-cutter {
         transform: rotate(15deg);
+    }
+}
+</style>
+
+<style lang="scss">
+.content {
+    a {
+        color: white;
+        text-decoration: underline;
+
+        &:hover {
+            color: white;
+        }
     }
 }
 </style>

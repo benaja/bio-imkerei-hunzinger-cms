@@ -40,6 +40,14 @@ h1 {
     margin-bottom: 40px;
 }
 
+.ql-align-justify {
+    text-align: justify;
+}
+
+.ql-align-center {
+    text-align: center;
+}
+
 $button-primary-background: #e89602;
 $button-secondary-background: #0267e8;
 .uk-button-primary {

@@ -13,7 +13,9 @@
                 class="image"
                 :style="{ backgroundImage: `url(/img/${product.medias[0].uuid})` }"
             ></div>
-            <div v-else class="no-image" :style="{ backgroundImage: `url(/images/no-image.png)` }"></div>
+            <div v-else class="no-image">
+                <p>Kein Bild vorhanden</p>
+            </div>
             <div class="content">
                 <h3>{{ product.title }}</h3>
                 <div class="short-description">
@@ -103,12 +105,20 @@ export default {
 }
 
 .no-image {
-    height: 180px;
+    padding-bottom: 60%;
+    position: relative;
     width: 100%;
     background-size: contain;
     background-position: center center;
     background-repeat: no-repeat;
     // background-image: url('./../../assets/images/no-image.png');
+    > p {
+        position: absolute;
+        text-align: center;
+        width: 100%;
+        top: 50%;
+        transform: translateY(-50%);
+    }
 }
 
 .content {

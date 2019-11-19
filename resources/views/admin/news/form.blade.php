@@ -29,4 +29,9 @@
         'note' => 'Hochladen von z.B. eines PDFs.'
     ])
 
+    @formField('input', [
+        'name' => 'file_name',
+        'label' => 'Dateiname'
+    ])
+
 @stop

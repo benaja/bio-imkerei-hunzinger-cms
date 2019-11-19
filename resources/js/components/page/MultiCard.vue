@@ -1,11 +1,11 @@
 <template>
     <div class="card-container" :style="containerStyle">
         <template v-for="(card, index) of cards">
-            <div class="text" :key="'t' + card.id" :style="cardStyle(index)">
+            <div class="text" :key="'t' + card.id" :style="card.style ? card.style.text : ''">
                 <h2>{{card.content.title}}</h2>
                 <div v-html="card.content.text"></div>
             </div>
-            <div class="slider" :key="'i' + card.id" :style="cardStyle(index, 1)">
+            <div class="slider" :key="'i' + card.id" :style="card.style ? card.style.image : ''">
                 <div uk-slider="clsActivated: uk-transition-active; center: true">
                     <div class="uk-position-relative uk-visible-toggle uk-light" tabindex="-1">
                         <ul class="uk-slider-items uk-child-width-1-1 uk-child-width-1-1@m">
@@ -45,38 +45,76 @@ export default {
             type: Array,
             required: true
         },
-        rows: {
+        columns: {
             type: Number,
             required: true
         }
     },
-    computed: {
-        containerStyle() {
-            let gridTemplateColumns = "";
-            for (let i = 0; i < this.rows; i++) {
-                gridTemplateColumns += ` ${100 / this.rows}%`;
+    data() {
+        return {
+            containerStyle: {
+                gridTemplateColumns: null,
+                gridTemplateRows: null
             }
-
-            let gridTemplateRows = "";
-            for (let i = 0; i < this.cards.length; i++) {
-                gridTemplateRows += " auto";
-            }
-            return {
-                gridTemplateColumns,
-                gridTemplateRows
-            };
-        }
+        };
     },
+    mounted() {
+        this.setStyle();
+        window.addEventListener("resize", () => {
+            this.setStyle();
+        });
+    },
+    computed: {},
     methods: {
+        isMobile() {
+            return window.innerWidth < 800;
+        },
+        setStyle() {
+            for (let i = 0; i < this.cards.length; i++) {
+                this.cards[i].style = {
+                    text: this.cardStyle(i, 0),
+                    image: this.cardStyle(i, 1)
+                };
+            }
+            this.containerStyle = this.getContainerStyle();
+        },
         cardStyle(index, addToRow = 0) {
-            let gridColumn = (index % 2) + 1;
-            let gridRow =
-                this.cards.length / 2 + (index - (index % 2)) + addToRow;
+            let gridColumn, gridRow;
+            if (this.isMobile()) {
+                gridColumn = 1;
+                gridRow = (index + 1) * 2 - 1 + addToRow;
+            } else {
+                gridColumn = (index % this.columns) + 1;
+                gridRow =
+                    ((index - (index % this.columns)) / this.columns + 1) * 2 +
+                    addToRow;
+            }
             return {
                 gridColumnStart: gridColumn,
                 gridColumnEnd: gridColumn,
                 gridRowStart: gridRow,
                 gridRowEnd: gridRow
+            };
+        },
+        getContainerStyle() {
+            let gridTemplateColumns = "";
+            if (this.isMobile()) {
+                gridTemplateColumns = "100%";
+            } else {
+                for (let i = 0; i < this.columns; i++) {
+                    gridTemplateColumns += ` ${100 / this.columns}%`;
+                }
+            }
+
+            let gridTemplateRows = "";
+            let rows = Math.ceil(this.cards.length / this.columns);
+            for (let i = 0; i < rows * 2; i++) {
+                gridTemplateRows += " auto";
+                if (this.isMobile()) gridTemplateRows += " auto";
+            }
+            return {
+                gridTemplateColumns,
+                gridTemplateRows
             };
         }
     }

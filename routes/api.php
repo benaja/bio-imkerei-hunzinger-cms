@@ -24,6 +24,9 @@ Route::get('buy-information', 'MoreContentController@buyInformation');
 Route::get('gallery', 'MoreContentController@gallery');
 Route::get('news', 'MoreContentController@news');
 Route::get('about-us', 'MoreContentController@aboutUs');
+Route::get('project', 'MoreContentController@project');
+Route::get('contact', 'MoreContentController@contact');
+Route::get('footer', 'MoreContentController@footer');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

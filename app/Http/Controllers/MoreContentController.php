@@ -25,16 +25,41 @@ class MoreContentController extends Controller
 
         foreach ($news as &$article) {
             $article->image = $article->image('cover', 'default');
+            $article->file = $article->file('single_file');
         }
         return $news;
     }
 
     public function aboutUs()
     {
-        $aboutUsPage = Page::byName('about_us');
-        $cards = Block::where('blockable_id', $aboutUsPage->id)->get();
+        return $this->getCardsOfPage('about_us');
+    }
+
+    public function project()
+    {
+        return $this->getCardsOfPage('project');
+    }
+
+    public function contact()
+    {
+        return Page::byName('contact');
+    }
+
+    public function footer()
+    {
+        return Page::byName('footer');
+    }
+
+    private function getCardsOfPage($pageName)
+    {
+        $page = Page::byName($pageName);
+        $cards = Block::where('blockable_id', $page->id)->get();
         foreach ($cards as &$card) {
-            $card->images = $card->images('slideshow', 'desktop');
+            if ($card->type === 'image_gallery') {
+                $card->images = $card->images('cover', 'desktop');
+            } else {
+                $card->images = $card->images('slideshow', 'desktop');
+            }
         }
         return $cards;
     }

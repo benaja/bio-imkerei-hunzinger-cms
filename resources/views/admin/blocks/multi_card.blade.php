@@ -1,5 +1,5 @@
 @formField('input', [
-  'name' => 'rows',
+  'name' => 'columns',
   'label' => 'Anzahl Spalten',
   'type' => 'number'
 ])

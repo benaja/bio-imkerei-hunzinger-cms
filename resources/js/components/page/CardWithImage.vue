@@ -120,4 +120,24 @@ h2 {
         }
     }
 }
+
+@media only screen and (max-width: 800px) {
+    .card {
+        width: 80%;
+
+        .small {
+            width: 60%;
+        }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    .card {
+        width: 100%;
+
+        .small {
+            width: 80%;
+        }
+    }
+}
 </style>

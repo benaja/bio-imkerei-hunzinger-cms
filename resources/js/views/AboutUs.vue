@@ -1,20 +1,18 @@
 <template>
-    <div>
-        <div class="uk-container">
-            <h1>Über Uns</h1>
-            <div class="content">
-                <template v-for="card of content">
-                    <card-with-image
-                        v-if="card.type === 'card_with_image' || card.type === 'card_with_video'"
-                        :card="card"
-                    ></card-with-image>
-                    <multi-card
-                        v-if="card.type === 'multi_card'"
-                        :cards="card.subCards"
-                        :rows="parseInt(card.content.rows)"
-                    ></multi-card>
-                </template>
-            </div>
+    <div class="uk-container">
+        <h1>Über Uns</h1>
+        <div class="content">
+            <template v-for="card of content">
+                <card-with-image
+                    v-if="card.type === 'card_with_image' || card.type === 'card_with_video'"
+                    :card="card"
+                ></card-with-image>
+                <multi-card
+                    v-if="card.type === 'multi_card'"
+                    :cards="card.subCards"
+                    :columns="parseInt(card.content.columns)"
+                ></multi-card>
+            </template>
         </div>
     </div>
 </template>

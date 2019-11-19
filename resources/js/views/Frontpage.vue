@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div uk-parallax="bgy: -200" class="background-image">
+        <div uk-parallax="bgy: 200" class="background-image">
             <div class="darken-background">
                 <img
                     class="large-logo"
@@ -30,18 +30,16 @@
                     <multi-card
                         v-if="card.type === 'multi_card'"
                         :cards="card.subCards"
-                        :rows="parseInt(card.content.rows)"
+                        :columns="parseInt(card.content.columns)"
                     ></multi-card>
                 </template>
             </div>
         </div>
-        <page-footer></page-footer>
     </div>
 </template>
 
 <script>
 import ProductPreview from "@/js/components/products/ProductPreview";
-import PageFooter from "@/js/components/PageFooter";
 import NavigationBar from "@/js/components/NavigationBar";
 import CardWithImage from "@/js/components/page/CardWithImage";
 import MultiCard from "@/js/components/page/MultiCard";
@@ -50,7 +48,6 @@ export default {
     name: "Frontpage",
     components: {
         ProductPreview,
-        PageFooter,
         NavigationBar,
         CardWithImage,
         MultiCard
@@ -71,16 +68,16 @@ export default {
         window.onscroll = this.onScroll;
     },
     methods: {
-        onScroll() {
-            if (
-                document.body.scrollTop > 60 ||
-                document.documentElement.scrollTop > 60
-            ) {
-                this.navbarFixed = true;
-            } else {
-                this.navbarFixed = false;
-            }
-        }
+        // onScroll() {
+        //     if (
+        //         document.body.scrollTop > 60 ||
+        //         document.documentElement.scrollTop > 60
+        //     ) {
+        //         this.navbarFixed = true;
+        //     } else {
+        //         this.navbarFixed = false;
+        //     }
+        // }
     }
 };
 </script>

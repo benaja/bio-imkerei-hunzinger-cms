@@ -60,6 +60,11 @@ class PageController extends ModuleController
         return $this->getView($repository, 'gallery', 'Wähle alle Bilder aus, welche in der Gallerie angezeigt werden sollen.');
     }
 
+    public function footer(PageRepository $repository)
+    {
+        return $this->getView($repository, 'footer', 'Footer');
+    }
+
     private function getView($repository, $pageName, $pageNameGerman)
     {
         $page = $repository->byName($pageName);

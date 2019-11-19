@@ -78,6 +78,10 @@ export default {
 
 <style lang="scss" scoped>
 @import "~@/sass/_variables.scss";
+h1 {
+    margin-top: 0;
+}
+
 .uk-container {
     padding-top: 130px;
     min-height: calc(100vh - 500px);

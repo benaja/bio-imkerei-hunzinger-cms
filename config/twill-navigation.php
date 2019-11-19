@@ -5,13 +5,13 @@ return [
         'title' => 'Produkte',
         'module' => true,
     ],
-    'pages' => [
-        'title' => 'Seiten',
-        'module' => true,
-    ],
     'news' => [
         'title' => 'News',
         'module' => true
+    ],
+    'contact' => [
+        'title' => 'Kontakt',
+        'route' => 'admin.contact',
     ],
     'about' => [
         'title' => 'Über Uns',
@@ -20,10 +20,6 @@ return [
             'about_us' => [
                 'title' => 'Über Uns',
                 'route' => 'admin.about.about_us',
-            ],
-            'contact' => [
-                'title' => 'Kontakt',
-                'route' => 'admin.about.contact',
             ],
             'project' => [
                 'title' => 'Projekt',
@@ -56,6 +52,10 @@ return [
             'buy_information' => [
                 'title' => 'Kauf Informationen',
                 'route' => 'admin.more_content.buy_information'
+            ],
+            'footer' => [
+                'title' => 'Footer',
+                'route' => 'admin.more_content.footer'
             ]
         ]
     ]
