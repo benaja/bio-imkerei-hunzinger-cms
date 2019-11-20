@@ -59,7 +59,10 @@ export default {
         };
     },
     mounted() {
-        this.setStyle();
+        // wait on next tick, because else isMobile is always false
+        this.$nextTick(() => {
+            this.setStyle();
+        });
         window.addEventListener("resize", () => {
             this.setStyle();
         });
@@ -151,6 +154,16 @@ h2 {
     > div {
         background-size: cover;
         background-position: center center;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .text {
+        margin: 0;
+    }
+
+    .slider {
+        margin: 0 0 20px 0;
     }
 }
 </style>

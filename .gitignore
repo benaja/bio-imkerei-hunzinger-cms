@@ -6,6 +6,7 @@ public/assets/admin
 public/mix-manifest.json
 public/hot
 pullic/.DS_Store
+public/js/app.js
 /vendor
 .env
 .env.backup

@@ -219,6 +219,10 @@ export default {
         margin-left: 10px;
     }
 
+    .sticky .uk-navbar-sticky .logo-desktop {
+        display: none;
+    }
+
     .menu-icon {
         display: block;
     }
