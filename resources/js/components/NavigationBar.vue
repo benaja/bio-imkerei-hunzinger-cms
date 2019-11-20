@@ -195,6 +195,7 @@ export default {
     display: none;
 }
 
+.sticky .uk-navbar-sticky .logo-mobile,
 .logo-mobile {
     display: none;
 }
@@ -244,6 +245,7 @@ export default {
         display: none;
     }
 
+    .sticky .uk-navbar-sticky .logo-mobile,
     .logo-mobile {
         display: inherit;
 
