@@ -83,9 +83,8 @@ h1 {
 }
 
 .uk-container {
-    padding-top: 130px;
+    padding-top: 100px;
     min-height: calc(100vh - 500px);
-    padding-bottom: 100px;
 }
 
 .product-container {
@@ -134,6 +133,35 @@ h1 {
         // width: 120px;
         margin: 10px;
         text-transform: none;
+    }
+}
+
+@media only screen and (max-width: 800px) {
+    .uk-container {
+        padding-top: 20px;
+    }
+
+    .product-container {
+        flex-wrap: wrap;
+        > div {
+            width: 100%;
+        }
+    }
+
+    .image {
+        padding-right: 0;
+    }
+
+    .content {
+        padding-left: 0;
+    }
+
+    .text {
+        padding: 0;
+    }
+
+    h1 {
+        margin-top: 20px;
     }
 }
 </style>

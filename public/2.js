@@ -112,7 +112,6 @@ __webpack_require__.r(__webpack_exports__);
   mounted: function mounted() {
     var _this = this;
 
-    console.log("test");
     this.axios.get("/project").then(function (response) {
       _this.content = response.data;
     });
@@ -171,7 +170,7 @@ exports = module.exports = __webpack_require__(/*! ../../../node_modules/css-loa
 
 
 // module
-exports.push([module.i, ".ql-video {\n  float: right;\n  width: 100%;\n  height: 600px;\n}", ""]);
+exports.push([module.i, ".ql-video {\n  float: right;\n  width: 100%;\n  height: 600px;\n}\n.ql-align-justify {\n  text-align: left;\n}", ""]);
 
 // exports
 

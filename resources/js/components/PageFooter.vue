@@ -8,39 +8,30 @@
                     <p>
                         <strong>Newsletter Anmeldung</strong>
                     </p>
-                    <form class="uk-form-stacked">
+                    <form class="uk-form-stacked" ref="form">
                         <div class="uk-margin">
-                            <!-- <label class="uk-form-label" for="form-stacked-text">Vorname</label> -->
-                            <div class="uk-form-controls">
-                                <input
-                                    class="uk-input"
-                                    id="form-stacked-text"
-                                    type="text"
-                                    placeholder="Vorname"
-                                />
-                            </div>
+                            <text-input
+                                v-model="newsletter.firstname"
+                                placeholder="Vorname"
+                                :rules="[rules.required]"
+                            ></text-input>
                         </div>
                         <div class="uk-margin">
-                            <div class="uk-form-controls">
-                                <input
-                                    class="uk-input"
-                                    id="form-stacked-text"
-                                    type="text"
-                                    placeholder="Nachname"
-                                />
-                            </div>
+                            <text-input
+                                v-model="newsletter.lastname"
+                                placeholder="Nachname"
+                                :rules="[rules.required]"
+                            ></text-input>
                         </div>
                         <div class="uk-margin">
-                            <div class="uk-form-controls">
-                                <input
-                                    class="uk-input"
-                                    id="form-stacked-text"
-                                    type="email"
-                                    placeholder="Email"
-                                />
-                            </div>
+                            <text-input
+                                v-model="newsletter.email"
+                                placeholder="Email"
+                                tpye="email"
+                                :rules="[rules.required, rules.email]"
+                            ></text-input>
                         </div>
-                        <button class="uk-button uk-button-secondary">Anmelden</button>
+                        <button class="uk-button uk-button-secondary" @click="subscribe">Anmelden</button>
                     </form>
                 </div>
                 <div class="content content-right">
@@ -62,16 +53,41 @@
                 </div>
             </div>
         </div>
+        <popup-modal
+            v-model="modal.isOpen"
+            :title="modal.title"
+            :text="modal.text"
+            :type="modal.type"
+        ></popup-modal>
     </div>
 </template>
 
 <script>
+import TextInput from "@/js/components/form/TextInput";
+import PopupModal from "@/js/components/PopupModal";
+
 export default {
     name: "PageFooter",
+    components: {
+        TextInput,
+        PopupModal
+    },
     data() {
         return {
             content: {
                 values: {}
+            },
+            rules: {
+                required: v => !!v || "Dieses Feld ist erforderlich",
+                email: value => {
+                    const pattern = /^(([^<>()[\]\\.,;:\s@"]+(\.[^<>()[\]\\.,;:\s@"]+)*)|(".+"))@((\[[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}\.[0-9]{1,3}])|(([a-zA-Z\-0-9]+\.)+[a-zA-Z]{2,}))$/;
+                    return pattern.test(value) || "Ungültige Email";
+                }
+            },
+            newsletter: {},
+            modal: {
+                title: "Erfolgreich gespeichert",
+                text: "fdfdsf"
             }
         };
     },
@@ -79,6 +95,62 @@ export default {
         this.axios
             .get("/footer")
             .then(response => (this.content = response.data));
+    },
+    methods: {
+        subscribe(event) {
+            event.preventDefault();
+            let allValid = true;
+            for (let i = 0; i < this.$children.length; i++) {
+                if (
+                    this.$children[i].validate &&
+                    this.$children[i].validate() !== true
+                ) {
+                    allValid = false;
+                }
+            }
+            if (allValid) {
+                this.axios
+                    .post("/newsletter", this.newsletter)
+                    .then(() => {
+                        this.newsletter = {};
+                        this.modal = {
+                            isOpen: true,
+                            title: "Erfolgreich Angemeldet",
+                            text:
+                                "Sie haben sich erfolgreich für den Newsletter angemeldet."
+                        };
+                    })
+                    .catch(error => {
+                        if (
+                            error.response &&
+                            error.response.data.includes("email already exists")
+                        ) {
+                            this.modal = {
+                                isOpen: true,
+                                title: "Email exisitert bereits",
+                                text:
+                                    "Sie haben sich bereits für den Newsletter angemeldet.",
+                                type: "error"
+                            };
+                        } else {
+                            this.modal = {
+                                isOpen: true,
+                                title: "Unbekannter Fehler",
+                                text:
+                                    "Es ist ein unbekannter Fehler aufgetreten. Versuchen Sie es später erneut, oder kontaktieren Sie uns.",
+                                type: "error"
+                            };
+                        }
+                    });
+            }
+            // let inputs = this.$refs.form.getElementsByClassName(
+            //     "uk-form-controls"
+            // );
+            // for (let i = 0; i < inputs.length; i++) {
+            //     console.log(inputs[i]);
+            //     console.log(inputs[i].validate());
+            // }
+        }
     }
 };
 </script>
@@ -105,7 +177,6 @@ export default {
 
 .footer-background {
     background-color: #e89602;
-    height: 500px;
     width: 100%;
     margin-top: 1px;
 }
@@ -114,31 +185,16 @@ export default {
     padding: 200px 100px 0 100px;
     color: white;
     display: flex;
+    flex-wrap: wrap;
 
     > div {
         width: 33%;
+        margin-bottom: 50px;
     }
 }
 
 .newsletter {
     border-radius: 20px;
-}
-
-.uk-input {
-    background-color: transparent;
-    color: white;
-
-    &::placeholder {
-        color: rgb(255, 255, 255);
-    }
-
-    &:focus {
-        border-color: $blue;
-    }
-}
-
-.uk-form-label {
-    color: white;
 }
 
 .uk-button {
@@ -156,15 +212,33 @@ export default {
     margin-left: 30px;
 }
 
-@media only screen and (max-width: 100px) {
-    .footer-cutter {
-        transform: rotate(10deg);
+@media only screen and (max-width: 1000px) {
+    .footer-content {
+        padding: 200px 20px 0 20px;
+    }
+}
+
+@media only screen and (max-width: 700px) {
+    .footer-content {
+        > div {
+            width: 100%;
+        }
+    }
+
+    .content-right {
+        text-align: left;
     }
 }
 
 @media only screen and (max-width: 600px) {
     .footer-cutter {
-        transform: rotate(15deg);
+        transform: rotate(10deg);
+    }
+}
+
+@media only screen and (max-width: 400px) {
+    .footer-cutter {
+        transform: rotate(10deg);
     }
 }
 </style>

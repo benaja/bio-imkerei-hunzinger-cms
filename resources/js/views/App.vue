@@ -7,20 +7,13 @@
 </template>
 
 <script>
-import UIkit from "uikit";
-import Icons from "uikit/dist/js/uikit-icons";
 import PageFooter from "@/js/components/PageFooter";
 import NavigationBar from "@/js/components/NavigationBar";
-
-UIkit.use(Icons);
 
 export default {
     components: {
         PageFooter,
         NavigationBar
-    },
-    mounted() {
-        console.log(this.$route);
     }
 };
 </script>
@@ -71,6 +64,21 @@ $button-secondary-background: #0267e8;
     }
 }
 
+.uk-button-default {
+    border-color: $yellow;
+    color: $yellow;
+
+    &:hover {
+        border-color: darken($yellow, 10%);
+        color: darken($yellow, 10%);
+    }
+
+    &:focus,
+    &::selection {
+        border-color: $yellow;
+    }
+}
+
 .uk-button-outline-primary {
     background-color: transparent;
     border: 1px solid $button-primary-background;
@@ -106,6 +114,13 @@ a {
                 color: white;
             }
         }
+    }
+}
+
+@media only screen and (max-width: 600px) {
+    h1 {
+        margin-top: 20px;
+        margin-bottom: 20px;
     }
 }
 </style>

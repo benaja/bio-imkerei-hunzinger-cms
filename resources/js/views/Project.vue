@@ -19,7 +19,6 @@ export default {
         };
     },
     mounted() {
-        console.log("test");
         this.axios.get("/project").then(response => {
             this.content = response.data;
         });
@@ -32,5 +31,9 @@ export default {
     float: right;
     width: 100%;
     height: 600px;
+}
+
+.ql-align-justify {
+    text-align: left;
 }
 </style>

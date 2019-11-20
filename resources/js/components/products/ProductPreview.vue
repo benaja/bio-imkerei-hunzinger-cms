@@ -228,8 +228,13 @@ h3 {
         width: 100%;
     }
 
-    .product-preview:hover {
-        transform: scale(1);
+    .product-preview {
+        width: 100%;
+        margin: 0;
+
+        &:hover {
+            transform: scale(1);
+        }
     }
 
     .hover-container {

@@ -66,18 +66,6 @@ export default {
         });
 
         window.onscroll = this.onScroll;
-    },
-    methods: {
-        // onScroll() {
-        //     if (
-        //         document.body.scrollTop > 60 ||
-        //         document.documentElement.scrollTop > 60
-        //     ) {
-        //         this.navbarFixed = true;
-        //     } else {
-        //         this.navbarFixed = false;
-        //     }
-        // }
     }
 };
 </script>
@@ -143,10 +131,10 @@ h2 {
     // transform: scale(1.025);
 }
 
-@media only screen and (max-width: 1100px) {
-    // .products {
-    //   transform: scale(1.05);
-    // }
+@media only screen and (max-width: 800px) {
+    .large-logo {
+        right: 0;
+    }
 }
 
 @media only screen and (max-width: 600px) {

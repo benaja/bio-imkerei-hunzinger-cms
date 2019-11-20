@@ -27,6 +27,7 @@ Route::get('about-us', 'MoreContentController@aboutUs');
 Route::get('project', 'MoreContentController@project');
 Route::get('contact', 'MoreContentController@contact');
 Route::get('footer', 'MoreContentController@footer');
+Route::post('newsletter', 'SinglePageController@registerForNewsletter');
 
 Route::middleware('auth:api')->get('/user', function (Request $request) {
     return $request->user();

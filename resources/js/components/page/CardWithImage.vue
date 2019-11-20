@@ -125,7 +125,7 @@ h2 {
     .card {
         width: 80%;
 
-        .small {
+        &.small {
             width: 60%;
         }
     }
@@ -135,7 +135,11 @@ h2 {
     .card {
         width: 100%;
 
-        .small {
+        &.large {
+            width: 100%;
+        }
+
+        &.small {
             width: 80%;
         }
     }

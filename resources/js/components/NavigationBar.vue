@@ -13,9 +13,13 @@
                         uk-toggle
                     ></a>
                 </div>
-                <a class="uk-navbar-item uk-logo" href="/">
+                <a class="uk-navbar-item uk-logo logo-desktop" href="/">
                     <img class="logo" src="/images/logo_portrait.png" />
                     Bio-Imkerei Hunzinger
+                </a>
+                <a class="uk-navbar-item uk-logo logo-mobile" href="/">
+                    <p>Bio-Imkerei Hunzinger</p>
+                    <img class="logo" src="/images/logo_portrait.png" />
                 </a>
 
                 <div class="uk-navbar-right">
@@ -136,6 +140,7 @@ export default {
 
     .uk-navbar-sticky {
         background-color: white;
+        box-shadow: rgba(128, 128, 128, 0.623) 0 0 20px;
 
         .uk-navbar-nav > li > a,
         .uk-navbar-item,
@@ -170,6 +175,11 @@ export default {
     .uk-logo {
         display: none;
     }
+
+    .uk-navbar-toggle {
+        min-height: 70px;
+        color: white;
+    }
 }
 
 .uk-navbar-nav > li.uk-active > a {
@@ -185,10 +195,18 @@ export default {
     display: none;
 }
 
+.logo-mobile {
+    display: none;
+}
+
 .uk-navbar-toggle {
     color: black;
     padding-left: 20px;
     padding-right: 20px;
+}
+
+.uk-nav-default {
+    font-size: 1em;
 }
 
 @media only screen and (max-width: 800px) {
@@ -197,6 +215,8 @@ export default {
     }
     .logo {
         display: block;
+        margin-right: 0;
+        margin-left: 10px;
     }
 
     .menu-icon {
@@ -215,12 +235,25 @@ export default {
         float: right;
         padding-left: 10px;
     }
+
+    .logo-desktop {
+        display: none;
+    }
+
+    .logo-mobile {
+        display: inherit;
+
+        p {
+            margin-top: 18px;
+        }
+    }
 }
 
 @media only screen and (max-width: 400px) {
     .uk-logo {
         float: right;
         padding-right: 10px;
+        font-size: 1.3em;
     }
 }
 </style>

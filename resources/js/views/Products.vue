@@ -14,13 +14,20 @@
                             <option value="3">Teuerste</option>
                         </select>
                     </div>
-                    <h4>Filter</h4>
-                    <div
-                        v-for="(filter, index) in filters"
-                        :class="['filter', {selected: filter.selected}]"
-                        @click="changeFilter(index)"
-                    >
-                        <p>{{filter.text}}</p>
+                    <div class="filter-desktop">
+                        <h4>Filter</h4>
+                        <div
+                            v-for="(filter, index) in filters"
+                            :class="['filter', {selected: filter.selected}]"
+                            @click="changeFilter(index)"
+                        >
+                            <p>{{filter.text}}</p>
+                        </div>
+                    </div>
+                    <div class="filter-mobile">
+                        <button class="uk-button uk-button-default uk-width-1-1" type="button">
+                            <span uk-icon="settings" class="filter-icon"></span>Filter
+                        </button>
                     </div>
                 </div>
                 <div class="products">
@@ -139,17 +146,21 @@ h4 {
     margin-bottom: 0;
 }
 
+.filter-icon {
+    margin-right: 10px;
+}
+
 .products-grid {
     display: grid;
     grid-template-columns: 200px auto;
     grid-template-rows: auto auto;
+    grid-template-areas:
+        "filter products"
+        "filter products";
 }
 
 .filter {
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start: 1;
-    grid-column-end: 1;
+    grid-area: filter;
     margin: 5px 0;
     padding: 3px 6px;
     cursor: pointer;
@@ -163,16 +174,17 @@ h4 {
     }
 }
 
+.filter-mobile {
+    display: none;
+}
+
 .uk-select {
     background-color: transparent;
     border-color: $yellow;
 }
 
 .products {
-    grid-row-start: 1;
-    grid-row-end: 2;
-    grid-column-start: 2;
-    grid-column-end: 2;
+    grid-area: products;
     display: flex;
     flex-wrap: wrap;
     min-height: 300px;
@@ -187,5 +199,21 @@ h4 {
     float: left;
     width: 150px;
     font-weight: bold;
+}
+
+@media only screen and (max-width: 800px) {
+    .products-grid {
+        grid-template-areas:
+            "filter filter"
+            "products products";
+    }
+
+    .filter {
+        padding: 0;
+    }
+
+    .filter-desktop {
+        display: none;
+    }
 }
 </style>
