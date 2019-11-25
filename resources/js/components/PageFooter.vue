@@ -170,7 +170,7 @@ export default {
     height: 160px;
     position: absolute;
     background-color: $background-color;
-    transform: rotate(5deg);
+    transform: rotate(2deg);
     top: -50px;
     left: -50px;
 }
@@ -210,6 +210,12 @@ export default {
 .social-media-icon {
     width: 50px;
     margin-left: 30px;
+}
+
+@media only screen and (max-width: 1800px) {
+    .footer-cutter {
+        transform: rotate(5deg);
+    }
 }
 
 @media only screen and (max-width: 1000px) {

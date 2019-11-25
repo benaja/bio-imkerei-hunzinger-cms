@@ -21,7 +21,7 @@ class ProductController extends Controller
             ->where(function ($query) {
                 $query->where('publish_start_date', '<=', (new \DateTime())->format('Y-m-d H:i:s'));
                 $query->orWhere('publish_start_date', null);
-            })->get();
+            })->orderBy('publish_start_date', 'desc')->get();
 
         foreach ($products as $product) {
             $product->images = $product->images('cover', 'default', ['w' => 300]);

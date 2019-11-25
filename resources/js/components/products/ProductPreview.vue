@@ -129,7 +129,7 @@ export default {
 h3 {
     margin: 10px 0 0 0;
     // line-height: 1.8rem;
-    font-size: 2.2rem;
+    font-size: 35px;
     max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;

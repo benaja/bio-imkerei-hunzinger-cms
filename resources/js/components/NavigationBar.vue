@@ -99,12 +99,17 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+$nav-bar-shadow: rgba(128, 128, 128, 0.4) 0 0 20px;
 .uk-navbar-right {
     margin-right: 10px;
 }
 
 .navigation-box-container {
     height: 80px;
+}
+
+.uk-navbar {
+    box-shadow: $nav-bar-shadow;
 }
 
 .uk-navbar-container {
@@ -133,6 +138,9 @@ export default {
 }
 
 .sticky {
+    .uk-navbar {
+        box-shadow: none;
+    }
     .uk-navbar-container {
         position: absolute;
         background-color: transparent;
@@ -140,7 +148,7 @@ export default {
 
     .uk-navbar-sticky {
         background-color: white;
-        box-shadow: rgba(128, 128, 128, 0.623) 0 0 20px;
+        box-shadow: $nav-bar-shadow;
 
         .uk-navbar-nav > li > a,
         .uk-navbar-item,

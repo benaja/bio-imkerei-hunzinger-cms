@@ -20,7 +20,7 @@ class FeatureController extends Controller
         $products = [];
         foreach ($featured as $featuredId) {
             $product = Product::with(['prices', 'slugs', 'medias'])->find($featuredId);
-            $product->image = $product->image('cover');
+            $product->images = $product->images('cover', 'default', ['w' => 300]);
             array_push($products, $product);
         }
 

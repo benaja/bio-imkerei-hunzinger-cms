@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div class="uk-container">
+        <div class="products-container">
             <h1>Produkte</h1>
             <div class="products-grid">
                 <div class="filter">
@@ -142,6 +142,12 @@ export default {
 
 <style lang="scss" scoped>
 @import "~@/sass/_variables.scss";
+.products-container {
+    width: 90%;
+    max-width: 1500px;
+    margin: 0 auto;
+}
+
 h4 {
     margin-bottom: 0;
 }
