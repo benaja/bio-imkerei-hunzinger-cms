@@ -56,7 +56,7 @@ class MoreContentController extends Controller
         $cards = Block::where('blockable_id', $page->id)->get();
         foreach ($cards as &$card) {
             if ($card->type === 'image_gallery') {
-                $card->images = $card->images('cover', 'desktop');
+                $card->images = $card->images('cover', 'default', 'landscape');
             } else {
                 $card->images = $card->images('slideshow', 'desktop');
             }

@@ -45,19 +45,8 @@ class Product extends Model implements Sortable
             'default' => [
                 [
                     'name' => 'landscape',
-                    'ratio' => 16 / 9,
                 ],
-                [
-                    'name' => 'portrait',
-                    'ratio' => 3 / 4,
-                ],
-            ],
-            'mobile' => [
-                [
-                    'name' => 'mobile',
-                    'ratio' => 1,
-                ],
-            ],
+            ]
         ],
     ];
 

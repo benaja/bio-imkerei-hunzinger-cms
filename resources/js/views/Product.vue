@@ -3,8 +3,8 @@
         <div class="uk-container">
             <div class="product-container">
                 <div class="image" uk-lightbox>
-                    <a v-if="product.medias" :href="'/img/' + product.medias[0].uuid">
-                        <img :src="'/img/' + product.medias[0].uuid" />
+                    <a v-if="product.images && product.images.length > 0" :href="product.images[0]">
+                        <img :src="product.images[0]" />
                     </a>
                 </div>
                 <div class="content">

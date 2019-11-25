@@ -21,7 +21,6 @@ class NewsRepository extends ModuleRepository
 
     public function getPublished()
     {
-        $quey = $this->model->newQuery();
         return $this->model->published()->visible();
     }
 }

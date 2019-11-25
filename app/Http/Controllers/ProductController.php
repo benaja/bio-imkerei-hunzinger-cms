@@ -10,18 +10,32 @@ class ProductController extends Controller
 {
     public function index()
     {
-        return Product::with(['prices' => function ($query) {
+        $products = Product::with(['prices' => function ($query) {
             $query->orderBy('amount');
-        }, 'slugs', 'medias', 'categories'])
+        }, 'slugs', 'categories'])
             ->where('published', true)
-            ->whereDate('publish_end_date', '>=', (new \DateTime())->format('Y-m-d H:i:s'))
-            ->orWhere('publish_end_date', null)->get();
+            ->where(function ($query) {
+                $query->where('publish_end_date', '>=', (new \DateTime())->format('Y-m-d H:i:s'));
+                $query->orWhere('publish_end_date', null);
+            })
+            ->where(function ($query) {
+                $query->where('publish_start_date', '<=', (new \DateTime())->format('Y-m-d H:i:s'));
+                $query->orWhere('publish_start_date', null);
+            })->get();
+
+        foreach ($products as $product) {
+            $product->images = $product->images('cover', 'default', ['w' => 300]);
+        }
+        return $products;
     }
 
     public function getBySlug(Request $request)
     {
-        return ProductSlug::with(['product.prices' => function ($query) {
+        $product = ProductSlug::with(['product.prices' => function ($query) {
             $query->orderBy('amount');
-        }, 'product.medias', 'product.categories'])->where('slug', $request->slug)->first()->product;
+        }, 'product.categories'])->where('slug', $request->slug)->first()->product;
+
+        $product->images = $product->images('cover', 'default', ['w' => 1000]);
+        return $product;
     }
 }

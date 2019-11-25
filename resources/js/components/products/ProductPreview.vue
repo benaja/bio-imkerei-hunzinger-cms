@@ -11,7 +11,7 @@
             <div
                 v-if="product.medias.length > 0"
                 class="image"
-                :style="{ backgroundImage: `url(/img/${product.medias[0].uuid})` }"
+                :style="{ backgroundImage: `url(${product.images[0]})` }"
             ></div>
             <div v-else class="no-image">
                 <p>Kein Bild vorhanden</p>

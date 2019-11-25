@@ -37,4 +37,9 @@ class ProductRepository extends ModuleRepository
 
         return $fields;
     }
+
+    public function getPublished()
+    {
+        return $this->model->published()->visible();
+    }
 }
