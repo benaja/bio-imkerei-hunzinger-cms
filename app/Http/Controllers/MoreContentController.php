@@ -21,7 +21,7 @@ class MoreContentController extends Controller
 
     public function news(NewsRepository $newsRepository)
     {
-        $news = $newsRepository->getPublished()->get();
+        $news = $newsRepository->getPublished()->orderBy('publish_start_date', 'desc')->get();
 
         foreach ($news as &$article) {
             $article->image = $article->image('cover', 'default');
