@@ -91,7 +91,7 @@ export default {
     border-radius: 5px;
     cursor: pointer;
     transition-duration: 0.3s;
-    // box-shadow: 10px 10px 10px lightgray;
+    box-shadow: 10px 10px 10px rgba(194, 194, 194, 0.158);
 }
 
 .image {
@@ -129,7 +129,7 @@ export default {
 h3 {
     margin: 10px 0 0 0;
     // line-height: 1.8rem;
-    font-size: 35px;
+    font-size: 30px;
     max-width: 100%;
     overflow: hidden;
     text-overflow: ellipsis;
@@ -141,7 +141,7 @@ h3 {
     p {
         position: relative;
         color: #e89602;
-        font-size: 1.3rem;
+        font-size: 18px;
         margin: 0 10px;
         vertical-align: middle;
         top: 50%;

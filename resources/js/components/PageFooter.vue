@@ -3,7 +3,7 @@
         <div class="footer-cutter"></div>
         <div class="footer-background">
             <div class="footer-content">
-                <div class="content" v-html="content.values.content_left"></div>
+                <div class="site-content" v-html="content.values.content_left"></div>
                 <div class="newsletter">
                     <p>
                         <strong>Newsletter Anmeldung</strong>
@@ -34,7 +34,7 @@
                         <button class="uk-button uk-button-secondary" @click="subscribe">Anmelden</button>
                     </form>
                 </div>
-                <div class="content content-right">
+                <div class="site-content content-right">
                     <div v-html="content.values.content_right"></div>
                     <a href="https://www.facebook.com/bioimkereihunzinger/">
                         <img
@@ -250,7 +250,7 @@ export default {
 </style>
 
 <style lang="scss">
-.content {
+.site-content {
     a {
         color: white;
         text-decoration: underline;

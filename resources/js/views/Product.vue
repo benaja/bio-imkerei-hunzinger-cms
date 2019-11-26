@@ -1,9 +1,12 @@
 <template>
     <div>
         <div class="uk-container">
-            <div class="product-container">
-                <div class="image" uk-lightbox>
-                    <a v-if="product.images && product.images.length > 0" :href="product.images[0]">
+            <div
+                class="product-container"
+                :class="{'center-content': !product.images || product.images.length === 0}"
+            >
+                <div v-if="product.images && product.images.length > 0" class="image" uk-lightbox>
+                    <a :href="product.images[0]">
                         <img :src="product.images[0]" />
                     </a>
                 </div>
@@ -89,6 +92,10 @@ h1 {
 
 .product-container {
     display: flex;
+
+    &.center-content {
+        justify-content: center;
+    }
 
     > div {
         width: 50%;

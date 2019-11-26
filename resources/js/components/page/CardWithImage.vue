@@ -6,7 +6,9 @@
             <div class="media">
                 <div class="video" v-if="card.content.url">
                     <div>
-                        <iframe :src="card.content.url"></iframe>
+                        <iframe
+                            :src="`https://www.youtube.com/embed/${getYoutubeId(card.content.url)}`"
+                        ></iframe>
                     </div>
                 </div>
                 <!-- <img :src="'/img/' + medias[0].uuid" v-else /> -->
@@ -52,13 +54,12 @@ export default {
             default: false
         }
     },
-    computed: {
-        content() {
-            //   return JSON.parse(this.value);
+    methods: {
+        getYoutubeId(url) {
+            var regExp = /^.*((youtu.be\/)|(v\/)|(\/u\/\w\/)|(embed\/)|(watch\?))\??v?=?([^#\&\?]*).*/;
+            var match = url.match(regExp);
+            return match && match[7].length == 11 ? match[7] : false;
         }
-    },
-    mounted() {
-        console.log(this.card);
     }
 };
 </script>

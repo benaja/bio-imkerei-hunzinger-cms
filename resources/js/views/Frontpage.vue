@@ -22,7 +22,8 @@
                 ></ProductPreview>
             </div>
             <div class="content">
-                <template v-for="card of contentElements">
+                <custom-content :content="contentElements"></custom-content>
+                <!-- <template v-for="card of contentElements">
                     <card-with-image
                         v-if="card.type === 'card_with_image' || card.type === 'card_with_video'"
                         :card="card"
@@ -32,7 +33,7 @@
                         :cards="card.subCards"
                         :columns="parseInt(card.content.columns)"
                     ></multi-card>
-                </template>
+                </template>-->
             </div>
         </div>
     </div>
@@ -43,6 +44,7 @@ import ProductPreview from "@/js/components/products/ProductPreview";
 import NavigationBar from "@/js/components/NavigationBar";
 import CardWithImage from "@/js/components/page/CardWithImage";
 import MultiCard from "@/js/components/page/MultiCard";
+import CustomContent from "@/js/components/page/CustomContent";
 
 export default {
     name: "Frontpage",
@@ -50,7 +52,8 @@ export default {
         ProductPreview,
         NavigationBar,
         CardWithImage,
-        MultiCard
+        MultiCard,
+        CustomContent
     },
     data() {
         return {
