@@ -5,7 +5,11 @@
             <div uk-grid uk-lightbox="animation: slide">
                 <div v-for="image of images" class="image-container uk-width-1-4">
                     <div>
-                        <a class="uk-inline" :href="image.src" :data-caption="image.caption">
+                        <a
+                            class="uk-inline"
+                            :href="`${image.src}&w=1500&h=1500`"
+                            :data-caption="image.caption"
+                        >
                             <!-- <img :src="`${image.src}&w=400&h=150`" /> -->
                             <div
                                 class="image"

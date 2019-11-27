@@ -1,7 +1,7 @@
 <template>
     <div class="uk-container">
         <h1>Über Uns</h1>
-        <div class="content">
+        <div>
             <template v-for="card of content">
                 <card-with-image
                     v-if="card.type === 'card_with_image' || card.type === 'card_with_video'"

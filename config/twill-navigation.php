@@ -5,9 +5,9 @@ return [
         'title' => 'Produkte',
         'module' => true,
     ],
-    'news' => [
-        'title' => 'News',
-        'module' => true
+    'gallery' => [
+        'title' => 'Galerie',
+        'route' => 'admin.gallery'
     ],
     'contact' => [
         'title' => 'Kontakt',
@@ -24,12 +24,12 @@ return [
             'project' => [
                 'title' => 'Projekt',
                 'route' => 'admin.about.project',
-            ],
-            'gallery' => [
-                'title' => 'Galerie',
-                'route' => 'admin.about.gallery'
             ]
         ]
+    ],
+    'news' => [
+        'title' => 'News',
+        'module' => true
     ],
     'featured' => [
         'title' => 'Startseite',

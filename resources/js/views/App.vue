@@ -79,6 +79,19 @@ $button-secondary-background: #0267e8;
     }
 }
 
+.uk-button-link {
+    color: $yellow;
+
+    &:hover {
+        color: darken($yellow, 10%);
+    }
+
+    &:focus,
+    &::selection {
+        color: $yellow;
+    }
+}
+
 .uk-button-outline-primary {
     background-color: transparent;
     border: 1px solid $button-primary-background;

@@ -69,6 +69,28 @@ return [
             ],
         ],
         'crops' => [
+            'cardimages' => [
+                'landscape' => [
+                    [
+                        'name' => 'landscape',
+                        'ratio' => 4 / 3,
+                        'minValues' => [
+                            'width' => 100,
+                            'height' => 100,
+                        ],
+                    ],
+                ],
+                'portrait' => [
+                    [
+                        'name' => 'portrait',
+                        'ratio' => 3 / 4,
+                        'minValues' => [
+                            'width' => 100,
+                            'height' => 100,
+                        ],
+                    ],
+                ]
+            ],
             'slideshow' => [
                 'desktop' => [
                     [
