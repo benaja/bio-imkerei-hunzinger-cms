@@ -13,6 +13,9 @@
         </div>
         <div class="uk-container">
             <h2 class="products-header">Produkte</h2>
+            <p class="uk-text-center all-products">
+                <router-link tag="a" to="/produkte">Alle Produkte</router-link>
+            </p>
             <div class="products">
                 <ProductPreview
                     v-for="product of products"
@@ -112,7 +115,12 @@ h2 {
 }
 
 .products-header {
-    margin: 70px 0;
+    margin: 70px 0 20px 0;
+}
+
+.all-products {
+    font-size: 1.5rem;
+    margin-bottom: 30px;
 }
 
 .products {

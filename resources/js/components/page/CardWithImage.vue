@@ -1,5 +1,8 @@
 <template>
-    <div :class="['card', card.content.alignment, {'show-more': showMore}]" :style="cardStyle">
+    <div
+        :class="['card', card.content.alignment, card.content.orientation, {'show-more': showMore}]"
+        :style="cardStyle"
+    >
         <div class="card-content">
             <div>
                 <h2>{{card.content.title}}</h2>
