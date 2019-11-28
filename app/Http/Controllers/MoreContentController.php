@@ -58,7 +58,7 @@ class MoreContentController extends Controller
             if ($card->type === 'image_gallery') {
                 $card->images = $card->images('cover', 'default', 'landscape');
             } else if ($card->type === 'card_with_image') {
-                if ($card['content']['orientation'] === 'portrait') {
+                if (isset($card['content']['orientation']) && $card['content']['orientation'] === 'portrait') {
                     $card->images = $card->images('cardimages', 'portrait');
                 } else {
                     $card->images = $card->images('cardimages', 'landscape');
