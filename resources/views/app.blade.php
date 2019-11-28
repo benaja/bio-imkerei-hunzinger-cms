@@ -12,7 +12,7 @@
         <link rel="stylesheet" type="text/css" href="/css/uikit-rtl.min.css">
         <link rel="stylesheet" type="text/css" href="/css/uikit.min.css">
         <link rel="icon" href="/images/logo_portrait.png" />
-        <link href="{{ asset('css/app.css') }}"/>
+        <link href="{{ asset('css/app.css') }}?v={{time()}}"/>
         <!-- Primary Meta Tags -->
         <title>Bio-Imkerei Hunzinger | Schweizer Bienenhonig</title>
         <meta name="title" content="Bio Imkerei Hunzinger" />
@@ -61,6 +61,6 @@
     </head>
     <body>
         <div id="app"></div>
-        <script src="{{ asset('js/app.js') }}"></script>
+        <script src="{{ asset('/js/app.js') }}?v={{time()}}"></script>
     </body>
 </html>

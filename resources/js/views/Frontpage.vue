@@ -23,17 +23,6 @@
             </div>
             <div class="content">
                 <custom-content :content="contentElements"></custom-content>
-                <!-- <template v-for="card of contentElements">
-                    <card-with-image
-                        v-if="card.type === 'card_with_image' || card.type === 'card_with_video'"
-                        :card="card"
-                    ></card-with-image>
-                    <multi-card
-                        v-if="card.type === 'multi_card'"
-                        :cards="card.subCards"
-                        :columns="parseInt(card.content.columns)"
-                    ></multi-card>
-                </template>-->
             </div>
         </div>
     </div>

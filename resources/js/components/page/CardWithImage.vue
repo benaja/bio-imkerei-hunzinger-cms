@@ -151,26 +151,23 @@ h2 {
     }
 }
 
-@media only screen and (max-width: 800px) {
+@media only screen and (max-width: 1200px) {
     .card {
-        width: 80%;
+        flex-wrap: wrap;
 
-        &.small {
-            width: 60%;
-        }
-    }
-}
-
-@media only screen and (max-width: 600px) {
-    .card {
-        width: 100%;
-
-        &.large {
+        .card-content,
+        .media {
             width: 100%;
         }
 
-        &.small {
-            width: 80%;
+        &.left {
+            flex-wrap: wrap;
+        }
+
+        &.show-more {
+            .media {
+                width: 100%;
+            }
         }
     }
 }
