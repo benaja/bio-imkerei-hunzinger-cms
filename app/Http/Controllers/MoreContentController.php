@@ -16,8 +16,7 @@ class MoreContentController extends Controller
 
     public function gallery()
     {
-        // return Page::byName('gallery')->imagesAsArrays('gallery');
-
+        return Page::byName('gallery')->imagesAsArrays('gallery');
     }
 
     public function news(NewsRepository $newsRepository)
