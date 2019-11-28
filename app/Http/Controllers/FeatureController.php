@@ -27,14 +27,17 @@ class FeatureController extends Controller
         $frontPage = Page::getByPageName('frontpage_more_content');
         $cards = Block::where('blockable_id', $frontPage->id)->where('parent_id', null)->get();
 
-        foreach ($cards as $card) {
-            if ($card->type == 'card_with_image') {
-                $card->images = $card->images('slideshow', 'desktop');
-            } else if ($card->type == 'multi_card') {
-                $card->subCards = Block::where('parent_id', $card->id)->get();
-                foreach ($card->subCards as $subCard) {
-                    $subCard->images = $subCard->images('slideshow', 'desktop');
+        foreach ($cards as &$card) {
+            if ($card->type === 'image_gallery') {
+                $card->images = $card->images('cover', 'default', 'landscape');
+            } else if ($card->type === 'card_with_image') {
+                if (isset($card['content']['orientation']) && $card['content']['orientation'] === 'portrait') {
+                    $card->images = $card->images('cardimages', 'portrait');
+                } else {
+                    $card->images = $card->images('cardimages', 'landscape');
                 }
+            } else {
+                $card->images = $card->images('slideshow', 'desktop');
             }
         }
 
