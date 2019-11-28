@@ -28,6 +28,7 @@
                         </p>
                         <div class="price-buttons">
                             <div
+                                class="pice-names"
                                 uk-switcher="animation: uk-animation-fade; toggle: > *"
                                 v-if="product.prices.length > 1"
                             >
@@ -39,6 +40,7 @@
                                     :style="{width: 'calc(' + (100 / product.prices.length) + '%' + ' - 20px'}"
                                 >{{ price.name }}</button>
                             </div>
+                            <hr class="divider" />
                             <button
                                 class="uk-button uk-button-primary"
                                 type="button"
@@ -130,20 +132,42 @@ h1 {
 }
 
 .price-buttons {
-    // display: inline-block;
     > button {
         width: calc(100% - 20px);
         margin: 10px;
+        padding: 10px 1px;
+        line-height: 1.5em;
+    }
+
+    .pice-names {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
     }
 
     .price-button {
-        // width: 120px;
+        min-width: 100px;
         margin: 10px;
         text-transform: none;
+        padding: 10px 1px;
+        line-height: 1.5em;
+    }
+}
+
+.divider {
+    margin: 20px 10px;
+}
+
+@media only screen and (max-width: 1150px) {
+    .price-buttons .price-button {
+        min-width: calc(100% - 20px);
     }
 }
 
 @media only screen and (max-width: 800px) {
+    .price-buttons .price-button {
+        min-width: 100px;
+    }
     .uk-container {
         padding-top: 20px;
     }
@@ -169,6 +193,12 @@ h1 {
 
     h1 {
         margin-top: 20px;
+    }
+}
+
+@media only screen and (max-width: 520px) {
+    .price-buttons .price-button {
+        min-width: calc(100% - 20px);
     }
 }
 </style>
