@@ -30,7 +30,6 @@ export default {
     mounted() {
         this.axios.get("/gallery").then(response => {
             this.images = response.data;
-            console.log(this.images);
         });
     }
 };
@@ -45,7 +44,7 @@ export default {
 .image-container {
     text-align: center;
     padding: 10px;
-    width: calc(100% / 6);
+    width: calc(16.66%);
 
     > div {
         position: relative;

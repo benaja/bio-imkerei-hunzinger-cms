@@ -1,5 +1,5 @@
 <template>
-    <div class="product-preview-container" :class="{'ajust-with': !hoverSlider}">
+    <div class="product-preview-container" :class="{ 'ajust-with': !hoverSlider }">
         <router-link
             :to="'/produkte/' + product.slugs[0].slug"
             tag="div"
@@ -11,7 +11,8 @@
             <div
                 v-if="product.medias.length > 0"
                 class="image"
-                :style="{ backgroundImage: `url(${product.images[0]})` }"
+                :style="{ backgroundImage: `url(${product.images[0]})`}"
+                :class="{portrait: product.medias[0].height > product.medias[0].width}"
             ></div>
             <div v-else class="no-image">
                 <p>Kein Bild vorhanden</p>
@@ -23,7 +24,8 @@
                 </div>
                 <div v-if="product.prices.length > 0" class="price-information">
                     <p class="price">ab {{ product.prices[0].amount }}.-</p>
-                    <p class="subdescription">( zzgl. Versand )</p>
+                    <p v-if="product.available" class="subdescription">( zzgl. Versand )</p>
+                    <p v-else class="not-available">Zurzeit nicht verfügbar</p>
                 </div>
             </div>
             <div class="hover-container" v-if="hoverSlider">
@@ -77,6 +79,8 @@ export default {
 </script>
 
 <style lang="scss" scoped>
+@import "~@/sass/_variables.scss";
+
 .product-preview-container {
     width: 25%;
     margin-bottom: 30px;
@@ -98,10 +102,16 @@ export default {
     width: 100%;
     padding-bottom: 60%;
     background-size: cover;
-    background-position: top center;
+    background-position: center center;
     background-repeat: no-repeat;
     border-top-right-radius: 5px;
     border-top-left-radius: 5px;
+
+    &.portrait {
+        width: 40%;
+        margin: 0 auto;
+        border-radius: 0;
+    }
 }
 
 .no-image {
@@ -140,7 +150,7 @@ h3 {
     height: 60px;
     p {
         position: relative;
-        color: #e89602;
+        color: $yellow;
         font-size: 18px;
         margin: 0 10px;
         vertical-align: middle;
@@ -159,7 +169,11 @@ h3 {
 .subdescription {
     color: gray;
     margin-top: 0;
-    // margin-bottom: 20px;
+}
+
+.not-available {
+    color: $red;
+    margin-top: 0;
 }
 
 .hover-container {

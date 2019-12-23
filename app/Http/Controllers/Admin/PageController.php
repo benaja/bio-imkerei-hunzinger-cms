@@ -16,7 +16,7 @@ class PageController extends ModuleController
     protected $indexOptions = [
         'create' => true,
         'edit' => false,
-        'publish' => true,
+        'publish' => false,
         'bulkPublish' => true,
         'feature' => false,
         'bulkFeature' => false,

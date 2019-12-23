@@ -13,7 +13,6 @@ class Page extends Model
     use HasBlocks, HasMedias, HasFiles, HasRevisions;
 
     protected $fillable = [
-        'published',
         'name',
         "text",
         "values"

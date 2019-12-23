@@ -18,6 +18,7 @@
         "watch-poll": "npm run watch -- --watch-poll"
     },
     "dependencies": {
+        "eslint-config-airbnb-base": "^14.0.0",
         "uikit": "^3.1.7",
         "vue-axios": "^2.1.4",
         "vue-router": "^3.1.2"

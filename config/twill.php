@@ -32,11 +32,6 @@ return [
                 'icon' => 'image',
                 'component' => 'a17-block-card_with_video',
             ],
-            'multi_card' => [
-                'title' => 'Doppelte Karte',
-                'icon' => 'image',
-                'component' => 'a17-block-multi_card',
-            ],
             'text' => [
                 'title' => 'Text',
                 'icon' => 'text',

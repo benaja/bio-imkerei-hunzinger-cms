@@ -107,7 +107,10 @@ h1 {
 .image {
     padding-right: 20px;
     img {
-        width: 100%;
+        max-width: 100%;
+        max-height: 70vh;
+        margin: 0 auto;
+        display: block;
     }
 }
 
@@ -121,6 +124,10 @@ h1 {
 
 .available {
     color: $green;
+}
+
+.not-available {
+    color: $red;
 }
 
 .price {

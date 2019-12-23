@@ -9,6 +9,13 @@
                 />
                 <h1 class="main-title">Bio-Imkerei Hunzinger</h1>
                 <h2 class="second-title">Schweizer Bienenhonig feinster Qualität</h2>
+                <!-- <hexagon-row>
+                    <div>
+                        <hexagon></hexagon>
+                        <hexagon></hexagon>
+                        <hexagon></hexagon>
+                    </div>
+                </hexagon-row>-->
             </div>
         </div>
         <div class="uk-container">
@@ -37,6 +44,8 @@ import NavigationBar from "@/js/components/NavigationBar";
 import CardWithImage from "@/js/components/page/CardWithImage";
 import MultiCard from "@/js/components/page/MultiCard";
 import CustomContent from "@/js/components/page/CustomContent";
+import HexagonRow from "@/js/components/hexagon/HexagonRow";
+import Hexagon from "@/js/components/hexagon/Hexagon";
 
 export default {
     name: "Frontpage",
@@ -45,7 +54,9 @@ export default {
         NavigationBar,
         CardWithImage,
         MultiCard,
-        CustomContent
+        CustomContent,
+        HexagonRow,
+        Hexagon
     },
     data() {
         return {

@@ -214,6 +214,10 @@ $nav-bar-shadow: rgba(128, 128, 128, 0.4) 0 0 20px;
     padding-right: 20px;
 }
 
+.uk-logo {
+    white-space: nowrap;
+}
+
 .uk-nav-default {
     font-size: 1em;
 }
