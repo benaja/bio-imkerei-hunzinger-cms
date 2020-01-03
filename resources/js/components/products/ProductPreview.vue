@@ -23,7 +23,10 @@
                     <p>{{ product.short_description }}</p>
                 </div>
                 <div v-if="product.prices.length > 0" class="price-information">
-                    <p class="price">ab {{ product.prices[0].amount }}.-</p>
+                    <p class="price">
+                        <span v-if="product.prices.length > 1">ab</span>
+                        {{product.prices[0].amount }}{{Math.round(product.prices[0].amount) === product.prices[0].amount ? '.-': ''}}
+                    </p>
                     <p v-if="product.available" class="subdescription">( zzgl. Versand )</p>
                     <p v-else class="not-available">Zurzeit nicht verfügbar</p>
                 </div>

@@ -18,7 +18,7 @@ export default {
 <style lang="scss" scoped>
 @import "~@/sass/_variables.scss";
 
-$hexagonBaseColor: rgba(255, 255, 255, 0.5);
+$hexagonBaseColor: rgba(255, 255, 255, 0.6);
 
 // -webkit-clip-path: polygon(
 //   50% 0%,
