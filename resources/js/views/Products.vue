@@ -157,17 +157,12 @@ h4 {
 }
 
 .products-grid {
-    display: grid;
-    grid-template-columns: 200px auto;
-    grid-template-rows: auto auto;
-    grid-template-areas:
-        "filter products"
-        "filter products";
-    max-width: 90vw;
+    display: flex;
+    flex-wrap: nowrap;
 }
 
 .filter {
-    grid-area: filter;
+    width: 200px;
 }
 
 .sort-by {
@@ -198,10 +193,10 @@ h4 {
 }
 
 .products {
-    grid-area: products;
     display: flex;
     flex-wrap: wrap;
     min-height: 300px;
+    width: calc(100% - 200px);
 }
 
 [type="checkbox"].filled-in:checked + span:not(.lever):after {
@@ -217,10 +212,12 @@ h4 {
 
 @media only screen and (max-width: 800px) {
     .products-grid {
-        grid-template-columns: auto auto;
-        grid-template-areas:
-            "filter filter"
-            "products products";
+        flex-wrap: wrap;
+    }
+
+    .filter,
+    .products {
+        width: 100%;
     }
 
     .filter-item {
