@@ -162,7 +162,6 @@ export default {
     position: relative;
     overflow: hidden;
     z-index: 0;
-    margin-top: 50px;
 }
 
 .footer-cutter {

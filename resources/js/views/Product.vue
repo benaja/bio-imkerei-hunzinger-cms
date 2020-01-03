@@ -42,12 +42,20 @@
                                 uk-toggle="target: #buy-information"
                             >Kaufen</button>
                         </div>
-                        <p class="available" v-if="product.available">
-                            <img src="/icons/available.svg" />Verfügbar
-                        </p>
-                        <p class="not-available" v-else>
-                            <img src="/icons/not-available.svg" />Zurzeit nicht verfügbar
-                        </p>
+                        <div class="additional-information">
+                            <p class="available" v-if="product.available">
+                                <img src="/icons/available.svg" />Verfügbar
+                            </p>
+                            <p class="not-available" v-else>
+                                <img src="/icons/not-available.svg" />Zurzeit nicht verfügbar
+                            </p>
+                            <template v-if="product.isBio">
+                                <p class="available">
+                                    <img src="/icons/available.svg" />Bio-Knospe
+                                </p>
+                                <img class="bio-logo" src="/images/bio-knospe.png" />
+                            </template>
+                        </div>
                     </div>
                 </div>
             </div>
@@ -136,7 +144,7 @@ h1 {
 
 .available,
 .not-available {
-    padding-left: 10px;
+    margin: 5px 0;
     img {
         height: 0.8em;
         margin-right: 5px;
@@ -174,6 +182,14 @@ h1 {
 
 .divider {
     margin: 20px 10px;
+}
+
+.bio-logo {
+    width: 100px;
+}
+
+.additional-information {
+    margin: 0 10px;
 }
 
 @media only screen and (max-width: 1150px) {
@@ -228,9 +244,8 @@ h1 {
         margin: 20px 0;
     }
 
-    .available,
-    .not-available {
-        padding-left: 0;
+    .additional-information {
+        margin: 0;
     }
 }
 </style>
