@@ -209,6 +209,7 @@ h4 {
 
 @media only screen and (max-width: 800px) {
     .products-grid {
+        grid-template-columns: auto auto;
         grid-template-areas:
             "filter filter"
             "products products";

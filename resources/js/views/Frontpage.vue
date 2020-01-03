@@ -42,9 +42,6 @@
         </div>
         <div class="uk-container">
             <h2 class="products-header">Produkte</h2>
-            <p class="uk-text-center all-products">
-                <router-link tag="a" to="/produkte">Alle Produkte</router-link>
-            </p>
             <div class="products">
                 <ProductPreview
                     v-for="product of products"
@@ -53,6 +50,9 @@
                     hover-slider
                 ></ProductPreview>
             </div>
+            <p class="uk-text-center all-products">
+                <router-link tag="a" to="/produkte">Alle Produkte anzeigen</router-link>
+            </p>
             <div class="content">
                 <custom-content :content="contentElements"></custom-content>
             </div>
@@ -145,12 +145,13 @@ h2 {
 }
 
 .products-header {
-    margin: 70px 0 20px 0;
+    margin: 100px 0 20px 0;
 }
 
 .all-products {
     font-size: 1.5rem;
-    margin-bottom: 30px;
+    margin-top: 0;
+    margin-bottom: 50px;
 }
 
 .products {
@@ -158,7 +159,6 @@ h2 {
     flex-direction: row;
     flex-wrap: wrap;
     justify-content: center;
-    // transform: scale(1.025);
 }
 
 .hexagons {

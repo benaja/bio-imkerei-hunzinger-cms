@@ -39,6 +39,7 @@ $hexagonBaseColor: rgba(255, 255, 255, 0.5);
     display: inline-block;
     position: relative;
     vertical-align: top;
+    z-index: 2;
 
     &.transparent {
         background-color: transparent;
@@ -56,6 +57,7 @@ $hexagonBaseColor: rgba(255, 255, 255, 0.5);
         position: absolute;
         border-left: $hexagonHeight / 2 solid transparent;
         border-right: $hexagonHeight / 2 solid transparent;
+        z-index: -1;
     }
 
     &:before {
