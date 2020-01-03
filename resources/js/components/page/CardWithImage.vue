@@ -118,6 +118,16 @@ h2 {
         flex-direction: row-reverse;
         flex-wrap: nowrap;
     }
+
+    &.portrait {
+        .card-content {
+            width: calc(55% - 40px);
+        }
+
+        .media {
+            width: 45%;
+        }
+    }
 }
 
 .card-content {
@@ -155,6 +165,7 @@ h2 {
 }
 
 @media only screen and (max-width: 1200px) {
+    .card.portrait,
     .card {
         flex-wrap: wrap;
 

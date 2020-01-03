@@ -23,6 +23,7 @@ class Product extends Model implements Sortable
         'short_description',
         'available',
         'position',
+        'isBio',
         // 'public',
         'featured',
         'publish_start_date',

@@ -26,6 +26,11 @@
         'label' => 'Verfügbar'
     ])
 
+    @formField('checkbox', [
+        'name' => 'isBio',
+        'label' => 'Bio Knospe'
+    ])
+
     @formField('wysiwyg', [
         'name' => 'description',
         'label' => 'Beschreibung',

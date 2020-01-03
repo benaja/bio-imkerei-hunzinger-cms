@@ -57,25 +57,25 @@
         <div id="offcanvas-slide" uk-offcanvas="overlay: true">
             <div class="uk-offcanvas-bar">
                 <ul class="uk-nav uk-nav-default">
-                    <li class="uk-active">
+                    <li :class="{'uk-active': $route.path === '/'}">
                         <a href="/">Startseite</a>
                     </li>
-                    <li>
+                    <li :class="{'uk-active': $route.path.includes('/produkte')}">
                         <a href="/produkte">Produkte</a>
                     </li>
-                    <li>
+                    <li :class="{'uk-active': $route.path.includes('/galerie')}">
                         <a href="/galerie">Galerie</a>
                     </li>
-                    <li>
+                    <li :class="{'uk-active': $route.path.includes('/kontakt')}">
                         <a href="/kontakt">Kontakt</a>
                     </li>
-                    <li>
+                    <li :class="{'uk-active': $route.path.includes('/about')}">
                         <a href="/about">Über Uns</a>
                         <ul class="uk-nav-sub">
-                            <li>
+                            <li :class="{'uk-active': $route.path.includes('/news')}">
                                 <a href="/news">News</a>
                             </li>
-                            <li>
+                            <li :class="{'uk-active': $route.path.includes('/projekt')}">
                                 <a href="/projekt">Projekt</a>
                             </li>
                         </ul>

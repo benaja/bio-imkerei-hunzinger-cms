@@ -15,18 +15,12 @@
                     <div class="text">
                         <h1>{{product.title}}</h1>
                         <div v-html="product.description"></div>
+                        <p v-if="product.prices.length === 1">Menge: {{ selectedPrice.name }}</p>
+                        <p class="amount">
+                            <strong>{{ selectedPrice.amount }}{{Math.round(selectedPrice.amount) === selectedPrice.amount ? '.-' : ''}}</strong>
+                        </p>
                     </div>
                     <div class="price">
-                        <p class="available" v-if="product.available">Verfügbar</p>
-                        <p class="not-available" v-else>Zurzeit nicht verfügbar</p>
-                        <p class="amount">
-                            <strong>
-                                CHF {{ selectedPrice.amount }}
-                                <span
-                                    v-if="product.prices.length === 1"
-                                >/ {{ selectedPrice.name }}</span>
-                            </strong>
-                        </p>
                         <div class="price-buttons">
                             <div
                                 class="pice-names"
@@ -48,6 +42,12 @@
                                 uk-toggle="target: #buy-information"
                             >Kaufen</button>
                         </div>
+                        <p class="available" v-if="product.available">
+                            <img src="/icons/available.svg" />Verfügbar
+                        </p>
+                        <p class="not-available" v-else>
+                            <img src="/icons/not-available.svg" />Zurzeit nicht verfügbar
+                        </p>
                     </div>
                 </div>
             </div>
@@ -87,7 +87,8 @@ export default {
 <style lang="scss" scoped>
 @import "~@/sass/_variables.scss";
 h1 {
-    margin-top: 0;
+    margin: 0 auto 20px auto;
+    text-align: left;
 }
 
 .uk-container {
@@ -133,12 +134,19 @@ h1 {
     color: $red;
 }
 
-.price {
-    text-align: center;
-
-    .amount {
-        font-size: 1.5em;
+.available,
+.not-available {
+    padding-left: 10px;
+    img {
+        height: 0.8em;
+        margin-right: 5px;
     }
+}
+
+.amount {
+    font-size: 2em;
+    color: $red;
+    margin: 0 0 20px 0;
 }
 
 .price-buttons {
@@ -175,9 +183,6 @@ h1 {
 }
 
 @media only screen and (max-width: 800px) {
-    .price-buttons .price-button {
-        min-width: 100px;
-    }
     .uk-container {
         padding-top: 20px;
     }
@@ -207,8 +212,25 @@ h1 {
 }
 
 @media only screen and (max-width: 520px) {
-    .price-buttons .price-button {
-        min-width: calc(100% - 20px);
+    .price-buttons {
+        .price-button {
+            min-width: 100%;
+        }
+
+        > button {
+            width: 100%;
+            margin-left: 0;
+            margin-right: 0;
+        }
+    }
+
+    .divider {
+        margin: 20px 0;
+    }
+
+    .available,
+    .not-available {
+        padding-left: 0;
     }
 }
 </style>
