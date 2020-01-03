@@ -9,13 +9,35 @@
                 />
                 <h1 class="main-title">Bio-Imkerei Hunzinger</h1>
                 <h2 class="second-title">Schweizer Bienenhonig feinster Qualität</h2>
-                <!-- <hexagon-row>
-                    <div>
-                        <hexagon></hexagon>
-                        <hexagon></hexagon>
-                        <hexagon></hexagon>
-                    </div>
-                </hexagon-row>-->
+                <div class="hexagons">
+                    <hexagon-row>
+                        <div>
+                            <hexagon></hexagon>
+                        </div>
+                    </hexagon-row>
+                    <hexagon-row uneven>
+                        <div>
+                            <hexagon></hexagon>
+                            <hexagon></hexagon>
+                            <hexagon>
+                                <img src="/images/bio-knospe.png" class="bio-knospe" />
+                            </hexagon>
+                        </div>
+                    </hexagon-row>
+                    <hexagon-row>
+                        <div>
+                            <hexagon></hexagon>
+                            <hexagon></hexagon>
+                            <hexagon></hexagon>
+                        </div>
+                    </hexagon-row>
+                    <hexagon-row uneven>
+                        <div>
+                            <hexagon></hexagon>
+                            <hexagon></hexagon>
+                        </div>
+                    </hexagon-row>
+                </div>
             </div>
         </div>
         <div class="uk-container">
@@ -41,8 +63,6 @@
 <script>
 import ProductPreview from "@/js/components/products/ProductPreview";
 import NavigationBar from "@/js/components/NavigationBar";
-import CardWithImage from "@/js/components/page/CardWithImage";
-import MultiCard from "@/js/components/page/MultiCard";
 import CustomContent from "@/js/components/page/CustomContent";
 import HexagonRow from "@/js/components/hexagon/HexagonRow";
 import Hexagon from "@/js/components/hexagon/Hexagon";
@@ -52,8 +72,6 @@ export default {
     components: {
         ProductPreview,
         NavigationBar,
-        CardWithImage,
-        MultiCard,
         CustomContent,
         HexagonRow,
         Hexagon
@@ -90,6 +108,7 @@ h2 {
     background-position: center center;
     background-size: cover;
     background-image: url("/images/wallpaper01.jpg");
+    position: relative;
 }
 
 .darken-background {
@@ -142,7 +161,30 @@ h2 {
     // transform: scale(1.025);
 }
 
+.hexagons {
+    position: absolute;
+    bottom: -210px;
+}
+
+.bio-knospe {
+    display: block;
+    width: 70%;
+    margin: 0 auto;
+    z-index: 10;
+}
+
+@media only screen and (max-width: 1200px) {
+    .hexagons {
+        left: -($hexagonHeight / 2 + $hexagonHeight / 40);
+    }
+}
+
 @media only screen and (max-width: 800px) {
+    .hexagons {
+        left: -($hexagonMobileHeight / 2 + $hexagonMobileHeight / 40);
+        bottom: -110px;
+    }
+
     .large-logo {
         right: 0;
     }

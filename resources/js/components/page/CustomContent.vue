@@ -5,11 +5,11 @@
                 v-if="card.type === 'card_with_image' || card.type === 'card_with_video'"
                 :card="card"
             ></card-with-image>
-            <multi-card
+            <!-- <multi-card
                 v-if="card.type === 'multi_card'"
                 :cards="card.subCards"
                 :columns="parseInt(card.content.columns)"
-            ></multi-card>
+            ></multi-card>-->
             <div v-if="card.type === 'text'" v-html="card.content.text"></div>
             <div v-if="card.type === 'video'" class="video">
                 <iframe :src="`https://www.youtube.com/embed/${getYoutubeId(card.content.video)}`"></iframe>
@@ -32,7 +32,10 @@ export default {
         ImageGallery
     },
     props: {
-        content: Array
+        content: {
+            type: Array,
+            default: []
+        }
     },
     methods: {
         getYoutubeId(url) {

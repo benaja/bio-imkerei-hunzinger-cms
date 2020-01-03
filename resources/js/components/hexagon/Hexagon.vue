@@ -1,15 +1,23 @@
 <template>
-    <div class="hexagon">
+    <div class="hexagon" :class="{transparent: transparent}">
         <slot></slot>
     </div>
 </template>
 
 <script>
-export default {};
+export default {
+    props: {
+        transparent: {
+            type: Boolean,
+            default: false
+        }
+    }
+};
 </script>
 
 <style lang="scss" scoped>
-$hexagonHeight: 100px;
+@import "~@/sass/_variables.scss";
+
 $hexagonBaseColor: rgba(255, 255, 255, 0.5);
 
 // -webkit-clip-path: polygon(
@@ -32,14 +40,17 @@ $hexagonBaseColor: rgba(255, 255, 255, 0.5);
     position: relative;
     vertical-align: top;
 
+    &.transparent {
+        background-color: transparent;
+        &::before,
+        &::after {
+            border-bottom-color: transparent;
+            border-top-color: transparent;
+        }
+    }
+
     &:before,
     &:after {
-        // content: "";
-        // position: absolute;
-        // width: 0;
-        // border-left: $hexagonHeight / 2 solid transparent;
-        // border-right: $hexagonHeight / 2 solid transparent;
-        // z-index: -1;
         content: "";
         width: 0;
         position: absolute;
@@ -60,32 +71,27 @@ $hexagonBaseColor: rgba(255, 255, 255, 0.5);
     }
 }
 
-// .hexagon:before {
-//     content: " ";
-//     width: 0;
-//     height: 0;
-//     border-bottom: 30px solid #6c6;
-//     border-left: 52px solid transparent;
-//     border-right: 52px solid transparent;
-//     position: absolute;
-//     top: -30px;
-// }
+@media only screen and (max-width: 800px) {
+    .hexagon {
+        height: $hexagonMobileHeight / 1.8;
+        width: $hexagonMobileHeight;
+        margin-left: $hexagonMobileHeight / 35;
+        margin-right: $hexagonMobileHeight / 35;
 
-// .hexagon {
-//     margin-top: 30px;
-//     width: 104px;
-//     height: 60px;
-//     background-color: #6c6;
-//     position: relative;
-// }
+        &:before,
+        &:after {
+            border-left: $hexagonMobileHeight / 2 solid transparent;
+            border-right: $hexagonMobileHeight / 2 solid transparent;
+        }
 
-// .hexagon:after {
-//     content: "";
-//     width: 0;
-//     position: absolute;
-//     bottom: -30px;
-//     border-top: 30px solid #6c6;
-//     border-left: 52px solid transparent;
-//     border-right: 52px solid transparent;
-// }
+        &:before {
+            top: -$hexagonMobileHeight / 3.464;
+            border-bottom: $hexagonMobileHeight / 3.464 solid $hexagonBaseColor;
+        }
+
+        &:after {
+            border-top: $hexagonMobileHeight / 3.464 solid $hexagonBaseColor;
+        }
+    }
+}
 </style>
