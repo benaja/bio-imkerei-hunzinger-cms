@@ -14,7 +14,7 @@
             <div v-if="card.type === 'video'" class="video">
                 <iframe :src="`https://www.youtube.com/embed/${getYoutubeId(card.content.video)}`"></iframe>
             </div>
-            <image-gallery v-if="card.type === 'image_gallery'" :card="card"></image-gallery>
+            <image-gallery v-if="card.type === 'image_gallery'" :card="card" largeImages></image-gallery>
         </template>
     </div>
 </template>
