@@ -4,7 +4,7 @@
             <h1>Produkte</h1>
             <div class="products-grid">
                 <div class="filter">
-                    <div>
+                    <div class="sort-by">
                         <label class="uk-form-label" for="sort-by">
                             <h4>Sortieren nach</h4>
                         </label>
@@ -18,7 +18,7 @@
                         <h4>Filter</h4>
                         <div
                             v-for="(filter, index) in filters"
-                            :class="['filter', {selected: filter.selected}]"
+                            :class="['filter-item', {selected: filter.selected}]"
                             @click="changeFilter(index)"
                         >
                             <p>{{filter.text}}</p>
@@ -163,10 +163,18 @@ h4 {
     grid-template-areas:
         "filter products"
         "filter products";
+    max-width: 90vw;
 }
 
 .filter {
     grid-area: filter;
+}
+
+.sort-by {
+    margin-bottom: 15px;
+}
+
+.filter-item {
     margin: 5px 0;
     padding: 3px 6px;
     cursor: pointer;
@@ -215,7 +223,7 @@ h4 {
             "products products";
     }
 
-    .filter {
+    .filter-item {
         padding: 0;
     }
 

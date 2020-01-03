@@ -4,6 +4,7 @@
             <div
                 class="product-container"
                 :class="{'center-content': !product.images || product.images.length === 0}"
+                v-if="isLoaded"
             >
                 <div v-if="product.images && product.images.length > 0" class="image" uk-lightbox>
                     <a :href="product.images[0]">
@@ -67,7 +68,8 @@ export default {
             product: {
                 prices: []
             },
-            selectedPrice: {}
+            selectedPrice: {},
+            isLoaded: false
         };
     },
     mounted() {
@@ -76,6 +78,7 @@ export default {
             .then(result => {
                 this.product = result.data;
                 this.selectedPrice = this.product.prices[0] || [];
+                this.isLoaded = true;
             });
     }
 };
