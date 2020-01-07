@@ -152,8 +152,8 @@ h1 {
 }
 
 .amount {
-    font-size: 2em;
-    color: $red;
+    font-size: 1.5em;
+    color: rgb(83, 83, 83);
     margin: 0 0 20px 0;
 }
 

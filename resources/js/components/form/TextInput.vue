@@ -60,10 +60,10 @@ export default {
 
 .uk-input {
     background-color: transparent;
-    color: white;
+    color: black;
 
     &::placeholder {
-        color: rgb(255, 255, 255);
+        color: rgb(95, 95, 95);
     }
 
     &:focus {
@@ -76,7 +76,7 @@ export default {
 }
 
 .uk-form-label {
-    color: white;
+    color: black;
 }
 
 .validation-error {

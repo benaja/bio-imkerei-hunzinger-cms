@@ -2,6 +2,7 @@
     <div
         :class="['card', card.content.alignment, card.content.orientation, {'show-more': showMore}]"
         :style="cardStyle"
+        :id="card.content.title"
     >
         <div class="card-content">
             <div>
@@ -103,6 +104,7 @@ h2 {
     padding-top: 1px;
     text-align: left;
     display: flex;
+    position: relative;
 
     &.show-more {
         .card-content {

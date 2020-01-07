@@ -31,7 +31,7 @@
                                 :rules="[rules.required, rules.email]"
                             ></text-input>
                         </div>
-                        <button class="uk-button uk-button-secondary" @click="subscribe">Anmelden</button>
+                        <button class="uk-button uk-button-primary" @click="subscribe">Anmelden</button>
                     </form>
                 </div>
                 <div class="site-content content-right">
@@ -52,6 +52,37 @@
                     </a>
                 </div>
             </div>
+            <div class="hexagons">
+                <hexagon-row small uneven inverted>
+                    <hexagon small color="yellow" :opacity="0.3" />
+                </hexagon-row>
+                <hexagon-row small inverted>
+                    <hexagon small color="yellow" :opacity="0.4" />
+                </hexagon-row>
+                <hexagon-row small uneven inverted>
+                    <hexagon small color="yellow" :opacity="0.4" />
+                    <hexagon small color="yellow" :opacity="0.5" />
+                    <hexagon small color="yellow" :opacity="0.6" />
+                </hexagon-row>
+                <hexagon-row small inverted>
+                    <hexagon small color="yellow" :opacity="0.6" />
+                    <hexagon small color="yellow" :opacity="0.7" />
+                    <hexagon small color="yellow" :opacity="0.8" />
+                </hexagon-row>
+                <hexagon-row small uneven inverted>
+                    <hexagon small color="yellow" :opacity="0.8" />
+                    <hexagon small color="yellow" :opacity="0.9" />
+                    <hexagon small color="yellow" />
+                </hexagon-row>
+                <hexagon-row small inverted>
+                    <hexagon small color="yellow" />
+                    <hexagon small color="yellow" />
+                    <hexagon small color="yellow" />
+                </hexagon-row>
+            </div>
+        </div>
+        <div class="footer-buttom-bar">
+            <p>© {{ new Date().getFullYear() }} by Benaja Hunzinger</p>
         </div>
         <popup-modal
             v-model="modal.isOpen"
@@ -65,12 +96,16 @@
 <script>
 import TextInput from "@/js/components/form/TextInput";
 import PopupModal from "@/js/components/PopupModal";
+import HexagonRow from "@/js/components/hexagon/HexagonRow";
+import Hexagon from "@/js/components/hexagon/Hexagon";
 
 export default {
     name: "PageFooter",
     components: {
         TextInput,
-        PopupModal
+        PopupModal,
+        HexagonRow,
+        Hexagon
     },
     data() {
         return {
@@ -175,40 +210,53 @@ export default {
 }
 
 .footer-background {
-    background-color: #e89602;
+    background-color: white;
     width: 100%;
     margin-top: 1px;
 }
 
 .footer-content {
-    padding: 200px 100px 0 100px;
-    color: white;
+    padding: 170px 100px 0 100px;
+    color: black;
     display: flex;
     flex-wrap: wrap;
 
     > div {
-        width: 33%;
+        width: 28%;
         margin-bottom: 50px;
     }
 }
 
 .newsletter {
     border-radius: 20px;
+    max-width: 600px;
 }
 
 .uk-button {
-    background-color: $blue;
     width: 100%;
 }
 
 .content-right {
     text-align: right;
-    color: white;
+    color: black;
 }
 
 .social-media-icon {
     width: 50px;
     margin-left: 30px;
+}
+
+.hexagons {
+    position: absolute;
+    right: 0;
+    bottom: -$hexagonMobileHeight / 2;
+}
+
+.footer-buttom-bar {
+    p {
+        margin: 0;
+        padding: 10px 100px;
+    }
 }
 
 @media only screen and (max-width: 1800px) {
@@ -217,13 +265,7 @@ export default {
     }
 }
 
-@media only screen and (max-width: 1000px) {
-    .footer-content {
-        padding: 200px 20px 0 20px;
-    }
-}
-
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 1200px) {
     .footer-content {
         > div {
             width: 100%;
@@ -235,9 +277,23 @@ export default {
     }
 }
 
+@media only screen and (max-width: 1000px) {
+    .footer-content {
+        padding: 200px 20px 0 20px;
+    }
+
+    .footer-buttom-bar p {
+        padding: 10px 20px;
+    }
+}
+
 @media only screen and (max-width: 600px) {
     .footer-cutter {
         transform: rotate(10deg);
+    }
+
+    .hexagons {
+        right: -($hexagonVerySmallHeight * 1.5 + $hexagonVerySmallHeight / 10);
     }
 }
 
@@ -251,11 +307,11 @@ export default {
 <style lang="scss">
 .site-content {
     a {
-        color: white;
+        color: black;
         text-decoration: underline;
 
         &:hover {
-            color: white;
+            color: black;
         }
     }
 }

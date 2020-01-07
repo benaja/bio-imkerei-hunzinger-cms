@@ -1,8 +1,5 @@
 <template>
-    <div
-        class="hexagon"
-        :class="[`opacity-${opacity * 100}`, { transparent: transparent }]"
-    >
+    <div class="hexagon" :class="[`opacity-${opacity * 100}`, color, { transparent, small }]">
         <slot></slot>
     </div>
 </template>
@@ -17,6 +14,14 @@ export default {
         opacity: {
             type: Number,
             default: 1
+        },
+        small: {
+            type: Boolean,
+            default: false
+        },
+        color: {
+            type: String,
+            default: ""
         }
     }
 };
@@ -69,6 +74,40 @@ $hexagonBaseColor: white;
         border-top: $hexagonHeight / 3.464 solid $hexagonBaseColor;
     }
 
+    &.small {
+        height: $hexagonMobileHeight / 1.8;
+        width: $hexagonMobileHeight;
+        margin-left: $hexagonMobileHeight / 30;
+        margin-right: $hexagonMobileHeight / 30;
+
+        &::before,
+        &::after {
+            border-left-width: $hexagonMobileHeight / 2;
+            border-right-width: $hexagonMobileHeight / 2;
+        }
+
+        &::before {
+            top: -$hexagonMobileHeight / 3.464;
+            border-bottom-width: $hexagonMobileHeight / 3.464;
+        }
+
+        &::after {
+            border-top-width: $hexagonMobileHeight / 3.464;
+        }
+    }
+
+    &.yellow {
+        background-color: $yellow;
+
+        &::before {
+            border-bottom-color: $yellow;
+        }
+
+        &::after {
+            border-top-color: $yellow;
+        }
+    }
+
     &:hover {
         filter: brightness(90%);
     }
@@ -82,7 +121,6 @@ $hexagonBaseColor: white;
             border-top-color: transparent;
         }
     }
-
     &.opacity-10 {
         background-color: rgba(255, 255, 255, 0.1);
         &::before,
@@ -163,6 +201,89 @@ $hexagonBaseColor: white;
             border-top-color: rgba(255, 255, 255, 0.9);
         }
     }
+
+    &.yellow {
+        &.opacity-10 {
+            background-color: rgba(232, 150, 2, 0.1);
+            &::before,
+            &::after {
+                border-bottom-color: rgba(232, 150, 2, 0.1);
+                border-top-color: rgba(232, 150, 2, 0.1);
+            }
+        }
+
+        &.opacity-20 {
+            background-color: rgba(232, 150, 2, 0.2);
+            &::before,
+            &::after {
+                border-bottom-color: rgba(232, 150, 2, 0.2);
+                border-top-color: rgba(232, 150, 2, 0.2);
+            }
+        }
+
+        &.opacity-30 {
+            background-color: rgba(232, 150, 2, 0.3);
+            &::before,
+            &::after {
+                border-bottom-color: rgba(232, 150, 2, 0.3);
+                border-top-color: rgba(232, 150, 2, 0.3);
+            }
+        }
+
+        &.opacity-40 {
+            background-color: rgba(232, 150, 2, 0.4);
+            &::before,
+            &::after {
+                border-bottom-color: rgba(232, 150, 2, 0.4);
+                border-top-color: rgba(232, 150, 2, 0.4);
+            }
+        }
+
+        &.opacity-50 {
+            background-color: rgba(232, 150, 2, 0.5);
+            &::before,
+            &::after {
+                border-bottom-color: rgba(232, 150, 2, 0.5);
+                border-top-color: rgba(232, 150, 2, 0.5);
+            }
+        }
+
+        &.opacity-60 {
+            background-color: rgba(232, 150, 2, 0.6);
+            &::before,
+            &::after {
+                border-bottom-color: rgba(232, 150, 2, 0.6);
+                border-top-color: rgba(232, 150, 2, 0.6);
+            }
+        }
+
+        &.opacity-70 {
+            background-color: rgba(232, 150, 2, 0.7);
+            &::before,
+            &::after {
+                border-bottom-color: rgba(232, 150, 2, 0.7);
+                border-top-color: rgba(232, 150, 2, 0.7);
+            }
+        }
+
+        &.opacity-80 {
+            background-color: rgba(232, 150, 2, 0.8);
+            &::before,
+            &::after {
+                border-bottom-color: rgba(232, 150, 2, 0.8);
+                border-top-color: rgba(232, 150, 2, 0.8);
+            }
+        }
+
+        &.opacity-90 {
+            background-color: rgba(232, 150, 2, 0.9);
+            &::before,
+            &::after {
+                border-bottom-color: rgba(232, 150, 2, 0.9);
+                border-top-color: rgba(232, 150, 2, 0.9);
+            }
+        }
+    }
 }
 
 @media only screen and (max-width: 1250px) {
@@ -209,6 +330,28 @@ $hexagonBaseColor: white;
 
         &:after {
             border-top: $hexagonMobileHeight / 3.464 solid $hexagonBaseColor;
+        }
+
+        &.small {
+            height: $hexagonVerySmallHeight / 1.8;
+            width: $hexagonVerySmallHeight;
+            margin-left: $hexagonVerySmallHeight / 30;
+            margin-right: $hexagonVerySmallHeight / 30;
+
+            &::before,
+            &::after {
+                border-left-width: $hexagonVerySmallHeight / 2;
+                border-right-width: $hexagonVerySmallHeight / 2;
+            }
+
+            &::before {
+                top: -$hexagonVerySmallHeight / 3.464;
+                border-bottom-width: $hexagonVerySmallHeight / 3.464;
+            }
+
+            &::after {
+                border-top-width: $hexagonVerySmallHeight / 3.464;
+            }
         }
     }
 }
