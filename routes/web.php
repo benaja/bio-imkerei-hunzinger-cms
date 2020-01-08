@@ -10,7 +10,11 @@
 | contains the "web" middleware group. Now create something great!
 |
 */
-Route::get('/{any}', 'SinglePageController@index')->where('any', '.*');
+// Route::get('/{any}', 'SinglePageController@index')->where('any', '.*');
+Route::get('/{any}', function () {
+    View::addExtension('html', 'php');
+    return View::make('index');
+})->where('any', '.*');
 
 // Route::get('/', 'FrontpageController@index');
 

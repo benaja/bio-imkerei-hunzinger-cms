@@ -7,10 +7,10 @@ use Log;
 
 class SinglePageController extends Controller
 {
-    public function index()
-    {
-        return view('app');
-    }
+    // public function index()
+    // {
+    //     return view('app');
+    // }
 
     public function registerForNewsletter(Request $request)
     {

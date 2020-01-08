@@ -1,6 +1,8 @@
 /node_modules
 /public/storage
-/public/*.js
+*/public/*.js
+/public/css/*.css
+/public/js/*.js*
 /storage/*.key
 public/assets/admin
 public/mix-manifest.json
