@@ -1,7 +1,6 @@
 {
     "private": true,
     "scripts": {
-        "serve": "concurrently \"cd resources/frontend && npm run serve\" \"npm run twill-dev\"",
         "dev": "npm run development",
         "development": "cross-env NODE_ENV=development node_modules/webpack/bin/webpack.js --progress --hide-modules --config=node_modules/laravel-mix/setup/webpack.config.js",
         "hot": "cross-env NODE_ENV=development node_modules/webpack-dev-server/bin/webpack-dev-server.js --inline --hot --config=node_modules/laravel-mix/setup/webpack.config.js",
@@ -15,8 +14,7 @@
         "twill-watch": "concurrently \"watch 'npm run twill-hot' vendor/area17/twill/public --wait=2 --interval=0.1\" \"npm run twill-watch-blocks\"",
         "twill-watch-blocks": "watch 'npm run twill-copy-blocks' resources/assets/js/blocks --wait=2 --interval=0.1",
         "watch": "npm run development -- --watch",
-        "watch-poll": "npm run watch -- --watch-poll",
-        "build": "cd resources/frontend && npm run build && rm -f ../../public/*.js RR rm -f ../../public/*.css && cp dist/index.html ../views/index.html && cp -r dist/* ../../public/"
+        "watch-poll": "npm run watch -- --watch-poll"
     },
     "dependencies": {
         "eslint-config-airbnb-base": "^14.0.0",

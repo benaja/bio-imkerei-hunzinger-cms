@@ -53,6 +53,7 @@ class SinglePageController extends Controller
             Log::notice('email already exist: ' . $request->email);
             return response('email already exists', 400);
         }
+
         return 'Successfully subscribed to email newsletter';
     }
 }
