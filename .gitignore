@@ -4,10 +4,6 @@
 /public/css/*.css
 /public/js/*.js*
 /storage/*.key
-!/public/css/uikit.min.css
-!/public/css/uikit-rtl.min.css
-!/public/js/uikit.min.js
-!/public/js/uikit-icons.min.js
 public/assets/admin
 public/mix-manifest.json
 public/hot
