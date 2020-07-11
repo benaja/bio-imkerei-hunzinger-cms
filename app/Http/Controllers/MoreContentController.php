@@ -16,7 +16,8 @@ class MoreContentController extends Controller
 
     public function gallery()
     {
-        return Page::byName('gallery')->imagesAsArrays('gallery');
+        // return Page::byName('gallery')->imagesAsArrays('gallery');
+        return $this->getCardsOfPage('gallery');
     }
 
     public function news(NewsRepository $newsRepository)
@@ -55,7 +56,7 @@ class MoreContentController extends Controller
         $page = Page::byName($pageName);
         $cards = Block::where('blockable_id', $page->id)->get();
         foreach ($cards as &$card) {
-            if ($card->type === 'image_gallery') {
+            if ($card->type === 'image_gallery' || $card->type === 'image_category') {
                 $card->images = $card->imagesAsArrays('cover', 'desktop');
             } else if ($card->type === 'card_with_image') {
                 if (isset($card['content']['orientation']) && $card['content']['orientation'] === 'portrait') {
@@ -63,7 +64,8 @@ class MoreContentController extends Controller
                 } else {
                     $card->images = $card->images('cardimages', 'landscape');
                 }
-            } else {
+            }
+            else {
                 $card->images = $card->images('slideshow', 'desktop');
             }
         }

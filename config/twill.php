@@ -1,6 +1,8 @@
 <?php
 
 return [
+    'locale' => 'de',
+    'fallback_locale' => 'en',
     'enabled' => [
         'users-management' => true,
         'media-library' => true,
@@ -46,6 +48,11 @@ return [
                 'title' => 'Bilder Galerie',
                 'icon' => 'add',
                 'component' => 'a17-block-image_gallery',
+            ],
+            'image_category' => [
+                'title' => 'Bilder Kategorie',
+                'icon' => 'add',
+                'component' => 'a17-block-image_category',
             ]
 
         ],
@@ -61,7 +68,7 @@ return [
                 'trigger' => 'Karte hinzufügen',
                 'component' => 'a17-block-card_with_image',
                 'max' => 10
-            ],
+            ]
         ],
         'crops' => [
             'cardimages' => [
