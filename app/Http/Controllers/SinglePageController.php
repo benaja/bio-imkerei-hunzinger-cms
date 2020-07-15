@@ -37,7 +37,7 @@ class SinglePageController extends Controller
             'Authorization: Basic ' . env("MAILGIMP_API_KEY")
         );
         curl_setopt($curl, CURLOPT_HTTPHEADER, $header);
-        curl_setopt($curl, CURLOPT_URL, 'https://us7.api.mailchimp.com/3.0/lists/f7a7139972/members');
+        curl_setopt($curl, CURLOPT_URL, 'https://us20.api.mailchimp.com/3.0/lists/e80376bf4f/members');
         curl_setopt($curl, CURLOPT_RETURNTRANSFER, 1);
         $result = curl_exec($curl);
         if (curl_errno($curl)) {
