@@ -28,6 +28,7 @@ class MoreContentController extends Controller
             $article->image = $article->image('cover', 'default');
             $article->file = $article->file('single_file');
         }
+
         return $news;
     }
 
@@ -46,6 +47,11 @@ class MoreContentController extends Controller
         return Page::byName('contact');
     }
 
+    public function trainee()
+    {
+        return $this->getCardsOfPage('trainee');
+    }
+
     public function footer()
     {
         return Page::byName('footer');
@@ -58,17 +64,17 @@ class MoreContentController extends Controller
         foreach ($cards as &$card) {
             if ($card->type === 'image_gallery' || $card->type === 'image_category') {
                 $card->images = $card->imagesAsArrays('cover', 'desktop');
-            } else if ($card->type === 'card_with_image') {
+            } elseif ($card->type === 'card_with_image') {
                 if (isset($card['content']['orientation']) && $card['content']['orientation'] === 'portrait') {
                     $card->images = $card->images('cardimages', 'portrait');
                 } else {
                     $card->images = $card->images('cardimages', 'landscape');
                 }
-            }
-            else {
+            } else {
                 $card->images = $card->images('slideshow', 'desktop');
             }
         }
+
         return $cards;
     }
 }

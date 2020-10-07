@@ -7,7 +7,7 @@ return [
     ],
     'gallery' => [
         'title' => 'Galerie',
-        'route' => 'admin.gallery'
+        'route' => 'admin.gallery',
     ],
     'contact' => [
         'title' => 'Kontakt',
@@ -24,12 +24,16 @@ return [
             'project' => [
                 'title' => 'Projekt',
                 'route' => 'admin.about.project',
-            ]
-        ]
+            ],
+            'trainee' => [
+                'title' => 'Praktikant/in',
+                'route' => 'admin.about.trainee',
+            ],
+        ],
     ],
     'news' => [
         'title' => 'News',
-        'module' => true
+        'module' => true,
     ],
     'featured' => [
         'title' => 'Startseite',
@@ -41,8 +45,8 @@ return [
             ],
             'frontpage_more_content' => [
                 'title' => 'Weitere Inahlte',
-                'route' => 'admin.featured.frontpage_more_content'
-            ]
+                'route' => 'admin.featured.frontpage_more_content',
+            ],
         ],
     ],
     'more_content' => [
@@ -51,12 +55,12 @@ return [
         'primary_navigation' => [
             'buy_information' => [
                 'title' => 'Kauf Informationen',
-                'route' => 'admin.more_content.buy_information'
+                'route' => 'admin.more_content.buy_information',
             ],
             'footer' => [
                 'title' => 'Footer',
-                'route' => 'admin.more_content.footer'
-            ]
-        ]
-    ]
+                'route' => 'admin.more_content.footer',
+            ],
+        ],
+    ],
 ];

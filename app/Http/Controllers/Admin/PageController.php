@@ -6,7 +6,6 @@ use A17\Twill\Http\Controllers\Admin\ModuleController;
 use App\Repositories\GalleryRepository;
 use App\Repositories\PageRepository;
 use Illuminate\Support\Collection;
-
 use Illuminate\Support\Facades\View;
 
 class PageController extends ModuleController
@@ -45,6 +44,11 @@ class PageController extends ModuleController
         return $this->getView($repository, 'project', 'Projekt');
     }
 
+    public function traineePage(PageRepository $repository)
+    {
+        return $this->getView($repository, 'trainee', 'Praktikant/in');
+    }
+
     public function frontpageMoreContent(PageRepository $repository)
     {
         return $this->getView($repository, 'frontpage_more_content', 'Füge hier weitere Elemente ein, welche auf der Startseite angezeigt werden');
@@ -80,7 +84,7 @@ class PageController extends ModuleController
         $view = Collection::make([
             "$this->viewPrefix.{$pageName}_form",
             "twill::$this->moduleName.form",
-            "twill::layouts.form",
+            'twill::layouts.form',
         ])->first(function ($view) {
             return View::exists($view);
         });
@@ -89,6 +93,7 @@ class PageController extends ModuleController
         // dd($form);
         $form['editableTitle'] = false;
         $form['customTitle'] = $pageNameGerman;
+
         return View::make($view, $form);
     }
 }

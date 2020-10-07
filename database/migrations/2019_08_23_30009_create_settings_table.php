@@ -22,7 +22,7 @@ class CreateSettingsTable extends Migration
         });
 
         Schema::create('setting_translations', function (Blueprint $table) {
-            createDefaultTranslationsTableFields($table, 'setting');
+            // createDefaultTranslationsTableFields($table, 'setting');
             $table->text('value')->nullable();
         });
     }

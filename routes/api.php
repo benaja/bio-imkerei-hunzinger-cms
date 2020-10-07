@@ -25,6 +25,7 @@ Route::get('gallery', 'MoreContentController@gallery');
 Route::get('news', 'MoreContentController@news');
 Route::get('about-us', 'MoreContentController@aboutUs');
 Route::get('project', 'MoreContentController@project');
+Route::get('trainee', 'MoreContentController@trainee');
 Route::get('contact', 'MoreContentController@contact');
 Route::get('footer', 'MoreContentController@footer');
 Route::post('newsletter', 'SinglePageController@registerForNewsletter');
